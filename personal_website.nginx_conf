@@ -1,0 +1,9 @@
+# Nginx is set up to run on the standard HTTP port and listen for requests
+server {
+  listen <port>;
+
+  location / {
+    include uwsgi_params;
+    uwsgi_pass unix:<path to>/personal_website.sock;
+  }
+}
