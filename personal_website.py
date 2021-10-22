@@ -23,6 +23,7 @@
 #
 """This is my personal website"""
 from flask import Flask, render_template
+import json
 
 APP = Flask(__name__)
 
@@ -35,15 +36,35 @@ def main():
 
 @APP.route("/3d-printing")
 def three_d():
+    """3D printing stuffs"""
     return render_template("3d.html")
 
 
 @APP.route("/anime")
 def anime():
-    return render_template("anime.html")
+    """A Weeb's favorite pass time"""
+    with open("anime.json", "r") as file:
+        data = json.load(file)
+    watched = convert_to_html_list(data["Watched"])
+    watching = convert_to_html_list(data["Watching"])
+    on_hold = convert_to_html_list(data["On Hold"])
+    ptw = convert_to_html_list(data["To Watch"])
+    output = render_template("anime.html", on_hold=on_hold, to_watch=ptw,
+                             watched=watched, watching=watching)
+    output = output.replace("&lt;", "<")
+    output = output.replace("&gt;", ">")
+    return output
+
+def convert_to_html_list(obj):
+    """Convert a Python 1D list to an HTML unordered list"""
+    output = ""
+    for each in obj:
+        output = output + f"<li>{each}</li>\n"
+    return output
 
 @APP.route("/software")
 def software():
+    """Cause I'm a nerd on multiple levels"""
     return render_template("software.html")
 
 
