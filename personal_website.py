@@ -29,8 +29,23 @@ APP = Flask(__name__)
 
 @APP.route("/")
 def main():
-    """Handle the root directory of the mirrors"""
+    """Handle the root directory of the website"""
     return render_template("index.html")
+
+
+@APP.route("/3d-printing")
+def three_d():
+    return render_template("3d.html")
+
+
+@APP.route("/anime")
+def anime():
+    return render_template("anime.html")
+
+@APP.route("/software")
+def software():
+    return render_template("software.html")
+
 
 
 if __name__ == "__main__":
