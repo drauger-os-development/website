@@ -132,7 +132,14 @@
   "The Hidden Dungeon Only I Know About",
   "Seiren",
   "Seirei Gensouki: Spirit Chronicles",
-  "Love, Chunibyo, & Other Delusions (Seasons 1 & 2)"
+  "Love, Chunibyo, & Other Delusions (Seasons 1 & 2)",
+  "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat",
+  "Princess Connect! Re: Dive (Season 1)",
+  "Mayo Chiki",
+  "Komi Can't Communicate",
+  "Actually, I Am",
+  "The Irregular At Magic High School",
+  "The Fruit of Evolution: Before I Knew It, My Life Had It Made"
  ],
  "On Hold": [
   "Infinite Stratos (Find season 1 and rewatch season 2)",
@@ -155,8 +162,9 @@
   "Monster Girl Doctor (Season 2 delayed?)"
  ],
  "Watching": [
-  "Demon Slayer: Kimetsu No Yaiba (Season 2)",
-  "The World's Finest Assassin Gets Reincarnated in Another World as an Aristocrat"
+  "Demon Slayer: Kimetsu No Yaiba (Entertainment District Arc)",
+  "Princess Connect! Re: Dive (Season 2)",
+  "Attack on Titan (Season 2, Part 2)"
  ],
  "To Watch": [
   "Narruto Shippuden",
@@ -179,14 +187,17 @@
   "Rascal Does Not Dream of a Dreaming Girl",
   "NORN9",
   "Asobi ni Iku yo! (Cat Planet Cuties)",
-  "Mayo Chiki",
   "Kiss x Sis",
   "Highschool DxD Season 5 (Release 2022)",
   "Pandora Hearts",
   "Kanata no Astra",
   "Konosuba (Season 3)",
+<<<<<<< Updated upstream
   "Haganai: I don't have many friends (Boku wa Tomodachi ga Sukunai)",
   "Komi Can't Communicate",
   "Arifureta: From Commonplace to World's Strongest (Season 2 release January 13th, 2022)"
+=======
+  "Haganai: I don't have many friends (Boku wa Tomodachi ga Sukunai)"
+>>>>>>> Stashed changes
  ]
 }

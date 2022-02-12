@@ -2,14 +2,101 @@
 
 {% block content %}
 <h1 class="title">
-  Software
+    Software
 </h1>
 </br>
 <div class="box">
   <h2 class="subtitle">
-    This page is still under construction. Check back later to see if more has been added!
+      Most of the software I have written can be found <a href="https://github.com/Batcastle">on my GitHub</a>, or <a href="https://github.com/drauger-os-development">the Drauger OS GitHub</a>.
   </h2>
   </br>
+  <h3 class="subtitle">
+      Here's a quick bit of info about some of the software I have made.
+  </h3>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/Batcastle/personal_website">This Website!</a>
+  </h2>
+  <p>
+      Despite not being a web developer, I did actually write this entire website from scratch (except most of the CSS)! It uses Python and <a href="https://flask.palletsprojects.com/en/2.0.x/">Flask</a> to provide the server-side logic and pre-generate semi-dynamic pages, and simple static HTML for the web pages themselves. On the back end, it utilizes <a href="https://uwsgi-docs.readthedocs.io/en/latest/">uWSGI</a> and <a href="https://systemd.io/">systemd</a> in order to ensure the website has as little down tiem as possible and to provide a secure interface with which the Python script can interact with the web server, and thus, the outside world.
+      </br>
+      </br>
+      This website is entirely open-source. So if you find a spelling or grammar mistake, would like to help me make it look more presentable, or fork it to make your own, feel free to do so!
+  </p>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/drauger-os-development/systemd-boot-manager">systemd-boot-manager</a>
+  </h2>
+  <p>
+      systemd-boot-manager is a service which manages kernel stubs and <a href="https://wiki.ubuntu.com/Initramfs">initramfs images</a> for Linux operating systems using <a href="https://wiki.archlinux.org/title/systemd-boot">systemd-boot</a>. It provides enforcement of the user's default boot entry setting, as well as colorful and user-friendly output on the command line when used. It's fast, small, simple, and relatively easy to utilize.
+      </br>
+      </br>
+      Being written entirely in Python, systemd-boot-manager is entirely open-source. Feel free to fork it, submit a PR, or help me get it into upstream Linux repositories!
+  </p>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/drauger-os-development/xfce4-desktop-service">xfce4-desktop-service</a>
+  </h2>
+  <p>
+      xfce4-desktop-service was created to fix a specific bug I noticed with the <a href="https://xfce.org/">Xfce</a> desktop environment:
+      </br>
+      </br>
+      When running Xfce, if you do not have their file manager, <a href="https://docs.xfce.org/xfce/thunar/start">Thunar</a>, installed, the vast majority of interactions with desktop icons didn't work.
+      </br>
+      </br>
+      This may happen because someone may decide they want to use a different file manager, such as <a href="https://en.wikipedia.org/wiki/Nemo_(file_manager)">Nemo</a>, <a href="https://en.wikipedia.org/wiki/GNOME_Files">Nautilus</a>, or <a href="https://apps.kde.org/dolphin/">Dolphin</a>, causing Thunar to be essentially useless outside of the service it provides for desktop icons. Since said desktop service is not provided as a seperate package, I took it upon myself to write a package that provides that service. And thus, xfce4-desktop-service was born.
+      </br>
+      </br>
+      xfce4-desktop-service does have it's downfalls:
+      <ul>
+          <li>xfce4-desktop-service is single-threaded. I have yet to design a system that will handle multiple desktop requests at once. However, this is not unlike how Thunar handled desktop icon action requests so, while not ideal, it is not a huge downfall.</li>
+          <li>Being written in Python, xfce4-desktop-service is somewhat slower and has slightly more overhead than something written in C, C++ or Rust would. However, this allows us to easily support multiple CPU architectures, and rapidly iterate on the software to fix bugs and add features.</li>
+          <li>Since this project is not maintained by the Xfce devs themselves, we are always a step behind them whenever a change is made to the service Thunar provides.</li>
+          <li>This service relies on <a href="https://wiki.archlinux.org/title/XDG_Autostart">xdg-autostart</a> to start the service. Meaning it takes a little time to get started when a user logs in.</li>
+      </ul>
+      All this being said, it provides an essential service: allowing users to have only one file manager installed. This prevents confusion on systems new users use, and a more seamless user experience.
+  </p>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/drauger-os-development/system-installer">system-installer</a>
+  </h2>
+  <p>
+      system-installer is the system installation utility used by Drauger OS. It provides most of the basic necessities of a typical Linux system installation utility, plus a few extra features:
+      <ul>
+          <li><a href="https://btrfs.wiki.kernel.org/index.php/Main_Page">BTRFS</a> RAID support for the users' home partition</li>
+          <li>OEM installation capabilities</li>
+          <li>Quick Install - The ability to dump a config file after a successful installation, which contains the settings used, then re-import that file on another machine and quickly create a clone of the original installation, based off the same settings.</li>
+          <li>Sub-5 minute installation on most modern hardware (Assuming you are installing to an SSD)</li>
+      </ul>
+      Due to the nature of system-installer, it is in a state of constant flux. It requires constant fixing in order to keep it working due to all the libraries it uses and all the hardware it interacts with. It is also undergoing constant changes as we attempt to add new features, improve user experience, and improve cross-platform support.
+  </p>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/Batcastle/PyLibMan">PyLibMan</a>
+  </h2>
+  <p>
+      PyLibMan is management software for libaries to use. It is currently incomplete, but is at a stage of being a minimum viable product. PyLibMan has the following features:
+      <ul>
+          <li>Python and SQLite based, as well as multithreaded, allowing PyLibMan to run on rather low-end hardware, regardless of CPU architecture.</li>
+          <li>Uses QR Codes in order to identify individual books, even amongst multiple otherwise identical copies.</li>
+          <li>Is able to tell you not only who has a book, but also how long they have had the book and whether it is missing or taken out of circulation.</li>
+      </ul>
+  </p>
+  </br>
+  <h2 class="subtitle">
+      <a href="https://github.com/drauger-os-development/download-optimizer">Download Optimizer</a>
+  </h2>
+  <p>
+      Download Optimizer is a transparent CDN service. In short, the way it works:
+      <ul>
+          <li>Download Optimizer receivews a GET request from a user</li>
+          <li>Download Optimizer uses the user's IP address to get coordinates close to their location</li>
+          <li>It then uses some complex math (the <a href="https://en.wikipedia.org/wiki/Haversine_formula">Haversine Formula</a>) to calculate the server closest to the user</li>
+          <li>Download Optimizer then sends a 302 redirect response to the user, sending them to the new server, but with the same path as before.</li>
+          <li>The client's computer then connects to the new server and downloads the appropriate files.</li>
+      </ul>
+      Download Optimizer does keep some basic download statistics, but this is entirely just download numbers and averages over time. No download counts by location, no download counts by file, no download counts by OS. This is done not because I can't, but because users deserve privacy. Download Optimizer simply does not need any of that information, so it doesn't use it, let alone log it.
+  </p>
 </div>
 
 {% endblock %}
