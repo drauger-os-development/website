@@ -22,7 +22,8 @@
 #
 #
 """This is my personal website"""
-from flask import Flask, render_template
+from flask import Flask, render_template, send_from_directory, redirect, url_for
+import os
 import json
 
 APP = Flask(__name__)
@@ -66,6 +67,15 @@ def convert_to_html_list(obj):
 def software():
     """Cause I'm a nerd on multiple levels"""
     return render_template("software.html")
+
+
+@APP.route("/assets/<path:path>")
+def static_dir(path):
+    if ".." in path:
+        return redirect(url_for("forbidden"))
+    if path not in os.listdir("assets"):
+        return redirect(url_for("page_not_found"))
+    return send_from_directory("assets", path)
 
 
 @APP.errorhandler(404)
