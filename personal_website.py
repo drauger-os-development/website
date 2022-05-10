@@ -73,10 +73,18 @@ def error_404(e):
     return page_not_found()
 
 
+@APP.errorhandler(403)
+def error_403(e):
+    return forbidden()
+
 
 @APP.route("/404")
 def page_not_found():
     return render_template('404.html'), 404
 
+
+@APP.route("/403")
+def forbidden():
+    return render_template('403.html'), 403
 if __name__ == "__main__":
     APP.run(host="0.0.0.0", debug=False)
