@@ -69,7 +69,13 @@ def software():
 
 
 @APP.errorhandler(404)
-def page_not_found(e):
+def error_404(e):
+    return page_not_found()
+
+
+
+@APP.route("/404")
+def page_not_found():
     return render_template('404.html'), 404
 
 if __name__ == "__main__":
