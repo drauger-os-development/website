@@ -96,5 +96,12 @@ def page_not_found():
 @APP.route("/403")
 def forbidden():
     return render_template('403.html'), 403
+
+
+@APP.route("/favicon.ico")
+def favicon():
+    return static_dir("favicon.png")
+
+
 if __name__ == "__main__":
     APP.run(host="0.0.0.0", debug=False)
