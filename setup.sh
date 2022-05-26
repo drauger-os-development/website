@@ -31,12 +31,12 @@ echo "Installing Dependencies . . ."
 sudo apt install --assume-yes $(<requirements_apt.txt)
 username=$(whoami)
 echo "Configuring your system . . ."
-sudo cp -v personal_website.nginx_conf /etc/nginx/sites-available/personal_website.conf
-sudo cp -v personal_website.service /etc/systemd/system/personal_website.service
-sudo sed -i "s:<path to>:$PWD:g" /etc/nginx/sites-available/personal_website.conf
-sudo sed -i "s:<port>:$port:g" /etc/nginx/sites-available/personal_website.conf
-sudo sed -i "s:<path to>:$PWD:g" /etc/systemd/system/personal_website.service
-sudo sed -i "s:<username>:$username:g" /etc/systemd/system/personal_website.service
+sudo cp -v website.nginx_conf /etc/nginx/sites-available/website.conf
+sudo cp -v website.service /etc/systemd/system/website.service
+sudo sed -i "s:<path to>:$PWD:g" /etc/nginx/sites-available/website.conf
+sudo sed -i "s:<port>:$port:g" /etc/nginx/sites-available/website.conf
+sudo sed -i "s:<path to>:$PWD:g" /etc/systemd/system/website.service
+sudo sed -i "s:<username>:$username:g" /etc/systemd/system/website.service
 
 # Only bother trying to delete this file if it exists
 if [ -f /etc/nginx/sites-enabled/default ]; then
@@ -45,9 +45,9 @@ if [ -f /etc/nginx/sites-enabled/default ]; then
 fi
 
 echo "Enabling site and restarting Nginx . . ."
-sudo systemctl enable personal_website
-sudo ln -sv /etc/nginx/sites-available/personal_website.conf /etc/nginx/sites-enabled/personal_website.conf
+sudo systemctl enable website
+sudo ln -sv /etc/nginx/sites-available/personal_website.conf /etc/nginx/sites-enabled/website.conf
 sudo systemctl restart nginx
-sudo systemctl start personal_website
+sudo systemctl start website
 git log | grep "^commit " | head -n1 | awk '{print $2}' > .git_commit_number
 echo "Please ensure port $port is open so that the website may be exposed to the network"

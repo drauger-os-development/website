@@ -23,10 +23,10 @@
 #
 echo "Removing files and disabling. . ."
 # Stop and disable start up service
-sudo systemctl stop personal_website
-sudo systemctl disable personal_website
+sudo systemctl stop website
+sudo systemctl disable website
 # remove system files
-sudo rm -fv /etc/nginx/sites-available/personal_website.conf /etc/nginx/sites-enabled/personal_website.conf /etc/systemd/system/personal_website.service
+sudo rm -fv /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled/website.conf /etc/systemd/system/website.service
 # restart nginx to take the site offline
 sudo systemctl restart nginx
 # remove commit tag

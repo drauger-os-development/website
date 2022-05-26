@@ -6,7 +6,7 @@ After=network.target
 User=<username>
 Group=www-data
 WorkingDirectory=<path to>
-ExecStart=/usr/bin/uwsgi --ini <path to>/personal_website.ini
+ExecStart=/usr/bin/uwsgi --ini <path to>/website.ini
 
 [Install]
 WantedBy=multi-user.target

@@ -3,7 +3,7 @@
 #
 #  wsgi.py
 #
-#  Copyright 2021 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -22,7 +22,7 @@
 #
 #
 """WSGI Loader"""
-from personal_website import APP
+from website import APP
 
 if __name__ == "__main__":
     APP.run()

@@ -3,7 +3,7 @@
 #
 #  update.sh
 #
-#  Copyright 2021 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -35,13 +35,13 @@ if [ -f .git_commit_number ]; then
 	fi
 fi
 # We need to figure out what port was configured beforehand so that the user's settings are retained
-port=$(grep "listen *.*;" /etc/nginx/sites-available/personal_website.conf | awk '{print $2}' | sed 's/;//g')
+port=$(grep "listen *.*;" /etc/nginx/sites-available/website.conf | awk '{print $2}' | sed 's/;//g')
 
-# uninstall personal_website
+# uninstall website
 echo "Deconfiguring . . ."
 ./uninstall.sh
 
-# reinstall personal_website
+# reinstall _website
 echo "Reconfiguring . . ."
 ./setup.sh "$port"
 

@@ -1,9 +1,9 @@
 #!/usr/bin/env python3
 # -*- coding: utf-8 -*-
 #
-#  personal_website.py
+#  website.py
 #
-#  Copyright 2021 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -21,7 +21,7 @@
 #  MA 02110-1301, USA.
 #
 #
-"""This is my personal website"""
+"""Drauger OS website"""
 from flask import Flask, render_template, send_from_directory, redirect, url_for
 import os
 import json
