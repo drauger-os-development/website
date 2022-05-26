@@ -67,6 +67,12 @@ def thank_you():
     return render_template("thank_you.html")
 
 
+@APP.route("/thank_you_old")
+def thank_you_old():
+    """Cause I'm a nerd on multiple levels"""
+    return render_template("thank_you_old.html")
+
+
 @APP.route("/assets/<path:path>")
 def static_dir(path):
     if ".." in path:

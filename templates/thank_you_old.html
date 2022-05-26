@@ -15,7 +15,7 @@
 <div class="box">
     <center>
         <h2>
-Thank you for choosing Drauger OS! If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso">try this link</a>.
+Thank you for choosing Drauger OS! If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.5.1-AMD64.iso">try this link</a>.
 </br>
 The default password is ‘toor’.
 </br>
@@ -33,8 +33,8 @@ function sleep(ms) {
 async function init_download()
 {
   link = document.createElement("a"); //create 'a' element
-  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso");
-  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso");
+  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.5.1-AMD64.iso");
+  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.5.1-AMD64.iso");
   await sleep(3000);
   link.click();
 }
@@ -42,6 +42,6 @@ async function init_download()
 init_download();
 </script>
 <noscript>
-  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso">
+  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.5.1-AMD64.iso">
 </noscript>
 {% endblock %}
