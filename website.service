@@ -1,5 +1,5 @@
 [Unit]
-Description=uWSGI instance to serve your personal website
+Description=uWSGI instance to serve your website
 After=network.target
 
 [Service]

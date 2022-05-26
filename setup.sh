@@ -46,7 +46,7 @@ fi
 
 echo "Enabling site and restarting Nginx . . ."
 sudo systemctl enable website
-sudo ln -sv /etc/nginx/sites-available/personal_website.conf /etc/nginx/sites-enabled/website.conf
+sudo ln -sv /etc/nginx/sites-available/website.conf /etc/nginx/sites-enabled/website.conf
 sudo systemctl restart nginx
 sudo systemctl start website
 git log | grep "^commit " | head -n1 | awk '{print $2}' > .git_commit_number
