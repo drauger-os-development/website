@@ -67,6 +67,26 @@ def thank_you():
     return render_template("thank_you.html")
 
 
+@APP.route("/system_requirements")
+@APP.route("/sys_reqs")
+def sys_reqs():
+    """Cause I'm a nerd on multiple levels"""
+    return render_template("sys_reqs.html")
+
+
+@APP.route("/contribute")
+@APP.route("/contributing")
+def contributing():
+    """Cause I'm a nerd on multiple levels"""
+    return render_template("contributing.html")
+
+
+@APP.route("/contributors")
+def contributors():
+    """Cause I'm a nerd on multiple levels"""
+    return render_template("contributors.html")
+
+
 @APP.route("/thank_you_old")
 def thank_you_old():
     """Cause I'm a nerd on multiple levels"""
