@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+
+{% block content %}
+<h1 class="title">
+  Download Drauger OS
+</h1>
+</br>
+<div class="box">
+    <center>
+        <h2>
+            Please choose the version of Drauger OS you would like to download.
+        </h2>
+    </center>
+  </br>
+  <center>
+      <div>
+          <a class="p-button--positive is-wide" href="{{ url_for('thank_you') }}">
+              <img class="redglow" src="{{ url_for('static_dir', path='751download.png') }}">
+          </a>
+      </div>
+  </center>
+  <center>
+    <div>
+        <a class="p-button--positive is-wide" href="https://sourceforge.net/projects/drauger-os/files/latest/download">
+            <img class="redglow" src="{{ url_for('static_dir', path='741download.png') }}">
+        </a>
+    </div>
+    </center>
+</div>
+
+{% endblock %}

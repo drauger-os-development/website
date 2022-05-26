@@ -41,7 +41,7 @@ port=$(grep "listen *.*;" /etc/nginx/sites-available/website.conf | awk '{print 
 echo "Deconfiguring . . ."
 ./uninstall.sh
 
-# reinstall _website
+# reinstall website
 echo "Reconfiguring . . ."
 ./setup.sh "$port"
 

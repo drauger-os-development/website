@@ -35,26 +35,17 @@ def main():
     return render_template("index.html")
 
 
-@APP.route("/3d-printing")
-def three_d():
+@APP.route("/download")
+def download():
     """3D printing stuffs"""
-    return render_template("3d.html")
+    return render_template("download.html")
 
 
-@APP.route("/anime")
-def anime():
-    """A Weeb's favorite pass time"""
-    with open("anime.json", "r") as file:
-        data = json.load(file)
-    watched = convert_to_html_list(data["Watched"])
-    watching = convert_to_html_list(data["Watching"])
-    on_hold = convert_to_html_list(data["On Hold"])
-    ptw = convert_to_html_list(data["To Watch"])
-    output = render_template("anime.html", on_hold=on_hold, to_watch=ptw,
-                             watched=watched, watching=watching)
-    output = output.replace("&lt;", "<")
-    output = output.replace("&gt;", ">")
-    return output
+@APP.route("/about")
+def about():
+    """Disaplay about us page"""
+    return render_template("about.html")
+
 
 def convert_to_html_list(obj):
     """Convert a Python 1D list to an HTML unordered list"""
@@ -63,10 +54,17 @@ def convert_to_html_list(obj):
         output = output + f"<li>{each}</li>\n"
     return output
 
-@APP.route("/software")
-def software():
+
+@APP.route("/contact")
+def contact():
     """Cause I'm a nerd on multiple levels"""
-    return render_template("software.html")
+    return render_template("contact.html")
+
+
+@APP.route("/thank_you")
+def thank_you():
+    """Cause I'm a nerd on multiple levels"""
+    return render_template("thank_you.html")
 
 
 @APP.route("/assets/<path:path>")
@@ -96,6 +94,19 @@ def page_not_found():
 @APP.route("/403")
 def forbidden():
     return render_template('403.html'), 403
+
+
+@APP.route("/go/<path:path>")
+def go_path_redirector(path):
+    """redirect old /go style links"""
+    return redirect(f"https://draugeros.org/{ path }")
+
+
+@APP.route("/go")
+@APP.route("/go/")
+def go_path_redirector_backup():
+    """redirect old /go style links"""
+    return redirect("https://draugeros.org")
 
 
 @APP.route("/favicon.ico")
