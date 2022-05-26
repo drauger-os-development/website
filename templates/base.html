@@ -87,11 +87,6 @@
   color: black;
 }
 
-/* Add a color to the active/current link */
-.topnav a.active {
-  background-color: #FF3939;
-  color: white;
-}
 .bg
 {
   width: 99%;
@@ -106,10 +101,10 @@
     <section class="hero is-primary is-fullheight">
 
         <div class="topnav">
-            <a class="active" href="{{ url_for('main') }}">Home</a>
+            <a href="{{ url_for('main') }}">Home</a>
             <a href="{{ url_for('download') }}">Download</a>
             <a href="{{ url_for('contact') }}">Contact</a>
-            <a href="{{ url_for('about') }}t">About</a>
+            <a href="{{ url_for('about') }}">About</a>
         </div>
         <img class="bg" src="/assets/banner.png">
         <div class="hero-body">
