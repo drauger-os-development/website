@@ -35,7 +35,8 @@ if [ -f .git_commit_number ]; then
 	fi
 fi
 # We need to figure out what port was configured beforehand so that the user's settings are retained
-port=$(grep "listen *.*;" /etc/nginx/sites-available/website.conf | awk '{print $2}' | sed 's/;//g')
+port=$(grep "listen *.*;" /etc/nginx/sites-available/website.conf | awk '{print $2}' | sed 's/;//g' | head -n1)
+server_name=$(grep "server_name *.*;" /etc/nginx/sites-available/website.conf | awk '{print $2}' | sed 's/;//g' | head -n1)
 
 # uninstall website
 echo "Deconfiguring . . ."
@@ -43,6 +44,6 @@ echo "Deconfiguring . . ."
 
 # reinstall website
 echo "Reconfiguring . . ."
-./setup.sh "$port"
+./setup.sh "$port" "$server_name"
 
 echo "Update complete!"

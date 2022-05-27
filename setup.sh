@@ -24,16 +24,26 @@
 set -Ee
 set -o pipefail
 port="$1"
+server_name="$2"
 if [ "$port" == "" ]; then
 	port="80"
+elif ! [[ "$port" =~ ^[0-9]+$ ]]; then
+	echo "Port is not a number. Defaulting to port 80."
+	port="80"
+fi
+if [ "$server_name" == ""]; then
+	echo "No Server name provided. Will prompt..."
+	server_name="example.com"
 fi
 echo "Installing Dependencies . . ."
 sudo apt install --assume-yes $(<requirements_apt.txt)
 username=$(whoami)
 echo "Configuring your system . . ."
+read -p "What is the address this website will be at?: " server_name
 sudo cp -v website.nginx_conf /etc/nginx/sites-available/website.conf
 sudo cp -v website.service /etc/systemd/system/website.service
 sudo sed -i "s:<path to>:$PWD:g" /etc/nginx/sites-available/website.conf
+sudo sed -i "s:<server_name>:$server_name:g" /etc/nginx/sites-available/website.conf
 sudo sed -i "s:<port>:$port:g" /etc/nginx/sites-available/website.conf
 sudo sed -i "s:<path to>:$PWD:g" /etc/systemd/system/website.service
 sudo sed -i "s:<username>:$username:g" /etc/systemd/system/website.service
