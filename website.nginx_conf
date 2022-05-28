@@ -6,3 +6,4 @@ server {
           include uwsgi_params;
           uwsgi_pass unix:<path to>/website.sock;
         }
+}
