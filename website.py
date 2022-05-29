@@ -97,9 +97,10 @@ def thank_you_old():
 def static_dir(path):
     if ".." in path:
         return redirect(url_for("forbidden"))
-    if path not in os.listdir("assets"):
+    try:
+        return send_from_directory("assets", path)
+    except:
         return redirect(url_for("page_not_found"))
-    return send_from_directory("assets", path)
 
 
 @APP.errorhandler(404)
@@ -137,7 +138,7 @@ def go_path_redirector_backup():
 
 @APP.route("/favicon.ico")
 def favicon():
-    return static_dir("favicon.png")
+    return static_dir("images/favicon.png")
 
 
 if __name__ == "__main__":
