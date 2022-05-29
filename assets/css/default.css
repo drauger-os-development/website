@@ -1,0 +1,154 @@
+body :not(iframe) {
+        background-color: #101112;
+        border-color: #101112;
+        color: #e8e6e3;
+      }
+      body {
+        opacity: 1 !important;
+        transition: none !important;
+        background-color: #101112 !important;
+        border-color: #101112 !important;
+      }
+      .title {
+        color:#FFFFFF;
+        font-size:2rem;
+        font-weight:600;
+        line-height:1.125;
+      }
+      .page-title
+      {
+          z-index: 1;
+          color:#FFFFFF;
+          font-size:2rem;
+          font-weight:600;
+          line-height:1.125;
+          position: relative;
+          background-color: rgba(0, 0, 0, 0);
+      }
+      .subtitle {
+        color:#FFFFFF;
+        font-size:1.25rem;
+        font-weight:400;
+        line-height:1.25;
+      }
+      .box {
+        border-radius:6px;
+        /* box-shadow:0 2px 3px #0A0A0A1A,0 0 0 1px #0A0A0A1A; */
+        color:#101112;
+        display:block;
+        padding:1.25rem;
+      }
+      h1, h2, h3, h4, p {
+          font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+      }
+      /* unvisited link */
+      a:link {
+          color: white;
+      }
+
+      /* visited link */
+      a:visited {
+          color: grey;
+      }
+
+      /* mouse over link */
+      a:hover {
+          color: red;
+      }
+      /* Add a black background color to the top navigation */
+.topnav {
+  background-color: #101112;
+  overflow: hidden;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+.image-menu {
+  background-color: #101112;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-block {
+  background-color: #101112;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Style the links inside the navigation bar */
+.image-menu a {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.image-menu p {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.image-menu h2 {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.image-menu a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+.bg
+{
+  width: 99%;
+  height: 35%;
+  z-index: 0;
+  position: absolute;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 50%;
+	display: table;
+	border: 1px solid #ffffff;
+}
+tr {
+    border: 1px solid #ffffff;
+}
+th {
+    border: 1px solid #ffffff;
+}
+td {
+    border: 1px solid #ffffff;
+}
