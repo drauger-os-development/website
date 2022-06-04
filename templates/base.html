@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drauger OS</title>
     <link rel="stylesheet" href="assets/css/default.css">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
 <body>
@@ -17,9 +17,7 @@
             <a href="{{ url_for('download') }}">Download</a>
             <a href="{{ url_for('contact') }}">Contact</a>
             <div class="dropdown">
-                <button class="dropbtn">About
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <button class="dropbtn">About</button>
                 <div class="dropdown-content">
                     <a href="{{ url_for('about') }}">About Drauger OS</a>
                     <a href="{{ url_for('sys_reqs') }}">System Requirements</a>
@@ -27,9 +25,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn">Contributing
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <button class="dropbtn">Contributing</button>
                 <div class="dropdown-content">
                     <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
                     <a href="{{ url_for('contributors') }}">Contributors</a>
@@ -38,9 +34,7 @@
                 </div>
             </div>
             <div class="dropdown">
-                <button class="dropbtn">Community
-                    <i class="fa fa-caret-down"></i>
-                </button>
+                <button class="dropbtn">Community</button>
                 <div class="dropdown-content">
                     <a href="https://t.me/draugeros">Telegram</a>
                     <a href="https://discord.gg/JW8FGrc">Discord</a>
