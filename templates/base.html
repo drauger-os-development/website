@@ -7,16 +7,47 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Drauger OS</title>
     <link rel="stylesheet" href="assets/css/default.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 
 <body>
     <section>
-
         <div class="topnav">
             <a href="{{ url_for('main') }}">Home</a>
             <a href="{{ url_for('download') }}">Download</a>
             <a href="{{ url_for('contact') }}">Contact</a>
-            <a href="{{ url_for('about') }}">About</a>
+            <div class="dropdown">
+                <button class="dropbtn">About
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('about') }}">About Drauger OS</a>
+                    <a href="{{ url_for('sys_reqs') }}">System Requirements</a>
+                    <a href="https://distrotest.net/Drauger%20OS">Try on DistroTest</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Contributing
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
+                    <a href="{{ url_for('contributors') }}">Contributors</a>
+                    <a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a>
+                    <a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on Distrowatch</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Community
+                    <i class="fa fa-caret-down"></i>
+                </button>
+                <div class="dropdown-content">
+                    <a href="https://t.me/draugeros">Telegram</a>
+                    <a href="https://discord.gg/JW8FGrc">Discord</a>
+                    <a href="https://www.reddit.com/r/DraugerOS/">Reddit</a>
+                    <a href="https://twitter.com/DraugerOS">Twitter</a>
+                </div>
+            </div>
         </div>
         <img class="bg" src="/assets/images/banner.webp">
         <div>
@@ -40,18 +71,6 @@
             <img class="redglow" src="https://raw.githubusercontent.com/fosshostorg/fosshost.org/main/static/img/fosshost-logo.png">
         </a>
     </h4>
-    <h4>
-        FOLLOW US ONLINE
-    </h4>
-    <p>
-        <a href="https://discord.gg/JW8FGrc" target="_blank">Discord</a>
-        </br>
-        <a href="https://t.me/draugeros" target="_blank">Telegram</a>
-        </br>
-        <a href="https://twitter.com/DraugerOS" target="_blank">Twitter</a>
-        </br>
-        <a href="https://www.reddit.com/r/DraugerOS/" target="_blank">Reddit</a>
-    </p>
     </br>
     <h4>
         Drauger OS logos, branding, and website content are property of Drauger OS Development and Thomas Castleman.

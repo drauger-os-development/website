@@ -2,63 +2,64 @@ body :not(iframe) {
         background-color: #101112;
         border-color: #101112;
         color: #e8e6e3;
-      }
-      body {
-        opacity: 1 !important;
-        transition: none !important;
-        background-color: #101112 !important;
-        border-color: #101112 !important;
-      }
-      .title {
-        color:#FFFFFF;
-        font-size:2rem;
-        font-weight:600;
-        line-height:1.125;
-      }
-      .page-title
-      {
-          z-index: 1;
-          color:#FFFFFF;
-          font-size:2rem;
-          font-weight:600;
-          line-height:1.125;
-          position: relative;
-          background-color: rgba(0, 0, 0, 0);
-      }
-      .subtitle {
-        color:#FFFFFF;
-        font-size:1.25rem;
-        font-weight:400;
-        line-height:1.25;
-      }
-      .box {
-        border-radius:6px;
-        /* box-shadow:0 2px 3px #0A0A0A1A,0 0 0 1px #0A0A0A1A; */
-        color:#101112;
-        display:block;
-        padding:1.25rem;
-      }
-      h1, h2, h3, h4, p {
-          font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
-      }
-      /* unvisited link */
-      a:link {
-          color: white;
-      }
+        font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+}
 
-      /* visited link */
-      a:visited {
-          color: grey;
-      }
+body, footer {
+    opacity: 1 !important;
+    transition: none !important;
+    background-color: #101112 !important;
+    border-color: #101112 !important;
+}
 
-      /* mouse over link */
-      a:hover {
-          color: red;
-      }
-      /* Add a black background color to the top navigation */
+.title {
+    color:#FFFFFF;
+    font-size:2rem;
+    font-weight:600;
+    line-height:1.125;
+}
+
+.page-title {
+    z-index: 1;
+    color:#FFFFFF;
+    font-size:2rem;
+    font-weight:600;
+    line-height:1.125;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.subtitle {
+    color:#FFFFFF;
+    font-size:1.25rem;
+    font-weight:400;
+    line-height:1.25;
+}
+
+h1, h2, h3, h4, p {
+    font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF3939;
+}
+
+/* Add a black background color to the top navigation */
 .topnav {
   background-color: #101112;
   overflow: hidden;
+  font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
 /* Style the links inside the navigation bar */
@@ -141,14 +142,73 @@ table {
 	border-spacing: 0;
 	width: 50%;
 	display: table;
-	border: 1px solid #ffffff;
+	border: 1px solid #ffffff !important;
 }
+
 tr {
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
 }
+
 th {
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
 }
+
 td {
-    border: 1px solid #ffffff;
+    border: 1px solid #ffffff !important;
+}
+
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white !important;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+  background-color: #FF3939 !important;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9 !important;
+  color: white !important;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: white !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #dddddd !important;
+  color: black !important;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
 }
