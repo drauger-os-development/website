@@ -40,6 +40,20 @@ h1, h2, h3, h4, p {
     font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
+.warning {
+    color: #FF3939;
+}
+
+.bolded {
+    color: inherit;
+    font-weight: bolder;
+}
+
+.column {
+     width:400px;
+     float:left
+}
+
 /* unvisited link */
 a:link {
     color: white;
