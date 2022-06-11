@@ -165,11 +165,12 @@ a:hover {
 
 .bg
 {
-  width: 100%;
+  width: 99%;
   height: 300px;
   z-index: 0;
   position: absolute;
 }
+
 table {
 	border-collapse: collapse;
 	border-spacing: 0;
