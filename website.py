@@ -25,6 +25,7 @@
 from flask import Flask, render_template, send_from_directory, redirect, url_for
 import os
 import json
+import wiki
 
 APP = Flask(__name__)
 
@@ -139,6 +140,18 @@ def go_path_redirector_backup():
 @APP.route("/favicon.ico")
 def favicon():
     return static_dir("images/favicon.png")
+
+@APP.route("/wiki")
+def wiki_homepage():
+    """This will be the wiki homepage"""
+    return ""
+
+@APP.route("/wiki/<title>")
+def wiki_post(title):
+    try:
+        return wiki.get_post(title)
+    except FileNotFoundError:
+        return page_not_found()
 
 
 if __name__ == "__main__":
