@@ -144,7 +144,23 @@ def favicon():
 @APP.route("/wiki")
 def wiki_homepage():
     """This will be the wiki homepage"""
-    return ""
+    template = """<a href="/wiki/{ title }"><h2>{ title }</h2></a>
+<h4>Written { written } by { author }</h4>
+<p>{ synopsis }</p>
+</br>"""
+    posts = wiki.list_posts()
+    posts_parse_in = []
+    for each in posts:
+        post = wiki.get_post_metadata(each)
+        new = template.replace("{ title }", each)
+        new = new.replace("{ written }", post["WRITTEN"])
+        new = new.replace("{ synopsis }", post["SYNOPSIS"])
+        new = new.replace("{ author }", ", ".join(post["AUTHOR"]))
+        posts_parse_in.append(new)
+    posts_parse_in = "\n</br>\n".join(posts_parse_in)
+    page = render_template("wiki-home.html")
+    page = page.replace("{ content }", posts_parse_in)
+    return page
 
 @APP.route("/wiki/<title>")
 def wiki_post(title):

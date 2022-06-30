@@ -25,40 +25,89 @@
 import markdown
 import os
 from flask import render_template
+import json
+import time
+
+# load our settings globally
+with open("settings.json", "r") as file:
+    settings = json.load(file)
+
+
+def list_posts():
+    """List all available posts"""
+    return os.listdir("post-meta/wiki")
+
+
+def get_post_metadata(title):
+    """Get a post's metadata"""
+    path = f"post-meta/wiki/{title}"
+    if os.path.exists(path):
+        with open(path, "r") as file:
+            metadata_raw = file.read().split("\n")
+    else:
+        raise FileNotFoundError(f"{path} not found")
+
+    # parse out comments  and blank lines from metadata
+    for each in range(len(metadata_raw) - 1, -1, -1):
+        if metadata_raw[each] == "":
+            del metadata_raw[each]
+        elif metadata_raw[each][0] == "#":
+            del metadata_raw[each]
+
+    # parse into dictionary
+    metadata = {}
+    for each in enumerate(metadata_raw):
+        data = each[1].split(": ")
+        if data[0].lower() in ("tags", "author", "editor"):
+            metadata[data[0].upper()] = data[1].split(",")
+        elif data[0].lower() == "written":
+            metadata[data[0].upper()] = time.strptime(data[1],
+                                              settings["time-format-stored"])
+        else:
+            metadata[data[0].upper()] = data[1]
+    keys = ["SYNOPSIS" , "TAGS", "AUTHOR", "WRITTEN"]
+    metadata["WRITTEN"] = time.strftime(settings["time-format-displayed"], metadata["WRITTEN"])
+    if not all(item in metadata.keys() for item in keys):
+        raise TypeError(f"Not all fields of { keys } in { path }")
+    return metadata
 
 
 def get_raw_post(title):
     """Get a raw markdown post, based on title"""
     path = f"posts/wiki/{title}.md"
     if os.path.exists(path):
-        print("File found!")
         with open(path, "r") as file:
             content = file.read()
-        print("File read!")
-        return content
     else:
         raise FileNotFoundError(f"{path} not found")
+    metadata = get_post_metadata(title)
+    # return combined data
+    data = {"metadata": metadata, "content": content}
+    return data
 
 
 def get_isolated_post(title):
     """Get a post, outside of it's web page wrapper"""
-    content = get_raw_post(title)
-    content = markdown.markdown(content)
-    return content
+    data = get_raw_post(title)
+    data["content"] = markdown.markdown(data["content"])
+    return data
 
 
 def get_post(title):
-    """Get a post, inside it's web page wrapper"""
-    content = get_isolated_post(title)
-    content = content.split("\n")
-    content[1] = "\n".join(content[1:])
-    content = content[:2]
-    content[0] = content[0][4:-5]
+    """Get a post, inside it's web page wrapper
+
+    This includes time formatting, and any sort of further parsing.
+    """
+    data = get_isolated_post(title)
+    data["content"] = data["content"].split("\n")
+    data["content"][1] = "\n".join(data["content"][1:])
+    data["content"] = data["content"][:2]
+    data["content"][0] = data["content"][0][4:-5]
     post = render_template("wiki-post.html")
     post = post.split("{ title }")
-    post.insert(1, content[0])
+    post.insert(1, data["content"][0])
     post = "\n".join(post)
     post = post.split("{ content }")
-    post.insert(1, content[1])
-    content = "\n".join(post)
-    return content
+    post.insert(1, data["content"][1])
+    data["content"] = "\n".join(post)
+    return data["content"]
