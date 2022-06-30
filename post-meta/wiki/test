@@ -1,0 +1,24 @@
+# Metadata file for test wiki post
+# shell-script style comments are supported. But, only for entire lines
+# all keys and values MUST be seperated by a colon (:) and a SINGLE space.
+
+# SYNOPSIS: the text to show to the user as a synopsis of a post. If this is not set, the first sentence of the post will be used.
+SYNOPSIS: This is a test wiki post to ensure everything is showing up, working, and rendering correctly.
+
+# TAGS: comma-delimited list of tags that apply to this post
+TAGS: test
+
+# AUTHOR: comma-delimited list of authors of the post
+AUTHOR: Thomas Castleman
+
+# EDITOR: comma-delimited list of editors of this post. This entry is optional.
+EDITOR: Thomas Castleman
+
+# WRITTEN: when the post was written, must be in the format YYYY - MM - DD
+# e.g.:
+# June 28th, 2022     ->  2022 - 06 - 28
+# October 19th, 1978  ->  1978 - 10 - 19
+# January 9th, 2145   ->  2145 - 01 - 09
+# December 2nd, 2010  ->  2010 - 12 - 02
+WRITTEN: 2022 - 06 - 28
+
