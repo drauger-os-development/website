@@ -155,7 +155,11 @@ def wiki_homepage():
         new = template.replace("{ title }", each)
         new = new.replace("{ written }", post["WRITTEN"])
         new = new.replace("{ synopsis }", post["SYNOPSIS"])
-        new = new.replace("{ author }", ", ".join(post["AUTHOR"]))
+        if "EDITOR" in post:
+            new = new.replace("{ author }",
+                              f"""{ ', '.join(post['AUTHOR']) }, Edited by { ', '.join(post['EDITOR']) }""")
+        else:
+            new = new.replace("{ author }", ", ".join(post["AUTHOR"]))
         posts_parse_in.append(new)
     posts_parse_in = "\n</br>\n".join(posts_parse_in)
     page = render_template("wiki-home.html")
