@@ -1,6 +1,7 @@
 # Nginx is set up to run on the standard HTTP ports and listen for requests
 server {
   listen <port>;
+  listen [::]:<port>;
 
         location / {
           include uwsgi_params;
