@@ -1,0 +1,19 @@
+{
+	"db-files": ["cook-book.sql"],
+	"cook-book.sql": {
+		"cook_book": {
+			"id": "INTEGER",
+			"name": "TEXT",
+			"author": "TEXT",
+			"tags": "TEXT",
+			"description": "TEXT",
+			"rating": "INTEGER",
+			"gluten": "BOOLEAN",
+			"vegan": "BOOLEAN",
+			"vegetarian": "BOOLEAN",
+			"kosher": "BOOLEAN",
+			"instructions": "TEXT",
+			"ingredient_list": "TEXT"
+		}	
+	}
+}

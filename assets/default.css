@@ -1,0 +1,222 @@
+/* -*- coding: utf-8 -*-
+
+ Copyright 2022 Thomas Castleman <contact@draugeros.org>
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA. */
+body :not(iframe) {
+	background-color: #212121;
+	border-color: #212121;
+	color: #e8e6e3;
+}
+
+body {
+	opacity: 1 !important;
+	transition: none !important;
+	background-color: #212121 !important;
+	border-color: #212121 !important;
+}
+
+.title {
+	color:#FFFFFF;
+	font-size:2rem;
+	font-weight:600;
+	line-height:1.125;
+}
+
+.subtitle {
+	color:#FFFFFF;
+	font-size:1.25rem;
+	font-weight:400;
+	line-height:1.25;
+}
+
+.box {
+	border-radius:6px;
+	box-shadow:0 2px 3px #0A0A0A1A,0 0 0 1px #0A0A0A1A;
+	color:#ffffff;
+	display:block;
+	padding:1.25rem;
+}
+
+h1, h2, h3, h4, p {
+	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+}
+
+/* unvisited link */
+a:link {
+	color: blue;
+}
+
+/* visited link */
+a:visited {
+	color: purple;
+}
+
+/* mouse over link */
+a:hover {
+	color: red;
+}
+
+.navbar-menu {
+	background-color: #343434;
+	border-radius: 25px;
+	box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
+	padding: 0.5rem 0;
+	flex-grow: 1;
+	flex-shrink: 0;
+	overflow: hidden;
+}
+
+.navbar-end {
+	padding: 1.25rem;
+	background-color: #343434;
+	border-radius: 25px;
+	overflow: hidden;
+}
+
+.navbar-item {
+	float: left;
+	display: block;
+	padding: 1.25rem;
+	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+	border-radius: 25px;
+	background-color: #232323;
+	opacity: 1;
+	color: #ffffff !important;
+	text-decoration: none;
+	margin: 0.25rem;
+}
+
+.nav-responsive {
+	display: none;
+}
+
+@media screen and (max-width: 600px) {
+	.navbar-menu {
+		display: none;
+	}
+
+	.navbar-end {
+		display: none;
+	}
+
+	.nav-responsive {
+		overflow: hidden;
+		background-color: #333333;
+		position: relative;
+	}
+
+	/* Hide the links inside the navigation menu (except for logo/home) */
+	.nav-responsive #responsive-links {
+		display: none;
+	}
+
+	/* Style the hamburger menu */
+	.nav-responsive a.icon {
+		background: black;
+		display: block;
+		position: absolute;
+		right: 0;
+		top: 0;
+	}
+}
+
+.navbar-item:hover
+{
+	box-shadow: 0 8px 16px rgba(80, 80, 80, 1);
+	padding: 1.5rem;
+	border-radius: 25px;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+  background-color: #101112;
+  overflow: hidden;
+  font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+/* The dropdown container */
+.dropdown {
+  float: left;
+  overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+  overflow: hidden;
+  font-size: 16px;
+  border: none;
+  outline: none;
+  color: white !important;
+  padding: 14px 16px;
+  background-color: inherit;
+  font-family: inherit; /* Important for vertical align on mobile phones */
+  margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+  background-color: #FF3939 !important;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9 !important;
+  color: white !important;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: white !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #dddddd !important;
+  color: black !important;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}

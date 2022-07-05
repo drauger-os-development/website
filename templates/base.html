@@ -4,113 +4,20 @@
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Thomas Castleman</title>
-    <style>
-      body :not(iframe) {
-        background-color: #212121;
-        border-color: #212121;
-        color: #e8e6e3;
-      }
-      body {
-        opacity: 1 !important;
-        transition: none !important;
-        background-color: #212121 !important;
-        border-color: #212121 !important;
-      }
-      .title {
-        color:#FFFFFF;
-        font-size:2rem;
-        font-weight:600;
-        line-height:1.125;
-      }
-      .subtitle {
-        color:#FFFFFF;
-        font-size:1.25rem;
-        font-weight:400;
-        line-height:1.25;
-      }
-      .box {
-        border-radius:6px;
-        box-shadow:0 2px 3px #0A0A0A1A,0 0 0 1px #0A0A0A1A;
-        color:#ffffff;
-        display:block;
-        padding:1.25rem;
-      }
-      h1, h2, h3, h4, p {
-          font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
-      }
-      /* unvisited link */
-      a:link {
-          color: blue;
-      }
-
-      /* visited link */
-      a:visited {
-          color: purple;
-      }
-
-      /* mouse over link */
-      a:hover {
-          color: red;
-      }
-      .navbar-menu {
-          background-color: #343434;
-          border-radius: 25px;
-          box-shadow: 0 8px 16px rgba(10, 10, 10, 0.1);
-          padding: 0.5rem 0;
-          flex-grow: 1;
-          flex-shrink: 0;
-      }
-      .navbar-end {
-          padding: 1.25rem;
-          background-color: #343434;
-          border-radius: 25px;
-      }
-      .navbar-item {
-          padding: 1.25rem;
-          font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
-          border-radius: 25px;
-          background-color: #232323;
-          opacity: 1;
-          color: #ffffff !important;
-          text-decoration: none;
-          margin: 0.25rem;
-      }
-      .navbar-item:hover
-      {
-          box-shadow: 0 8px 16px rgba(80, 80, 80, 1);
-          padding: 1.5rem;
-          border-radius: 25px;
-      }
-    </style>
+    <link rel="stylesheet" href="/assets/default.css">
+    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
 </head>
 
 <body>
     <section class="hero is-primary is-fullheight">
 
-        <div class="hero-head">
-            <nav class="navbar">
-                <div class="container">
-
-                    <div id="navbarMenuHeroA" class="navbar-menu">
-                        <div class="navbar-end">
-                            <a href="{{ url_for('main') }}" class="navbar-item">
-                		        Home
-            		        </a>
-    				        <a href="{{ url_for('three_d') }}" class="navbar-item">
-        				        3D Printing
-    				        </a>
-    				        <a href="{{ url_for('anime') }}" class="navbar-item">
-        				        Anime
-    				        </a>
-                            <a href="{{ url_for('software') }}" class="navbar-item">
-        				        Software
-    				        </a>
-                        </div>
-                    </div>
-                </div>
-            </nav>
+        <div class="topnav">
+            <a href="{{ url_for('main') }}">Home</a>
+            <a href="{{ url_for('three_d') }}">3D Printing</a>
+            <a href="{{ url_for('anime') }}">Anime</a>
+            <a href="{{ url_for('software') }}">Software</a>
         </div>
 
         <div class="hero-body">
