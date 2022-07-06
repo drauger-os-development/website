@@ -25,12 +25,8 @@
 import markdown
 import os
 from flask import render_template
-import json
 import time
-
-# load our settings globally
-with open("settings.json", "r") as file:
-    settings = json.load(file)
+import common
 
 
 def list_posts():
@@ -62,14 +58,59 @@ def get_post_metadata(title):
             metadata[data[0].upper()] = data[1].split(",")
         elif data[0].lower() == "written":
             metadata[data[0].upper()] = time.strptime(data[1],
-                                              settings["time-format-stored"])
-        else:
-            metadata[data[0].upper()] = data[1]
+                                              common.settings["time-format-stored"])
+        elif data[0].lower() == "synopsis":
+            # limit synopsis length to 140 characters
+            metadata[data[0].upper()] = data[1][:common.settings["synopsis-length"]]
     keys = ["SYNOPSIS" , "TAGS", "AUTHOR", "WRITTEN"]
-    metadata["WRITTEN"] = time.strftime(settings["time-format-displayed"], metadata["WRITTEN"])
+    metadata["WRITTEN"] = time.strftime(common.settings["time-format-displayed"], metadata["WRITTEN"])
     if not all(item in metadata.keys() for item in keys):
         raise TypeError(f"Not all fields of { keys } in { path }")
     return metadata
+
+
+def search_tags(tags: (list, tuple), method=True):
+    """Search for entries which match a given tag or tags
+
+    method can be one of 3 values: True, False, or None
+
+    if method == True, entry must have ALL tags. This is the default behavior.
+    if method == False, entry must have NONE of tags.
+    if method == None, entry may have one or more of tags.
+    """
+    if not isinstance(tags, (list, tuple)):
+        raise TypeError(f"{tags} is not of type list or tuple")
+    posts = list_posts()
+    post_meta = {}
+    for each in posts:
+        post_meta[each] = get_post_metadata(each)
+    del posts
+    if method is True:
+        keys = list(post_meta.keys())
+        for each in keys:
+            # normally we can just iterate over the dict, but we want to avoid an
+            # an error so we don't do that here.
+            if not common.contents_in_array(tags, post_meta[each]["TAGS"]):
+                del post_meta[each]
+    elif method is None:
+        output = {}
+        keys = list(post_meta.keys())
+        for each in keys:
+            # normally we can just iterate over the dict, but we want to avoid an
+            # an error so we don't do that here.
+            for each1 in tags:
+                if tags[each1] in post_meta[each]["TAGS"]:
+                    output[each] = post_meta[each]
+                    break
+        post_meta = output
+    elif method is False:
+        keys = list(post_meta.keys())
+        for each in keys:
+            # normally we can just iterate over the dict, but we want to avoid an
+            # an error so we don't do that here.
+            if common.contents_in_array(tags, post_meta[each]["TAGS"]):
+                del post_meta[each]
+    return post_meta
 
 
 def get_raw_post(title):

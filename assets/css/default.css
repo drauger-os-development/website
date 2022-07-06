@@ -17,10 +17,10 @@
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA 02110-1301, USA. */
 body :not(iframe) {
-        background-color: #101112;
-        border-color: #101112;
-        color: #e8e6e3;
-        font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+    background-color: #101112;
+    border-color: #101112;
+    color: #e8e6e3;
+    font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
 body, footer {
