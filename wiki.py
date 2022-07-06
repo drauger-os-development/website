@@ -31,7 +31,26 @@ import common
 
 def list_posts():
     """List all available posts"""
-    return os.listdir("post-meta/wiki")
+    posts = os.listdir("post-meta/wiki")
+    meta = {}
+    for each in posts:
+        meta[each] = get_post_metadata(each)
+        meta[each] = time.strptime(meta[each]["WRITTEN"],
+                                   common.settings["time-format-displayed"])
+        meta[each] = time.mktime(meta[each])
+    del posts
+    output = []
+    keys = list(meta.keys())
+    for each in range(len(keys)):
+        most = [0, ""]
+        for each1 in keys:
+            if meta[each1] > most[0]:
+                most[0] = meta[each1]
+                most[1] = each1
+        output.append(most[1])
+        del keys[keys.index(most[1])]
+    return output
+
 
 
 def get_post_metadata(title):
