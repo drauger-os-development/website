@@ -22,13 +22,13 @@
 #
 #
 set -Ee
-set -o pipefail
+# set -o pipefail
 echo "Pulling updates . . ."
 git pull
 # Check to see if there are any updates
 if [ -f .git_commit_number ]; then
 	num_git=$(git log | grep "^commit " | head -n1 | awk '{print $2}')
-	sleep 0.1s # no idea why we need this. Apparently we keep getting a SIGPIPE?
+	# sleep 0.1s # no idea why we need this. Apparently we keep getting a SIGPIPE?
 	num_file=$(<.git_commit_number)
 	if [ "$num_git" == "$num_file" ]; then
 		# no updates. Exit.
