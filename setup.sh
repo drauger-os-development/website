@@ -22,7 +22,6 @@
 #
 #
 set -Ee
-set -o pipefail
 port="$1"
 if [ "$port" == "" ]; then
 	port="80"
