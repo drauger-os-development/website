@@ -247,3 +247,458 @@ td {
 .dropdown:hover .dropdown-content {
   display: block;
 }
+
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.field.has-addons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.field.has-addons .control:not(:last-child) {
+    margin-right: -1px;
+}
+
+.field.has-addons .control:not(:first-child):not(:last-child) .button,
+.field.has-addons .control:not(:first-child):not(:last-child) .input,
+.field.has-addons .control:not(:first-child):not(:last-child) .select select {
+    border-radius: 0;
+}
+
+.field.has-addons .control:first-child .button,
+.field.has-addons .control:first-child .input,
+.field.has-addons .control:first-child .select select {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.field.has-addons .control:last-child .button,
+.field.has-addons .control:last-child .input,
+.field.has-addons .control:last-child .select select {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.field.has-addons .control .button:not([disabled]).is-hovered,
+.field.has-addons .control .button:not([disabled]):hover,
+.field.has-addons .control .input:not([disabled]).is-hovered,
+.field.has-addons .control .input:not([disabled]):hover,
+.field.has-addons .control .select select:not([disabled]).is-hovered,
+.field.has-addons .control .select select:not([disabled]):hover {
+    z-index: 2;
+}
+
+.field.has-addons .control .button:not([disabled]).is-active,
+.field.has-addons .control .button:not([disabled]).is-focused,
+.field.has-addons .control .button:not([disabled]):active,
+.field.has-addons .control .button:not([disabled]):focus,
+.field.has-addons .control .input:not([disabled]).is-active,
+.field.has-addons .control .input:not([disabled]).is-focused,
+.field.has-addons .control .input:not([disabled]):active,
+.field.has-addons .control .input:not([disabled]):focus,
+.field.has-addons .control .select select:not([disabled]).is-active,
+.field.has-addons .control .select select:not([disabled]).is-focused,
+.field.has-addons .control .select select:not([disabled]):active,
+.field.has-addons .control .select select:not([disabled]):focus {
+    z-index: 3;
+}
+
+.field.has-addons .control .button:not([disabled]).is-active:hover,
+.field.has-addons .control .button:not([disabled]).is-focused:hover,
+.field.has-addons .control .button:not([disabled]):active:hover,
+.field.has-addons .control .button:not([disabled]):focus:hover,
+.field.has-addons .control .input:not([disabled]).is-active:hover,
+.field.has-addons .control .input:not([disabled]).is-focused:hover,
+.field.has-addons .control .input:not([disabled]):active:hover,
+.field.has-addons .control .input:not([disabled]):focus:hover,
+.field.has-addons .control .select select:not([disabled]).is-active:hover,
+.field.has-addons .control .select select:not([disabled]).is-focused:hover,
+.field.has-addons .control .select select:not([disabled]):active:hover,
+.field.has-addons .control .select select:not([disabled]):focus:hover {
+    z-index: 4;
+}
+
+.field.has-addons .control.is-expanded {
+    flex-grow: 1;
+}
+
+.field.has-addons.has-addons-centered {
+    justify-content: center;
+}
+
+.field.has-addons.has-addons-right {
+    justify-content: flex-end;
+}
+
+.field.has-addons.has-addons-fullwidth .control {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.field.is-grouped {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.field.is-grouped > .control {
+    flex-shrink: 0;
+}
+
+.field.is-grouped > .control:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+}
+
+.field.is-grouped > .control.is-expanded {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.field.is-grouped.is-grouped-centered {
+    justify-content: center;
+}
+
+.field.is-grouped.is-grouped-right {
+    justify-content: flex-end;
+}
+
+.field.is-grouped.is-grouped-multiline {
+    flex-wrap: wrap;
+}
+
+.field.is-grouped.is-grouped-multiline > .control:last-child,
+.field.is-grouped.is-grouped-multiline > .control:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.field.is-grouped.is-grouped-multiline:last-child {
+    margin-bottom: -0.75rem;
+}
+
+.field.is-grouped.is-grouped-multiline:not(:last-child) {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 769px), print {
+    .field.is-horizontal {
+        display: flex;
+    }
+}
+
+.field-label .label {
+    font-size: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .field-label {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 769px), print {
+    .field-label {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+        margin-right: 1.5rem;
+        text-align: right;
+    }
+
+    .field-label.is-small {
+        font-size: 0.75rem;
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-normal {
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-medium {
+        font-size: 1.25rem;
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-large {
+        font-size: 1.5rem;
+        padding-top: 0.375em;
+    }
+}
+
+.field-body .field .field {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 769px), print {
+    .field-body {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 5;
+        flex-shrink: 1;
+    }
+
+    .field-body .field {
+        margin-bottom: 0;
+    }
+
+    .field-body > .field {
+        flex-shrink: 1;
+    }
+
+    .field-body > .field:not(.is-narrow) {
+        flex-grow: 1;
+    }
+
+    .field-body > .field:not(:last-child) {
+        margin-right: 0.75rem;
+    }
+}
+
+.control {
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+.control.has-icon .icon {
+    color: #dbdbdb;
+    height: 2.25em;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.25em;
+    z-index: 4;
+}
+
+.control.has-icon .input:focus + .icon {
+    color: #7a7a7a;
+}
+
+.control.has-icon .input.is-small + .icon {
+    font-size: 0.75rem;
+}
+
+.control.has-icon .input.is-medium + .icon {
+    font-size: 1.25rem;
+}
+
+.control.has-icon .input.is-large + .icon {
+    font-size: 1.5rem;
+}
+
+.control.has-icon:not(.has-icon-right) .icon {
+    left: 0;
+}
+
+.control.has-icon:not(.has-icon-right) .input {
+    padding-left: 2.25em;
+}
+
+.control.has-icon.has-icon-right .icon {
+    right: 0;
+}
+
+.control.has-icon.has-icon-right .input {
+    padding-right: 2.25em;
+}
+
+.control.has-icons-left .input:focus ~ .icon,
+.control.has-icons-left .select:focus ~ .icon,
+.control.has-icons-right .input:focus ~ .icon,
+.control.has-icons-right .select:focus ~ .icon {
+    color: #7a7a7a;
+}
+
+.control.has-icons-left .input.is-small ~ .icon,
+.control.has-icons-left .select.is-small ~ .icon,
+.control.has-icons-right .input.is-small ~ .icon,
+.control.has-icons-right .select.is-small ~ .icon {
+    font-size: 0.75rem;
+}
+
+.control.has-icons-left .input.is-medium ~ .icon,
+.control.has-icons-left .select.is-medium ~ .icon,
+.control.has-icons-right .input.is-medium ~ .icon,
+.control.has-icons-right .select.is-medium ~ .icon {
+    font-size: 1.25rem;
+}
+
+.control.has-icons-left .input.is-large ~ .icon,
+.control.has-icons-left .select.is-large ~ .icon,
+.control.has-icons-right .input.is-large ~ .icon,
+.control.has-icons-right .select.is-large ~ .icon {
+    font-size: 1.5rem;
+}
+
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+    color: #dbdbdb;
+    height: 2.25em;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.25em;
+    z-index: 4;
+}
+
+.control.has-icons-left .input,
+.control.has-icons-left .select select {
+    padding-left: 2.25em;
+}
+
+.control.has-icons-left .icon.is-left {
+    left: 0;
+}
+
+.control.has-icons-right .input,
+.control.has-icons-right .select select {
+    padding-right: 2.25em;
+}
+
+.control.has-icons-right .icon.is-right {
+    right: 0;
+}
+
+.control.is-loading::after {
+    position: absolute !important;
+    right: 0.625em;
+    top: 0.625em;
+    z-index: 4;
+}
+
+.control.is-loading.is-small:after {
+    font-size: 0.75rem;
+}
+
+.control.is-loading.is-medium:after {
+    font-size: 1.25rem;
+}
+
+.control.is-loading.is-large:after {
+    font-size: 1.5rem;
+}
+
+/*
+ * This might look a bit messy...
+*/
+
+.button,
+.file-cta,
+.file-name,
+.input,
+.pagination-ellipsis,
+.pagination-link,
+.pagination-next,
+.pagination-previous,
+.select select,
+.textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.25em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: calc(0.625em - 1px);
+    padding-right: calc(0.625em - 1px);
+    padding-top: calc(0.375em - 1px);
+    position: relative;
+    vertical-align: top;
+}
+
+.button:active,
+.button:focus,
+.file-cta:active,
+.file-cta:focus,
+.file-name:active,
+.file-name:focus,
+.input:active,
+.input:focus,
+.is-active.button,
+.is-active.file-cta,
+.is-active.file-name,
+.is-active.input,
+.is-active.pagination-ellipsis,
+.is-active.pagination-link,
+.is-active.pagination-next,
+.is-active.pagination-previous,
+.is-active.textarea,
+.is-focused.button,
+.is-focused.file-cta,
+.is-focused.file-name,
+.is-focused.input,
+.is-focused.pagination-ellipsis,
+.is-focused.pagination-link,
+.is-focused.pagination-next,
+.is-focused.pagination-previous,
+.is-focused.textarea,
+.pagination-ellipsis:active,
+.pagination-ellipsis:focus,
+.pagination-link:active,
+.pagination-link:focus,
+.pagination-next:active,
+.pagination-next:focus,
+.pagination-previous:active,
+.pagination-previous:focus,
+.select select.is-active,
+.select select.is-focused,
+.select select:active,
+.select select:focus,
+.textarea:active,
+.textarea:focus {
+    outline: 0;
+}
+
+.button[disabled],
+.file-cta[disabled],
+.file-name[disabled],
+.input[disabled],
+.pagination-ellipsis[disabled],
+.pagination-link[disabled],
+.pagination-next[disabled],
+.pagination-previous[disabled],
+.select select[disabled],
+.textarea[disabled] {
+    cursor: not-allowed;
+} /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+
+blockquote,
+body,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+iframe,
+legend,
+li,
+ol,
+p,
+pre,
+textarea,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}

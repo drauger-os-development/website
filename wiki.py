@@ -171,3 +171,43 @@ def get_post(title):
     post.insert(1, data["content"][1])
     data["content"] = "\n".join(post)
     return data["content"]
+
+
+def get_all_tags():
+    """Get a list of all tags"""
+    posts = list_posts()
+    for each in enumerate(posts):
+        posts[each[0]] = get_post_metadata(each[1])["TAGS"]
+    tags = []
+    for each in posts:
+        tags = tags + each
+    del posts
+    tags = common.unique(tags)
+    return tags
+
+
+def search_freetext(text, posts):
+    """Search synopsis and text of all posts for posts with a
+    certain number of matches
+    """
+    # get our posts pre-transcoding
+    post_data = {}
+    for each in posts:
+        post_data[each] = get_raw_post(each)
+        post_data[each]["synopsis_count"] = 0
+        post_data[each]["post_count"] = 0
+        post_data[each]["title_count"] = 0
+    # filter each post
+    for each in list(post_data.keys()):
+        # filter for each search term
+        for each1 in text:
+            post_data[each]["synopsis_count"] += post_data[each]["metadata"]["SYNOPSIS"].count(each1)
+            post_data[each]["post_count"] += post_data[each]["content"].count(each1)
+            post_data[each]["title_count"] += each.count(each1)
+    for each in post_data:
+        post_data[each] = post_data[each]["synopsis_count"] + post_data[each]["post_count"] + post_data[each]["title_count"]
+    output = []
+    for each in post_data:
+        if post_data[each] >= common.settings["freetext-match-threshold"]:
+            output.append(each)
+    return output

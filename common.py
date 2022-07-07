@@ -35,3 +35,15 @@ def contents_in_array(arr1: (list, tuple), arr2: (list, tuple)):
         if each not in arr2:
             return False
     return True
+
+
+def unique(starting_list):
+    """Function to get a list down to only unique elements"""
+    # intilize a null list
+    unique_list = []
+    # traverse for all elements
+    for each in starting_list:
+        # check if exists in unique_list or not
+        if each not in unique_list:
+            unique_list.append(each)
+    return unique_list
