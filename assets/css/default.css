@@ -59,7 +59,7 @@ body :not(iframe) {
 body, footer {
     opacity: 1 !important;
     transition: none !important;
-    background-color: #101112 !important;
+    background-color: #101112;
     border-color: #101112 !important;
 }
 
