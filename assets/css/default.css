@@ -1,0 +1,751 @@
+/* -*- coding: utf-8 -*-
+
+ Copyright 2022 Thomas Castleman <contact@draugeros.org>
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA. */
+ 
+:root {
+  --nav-font-size: 1vw;
+  --nav-summary-tittle-size: 1.5vw;
+  --nav-summary-text-size: 1vw;
+}
+
+
+@media only screen and (max-width: 600px) {
+	:root {
+		--nav-font-size: 2vw;
+		--nav-summary-tittle-size: 1vw;
+		--nav-summary-text-size: .6vw;
+	}
+}
+
+@media only screen and (max-width: 800px) {
+	:root {
+		--nav-font-size: 1.5vw;
+		--nav-summary-tittle-size: 1.2vw;
+		--nav-summary-text-size: .7vw;
+	}
+}
+
+ 
+body :not(iframe) {
+    border-color: #FFFFFF00;
+    color: #e8e6e3;
+    font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+}
+
+body, footer {
+    opacity: 1 !important;
+    transition: none !important;
+    background-color: #101112 !important;
+    border-color: #101112 !important;
+}
+
+summary {
+	font-size: var(--nav-summary-size);
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
+}
+
+.title {
+    color:#FFFFFF;
+    font-size:2rem;
+    font-weight:600;
+    line-height:1.125;
+}
+
+.page-title {
+    z-index: 1;
+    color:#FFFFFF;
+    font-size:2rem;
+    font-weight:600;
+    line-height:1.125;
+    position: relative;
+    background-color: rgba(0, 0, 0, 0);
+}
+
+.subtitle {
+    color:#FFFFFF;
+    font-size:1.25rem;
+    font-weight:400;
+    line-height:1.25;
+}
+
+h1, h2, h3, h4, p {
+    font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+    z-index: 1;
+}
+
+.centered-container {
+    background-color: #101112;
+	max-width: 65vw;
+	margin: 10vh auto;
+	padding: 15px 10px;
+	border-radius: 6px;
+}
+
+.warning {
+    color: #FF3939;
+}
+
+.bolded {
+    color: inherit;
+    font-weight: bolder;
+}
+
+.column {
+     width:400px;
+     float:left
+}
+
+/* unvisited link */
+a:link {
+    color: white;
+}
+
+/* visited link */
+a:visited {
+    color: grey;
+}
+
+/* mouse over link */
+a:hover {
+    color: #FF3939;
+}
+
+/* Add a black background color to the top navigation */
+.topnav {
+	background-color: #101112;
+	overflow: hidden;
+	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+	max-width: 40vw;
+	margin: 0 auto;
+	padding: 1px 5px;
+	border-radius: 0px 0px 6px 6px;
+	font-size: var(--nav-font-size);
+}
+
+/* Style the links inside the navigation bar */
+.topnav a {
+	float: left;
+	color: #f2f2f2;
+	background-color: #101112;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
+}
+
+/* Change the color of links on hover */
+.topnav a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+.image-menu {
+  background-color: #101112;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+}
+
+.horizontal-block {
+  background-color: #101112;
+  overflow: hidden;
+  display: flex;
+  justify-content: space-evenly;
+}
+
+/* Style the links inside the navigation bar */
+.image-menu a {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.image-menu p {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+.image-menu h2 {
+  float: left;
+  color: #f2f2f2;
+  background-color: #101112;
+  text-align: center;
+  padding: 20px 16px;
+  text-decoration: none;
+  font-size: 17px;
+}
+
+/* Change the color of links on hover */
+.image-menu a:hover {
+  background-color: #dddddd;
+  color: black;
+}
+
+.bg
+{
+  width: 99%;
+  height: 300px;
+  z-index: 0;
+  position: absolute;
+}
+
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+	width: 50%;
+	display: table;
+	border: 1px solid #ffffff !important;
+}
+
+tr {
+    border: 1px solid #ffffff !important;
+}
+
+th {
+    border: 1px solid #ffffff !important;
+}
+
+td {
+    border: 1px solid #ffffff !important;
+}
+
+
+/* The dropdown container */
+.dropdown {
+	float: left;
+	overflow: hidden;
+}
+
+/* Dropdown button */
+.dropdown .dropbtn {
+	overflow: hidden;
+	font-size: var(--nav-font-size);
+	border: none;
+	outline: none;
+	color: white !important;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
+}
+
+/* Add a red background color to navbar links on hover */
+.dropdown:hover .dropbtn {
+  background-color: #FF3939 !important;
+}
+
+/* Dropdown content (hidden by default) */
+.dropdown-content {
+  display: none;
+  position: absolute;
+  background-color: #f9f9f9 !important;
+  color: white !important;
+  min-width: 160px;
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  z-index: 2;
+}
+
+/* Links inside the dropdown */
+.dropdown-content a {
+  float: none;
+  color: white !important;
+  padding: 12px 16px;
+  text-decoration: none;
+  display: block;
+  text-align: left;
+}
+
+/* Add a grey background color to dropdown links on hover */
+.dropdown-content a:hover {
+  background-color: #dddddd !important;
+  color: black !important;
+}
+
+/* Show the dropdown menu on hover */
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+
+.field:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.field.has-addons {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.field.has-addons .control:not(:last-child) {
+    margin-right: -1px;
+}
+
+.field.has-addons .control:not(:first-child):not(:last-child) .button,
+.field.has-addons .control:not(:first-child):not(:last-child) .input,
+.field.has-addons .control:not(:first-child):not(:last-child) .select select {
+    border-radius: 0;
+}
+
+.field.has-addons .control:first-child .button,
+.field.has-addons .control:first-child .input,
+.field.has-addons .control:first-child .select select {
+    border-bottom-right-radius: 0;
+    border-top-right-radius: 0;
+}
+
+.field.has-addons .control:last-child .button,
+.field.has-addons .control:last-child .input,
+.field.has-addons .control:last-child .select select {
+    border-bottom-left-radius: 0;
+    border-top-left-radius: 0;
+}
+
+.field.has-addons .control .button:not([disabled]).is-hovered,
+.field.has-addons .control .button:not([disabled]):hover,
+.field.has-addons .control .input:not([disabled]).is-hovered,
+.field.has-addons .control .input:not([disabled]):hover,
+.field.has-addons .control .select select:not([disabled]).is-hovered,
+.field.has-addons .control .select select:not([disabled]):hover {
+    z-index: 2;
+}
+
+.field.has-addons .control .button:not([disabled]).is-active,
+.field.has-addons .control .button:not([disabled]).is-focused,
+.field.has-addons .control .button:not([disabled]):active,
+.field.has-addons .control .button:not([disabled]):focus,
+.field.has-addons .control .input:not([disabled]).is-active,
+.field.has-addons .control .input:not([disabled]).is-focused,
+.field.has-addons .control .input:not([disabled]):active,
+.field.has-addons .control .input:not([disabled]):focus,
+.field.has-addons .control .select select:not([disabled]).is-active,
+.field.has-addons .control .select select:not([disabled]).is-focused,
+.field.has-addons .control .select select:not([disabled]):active,
+.field.has-addons .control .select select:not([disabled]):focus {
+    z-index: 3;
+}
+
+.field.has-addons .control .button:not([disabled]).is-active:hover,
+.field.has-addons .control .button:not([disabled]).is-focused:hover,
+.field.has-addons .control .button:not([disabled]):active:hover,
+.field.has-addons .control .button:not([disabled]):focus:hover,
+.field.has-addons .control .input:not([disabled]).is-active:hover,
+.field.has-addons .control .input:not([disabled]).is-focused:hover,
+.field.has-addons .control .input:not([disabled]):active:hover,
+.field.has-addons .control .input:not([disabled]):focus:hover,
+.field.has-addons .control .select select:not([disabled]).is-active:hover,
+.field.has-addons .control .select select:not([disabled]).is-focused:hover,
+.field.has-addons .control .select select:not([disabled]):active:hover,
+.field.has-addons .control .select select:not([disabled]):focus:hover {
+    z-index: 4;
+}
+
+.field.has-addons .control.is-expanded {
+    flex-grow: 1;
+}
+
+.field.has-addons.has-addons-centered {
+    justify-content: center;
+}
+
+.field.has-addons.has-addons-right {
+    justify-content: flex-end;
+}
+
+.field.has-addons.has-addons-fullwidth .control {
+    flex-grow: 1;
+    flex-shrink: 0;
+}
+
+.field.is-grouped {
+    display: flex;
+    justify-content: flex-start;
+}
+
+.field.is-grouped > .control {
+    flex-shrink: 0;
+}
+
+.field.is-grouped > .control:not(:last-child) {
+    margin-bottom: 0;
+    margin-right: 0.75rem;
+}
+
+.field.is-grouped > .control.is-expanded {
+    flex-grow: 1;
+    flex-shrink: 1;
+}
+
+.field.is-grouped.is-grouped-centered {
+    justify-content: center;
+}
+
+.field.is-grouped.is-grouped-right {
+    justify-content: flex-end;
+}
+
+.field.is-grouped.is-grouped-multiline {
+    flex-wrap: wrap;
+}
+
+.field.is-grouped.is-grouped-multiline > .control:last-child,
+.field.is-grouped.is-grouped-multiline > .control:not(:last-child) {
+    margin-bottom: 0.75rem;
+}
+
+.field.is-grouped.is-grouped-multiline:last-child {
+    margin-bottom: -0.75rem;
+}
+
+.field.is-grouped.is-grouped-multiline:not(:last-child) {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 769px), print {
+    .field.is-horizontal {
+        display: flex;
+    }
+}
+
+.field-label .label {
+    font-size: inherit;
+}
+
+@media screen and (max-width: 768px) {
+    .field-label {
+        margin-bottom: 0.5rem;
+    }
+}
+
+@media screen and (min-width: 769px), print {
+    .field-label {
+        flex-basis: 0;
+        flex-grow: 1;
+        flex-shrink: 0;
+        margin-right: 1.5rem;
+        text-align: right;
+    }
+
+    .field-label.is-small {
+        font-size: 0.75rem;
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-normal {
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-medium {
+        font-size: 1.25rem;
+        padding-top: 0.375em;
+    }
+
+    .field-label.is-large {
+        font-size: 1.5rem;
+        padding-top: 0.375em;
+    }
+}
+
+.field-body .field .field {
+    margin-bottom: 0;
+}
+
+@media screen and (min-width: 769px), print {
+    .field-body {
+        display: flex;
+        flex-basis: 0;
+        flex-grow: 5;
+        flex-shrink: 1;
+    }
+
+    .field-body .field {
+        margin-bottom: 0;
+    }
+
+    .field-body > .field {
+        flex-shrink: 1;
+    }
+
+    .field-body > .field:not(.is-narrow) {
+        flex-grow: 1;
+    }
+
+    .field-body > .field:not(:last-child) {
+        margin-right: 0.75rem;
+    }
+}
+
+.control {
+    clear: both;
+    font-size: 1rem;
+    position: relative;
+    text-align: left;
+}
+
+.control.has-icon .icon {
+    color: #dbdbdb;
+    height: 2.25em;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.25em;
+    z-index: 4;
+}
+
+.control.has-icon .input:focus + .icon {
+    color: #7a7a7a;
+}
+
+.control.has-icon .input.is-small + .icon {
+    font-size: 0.75rem;
+}
+
+.control.has-icon .input.is-medium + .icon {
+    font-size: 1.25rem;
+}
+
+.control.has-icon .input.is-large + .icon {
+    font-size: 1.5rem;
+}
+
+.control.has-icon:not(.has-icon-right) .icon {
+    left: 0;
+}
+
+.control.has-icon:not(.has-icon-right) .input {
+    padding-left: 2.25em;
+}
+
+.control.has-icon.has-icon-right .icon {
+    right: 0;
+}
+
+.control.has-icon.has-icon-right .input {
+    padding-right: 2.25em;
+}
+
+.control.has-icons-left .input:focus ~ .icon,
+.control.has-icons-left .select:focus ~ .icon,
+.control.has-icons-right .input:focus ~ .icon,
+.control.has-icons-right .select:focus ~ .icon {
+    color: #7a7a7a;
+}
+
+.control.has-icons-left .input.is-small ~ .icon,
+.control.has-icons-left .select.is-small ~ .icon,
+.control.has-icons-right .input.is-small ~ .icon,
+.control.has-icons-right .select.is-small ~ .icon {
+    font-size: 0.75rem;
+}
+
+.control.has-icons-left .input.is-medium ~ .icon,
+.control.has-icons-left .select.is-medium ~ .icon,
+.control.has-icons-right .input.is-medium ~ .icon,
+.control.has-icons-right .select.is-medium ~ .icon {
+    font-size: 1.25rem;
+}
+
+.control.has-icons-left .input.is-large ~ .icon,
+.control.has-icons-left .select.is-large ~ .icon,
+.control.has-icons-right .input.is-large ~ .icon,
+.control.has-icons-right .select.is-large ~ .icon {
+    font-size: 1.5rem;
+}
+
+.control.has-icons-left .icon,
+.control.has-icons-right .icon {
+    color: #dbdbdb;
+    height: 2.25em;
+    pointer-events: none;
+    position: absolute;
+    top: 0;
+    width: 2.25em;
+    z-index: 4;
+}
+
+.control.has-icons-left .input,
+.control.has-icons-left .select select {
+    padding-left: 2.25em;
+}
+
+.control.has-icons-left .icon.is-left {
+    left: 0;
+}
+
+.control.has-icons-right .input,
+.control.has-icons-right .select select {
+    padding-right: 2.25em;
+}
+
+.control.has-icons-right .icon.is-right {
+    right: 0;
+}
+
+.control.is-loading::after {
+    position: absolute !important;
+    right: 0.625em;
+    top: 0.625em;
+    z-index: 4;
+}
+
+.control.is-loading.is-small:after {
+    font-size: 0.75rem;
+}
+
+.control.is-loading.is-medium:after {
+    font-size: 1.25rem;
+}
+
+.control.is-loading.is-large:after {
+    font-size: 1.5rem;
+}
+
+/*
+ * This might look a bit messy...
+*/
+
+.button,
+.file-cta,
+.file-name,
+.input,
+.pagination-ellipsis,
+.pagination-link,
+.pagination-next,
+.pagination-previous,
+.select select,
+.textarea {
+    -moz-appearance: none;
+    -webkit-appearance: none;
+    align-items: center;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    box-shadow: none;
+    display: inline-flex;
+    font-size: 1rem;
+    height: 2.25em;
+    justify-content: flex-start;
+    line-height: 1.5;
+    padding-bottom: calc(0.375em - 1px);
+    padding-left: calc(0.625em - 1px);
+    padding-right: calc(0.625em - 1px);
+    padding-top: calc(0.375em - 1px);
+    position: relative;
+    vertical-align: top;
+}
+
+.button:active,
+.button:focus,
+.file-cta:active,
+.file-cta:focus,
+.file-name:active,
+.file-name:focus,
+.input:active,
+.input:focus,
+.is-active.button,
+.is-active.file-cta,
+.is-active.file-name,
+.is-active.input,
+.is-active.pagination-ellipsis,
+.is-active.pagination-link,
+.is-active.pagination-next,
+.is-active.pagination-previous,
+.is-active.textarea,
+.is-focused.button,
+.is-focused.file-cta,
+.is-focused.file-name,
+.is-focused.input,
+.is-focused.pagination-ellipsis,
+.is-focused.pagination-link,
+.is-focused.pagination-next,
+.is-focused.pagination-previous,
+.is-focused.textarea,
+.pagination-ellipsis:active,
+.pagination-ellipsis:focus,
+.pagination-link:active,
+.pagination-link:focus,
+.pagination-next:active,
+.pagination-next:focus,
+.pagination-previous:active,
+.pagination-previous:focus,
+.select select.is-active,
+.select select.is-focused,
+.select select:active,
+.select select:focus,
+.textarea:active,
+.textarea:focus {
+    outline: 0;
+}
+
+.button[disabled],
+.file-cta[disabled],
+.file-name[disabled],
+.input[disabled],
+.pagination-ellipsis[disabled],
+.pagination-link[disabled],
+.pagination-next[disabled],
+.pagination-previous[disabled],
+.select select[disabled],
+.textarea[disabled] {
+    cursor: not-allowed;
+} /*! minireset.css v0.0.3 | MIT License | github.com/jgthms/minireset.css */
+
+blockquote,
+body,
+dd,
+dl,
+dt,
+fieldset,
+figure,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+hr,
+html,
+iframe,
+legend,
+li,
+ol,
+p,
+pre,
+textarea,
+ul {
+    margin: 0;
+    padding: 0;
+}
+
+button,
+input,
+select,
+textarea {
+    margin: 0;
+}

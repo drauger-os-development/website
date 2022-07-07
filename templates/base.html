@@ -1,32 +1,99 @@
 <!DOCTYPE html>
+<!-- -*- coding: utf-8 -*-
+
+ Copyright 2022 Thomas Castleman <contact@draugeros.org>
+
+ This program is free software; you can redistribute it and/or modify
+ it under the terms of the GNU General Public License as published by
+ the Free Software Foundation; either version 2 of the License, or
+ (at your option) any later version.
+
+ This program is distributed in the hope that it will be useful,
+ but WITHOUT ANY WARRANTY; without even the implied warranty of
+ MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the
+ GNU General Public License for more details.
+
+ You should have received a copy of the GNU General Public License
+ along with this program; if not, write to the Free Software
+ Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
+ MA 02110-1301, USA. -->
 <html>
 
 <head>
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Thomas Castleman</title>
-    <link rel="stylesheet" href="/assets/default.css">
-    <link rel="icon" type="image/x-icon" href="/assets/favicon.png">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Drauger OS</title>
+    <link rel="stylesheet" href="../assets/css/default.css">
+    <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
-<body>
-    <section class="hero is-primary is-fullheight">
-
+<body style='background-image: url(../assets/images/banner.webp);background-repeat: no-repeat;background-size: 100vw 100vh;'>
+    <section>
         <div class="topnav">
             <a href="{{ url_for('main') }}">Home</a>
-            <a href="{{ url_for('three_d') }}">3D Printing</a>
-            <a href="{{ url_for('anime') }}">Anime</a>
-            <a href="{{ url_for('software') }}">Software</a>
+            <a href="{{ url_for('download') }}">Download</a>
+            <a href="{{ url_for('contact') }}">Contact</a>
+            <a href="{{ url_for('wiki_homepage') }}">Wiki</a>
+            <div class="dropdown">
+                <button class="dropbtn">About</button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('about') }}">About Drauger OS</a>
+                    <a href="{{ url_for('sys_reqs') }}">System Requirements</a>
+                    <a href="https://distrotest.net/Drauger%20OS">Try on DistroTest</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Contributing</button>
+                <div class="dropdown-content">
+                    <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
+                    <a href="{{ url_for('contributors') }}">Contributors</a>
+                    <a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a>
+                    <a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on Distrowatch</a>
+                </div>
+            </div>
+            <div class="dropdown">
+                <button class="dropbtn">Community</button>
+                <div class="dropdown-content">
+                    <a href="https://t.me/draugeros">Telegram</a>
+                    <a href="https://discord.gg/JW8FGrc">Discord</a>
+                    <a href="https://www.reddit.com/r/DraugerOS/">Reddit</a>
+                    <a href="https://twitter.com/DraugerOS">Twitter</a>
+                </div>
+            </div>
         </div>
-
-        <div class="hero-body">
+        <div class="centered-container">
             <div class="container has-text-centered">
+            </br>
+            </br>
+            </br>
+            </br>
+            </br>
                {% block content %}
                {% endblock %}
             </div>
         </div>
     </section>
 </body>
-
+<footer style="text-align:center;">
+    <!-- <h4>
+        Hosted by:
+        </br>
+        <a class="p-button--positive is-wide" href="https://fosshost.org" target="_blank">
+            <img class="redglow" src="https://raw.githubusercontent.com/fosshostorg/fosshost.org/main/static/img/fosshost-logo.png">
+        </a>
+    </h4> -->
+    </br>
+    <h4>
+        Drauger OS logos, branding, and website content are property of Drauger OS Development and Thomas Castleman.
+    </h4>
+    </br>
+    <p>
+        <a href="https://draugeros.org/go/privacy" target="_blank">Privacy Policy</a>
+        </br>
+        <a href="https://draugeros.org/go/tos" target="_blank">Terms of Service</a>
+    </p>
+    </br>
+</footer>
 </html>
