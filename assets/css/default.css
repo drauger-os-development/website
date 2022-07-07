@@ -21,29 +21,38 @@
   --nav-font-size: 1vw;
   --nav-summary-tittle-size: 1.5vw;
   --nav-summary-text-size: 1vw;
+  --container-width: 65vw;
+  --nav-width: 40vw;
+  --font-color: #e8e6e3; /*debug var*/
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 1200px) {
 	:root {
 		--nav-font-size: 2vw;
-		--nav-summary-tittle-size: 1vw;
-		--nav-summary-text-size: .6vw;
+		--nav-summary-tittle-size: 3vw;
+		--nav-summary-text-size: 2vw;
+		--container-width: 75vw;
+		--nav-width: 50vw;
+		--font-color: #e8e6e3; /*debug var*/
 	}
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 600px) {
 	:root {
-		--nav-font-size: 1.5vw;
-		--nav-summary-tittle-size: 1.2vw;
-		--nav-summary-text-size: .7vw;
+		--nav-font-size: 3vw;
+		--nav-summary-tittle-size: 4vw;
+		--nav-summary-text-size: 3vw;
+		--container-width: 85vw;
+		--nav-width: 70vw;
+		--font-color: #e8e6e3; /*debug var*/
 	}
 }
 
  
 body :not(iframe) {
     border-color: #FFFFFF00;
-    color: #e8e6e3;
+    color: var(--font-color);
     font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
@@ -55,7 +64,7 @@ body, footer {
 }
 
 summary {
-	font-size: var(--nav-summary-size);
+	font-size: var(--nav-summary-tittle-size);
 }
 
 footer {
@@ -96,7 +105,7 @@ h1, h2, h3, h4, p {
 
 .centered-container {
     background-color: #101112;
-	max-width: 65vw;
+	max-width: var(--container-width);
 	margin: 10vh auto 25vh;
 	padding: 15px 10px;
 	border-radius: 6px;
@@ -136,7 +145,7 @@ a:hover {
 	background-color: #101112;
 	overflow: hidden;
 	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
-	max-width: 40vw;
+	max-width: var(--nav-width);
 	margin: 0 auto;
 	padding: 1px 5px;
 	border-radius: 0px 0px 6px 6px;
