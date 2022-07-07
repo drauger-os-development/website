@@ -97,7 +97,7 @@ h1, h2, h3, h4, p {
 .centered-container {
     background-color: #101112;
 	max-width: 65vw;
-	margin: 10vh auto;
+	margin: 10vh auto 25vh;
 	padding: 15px 10px;
 	border-radius: 6px;
 }
