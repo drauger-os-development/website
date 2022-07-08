@@ -109,6 +109,7 @@ h1, h2, h3, h4, p {
 	margin: 10vh auto 25vh;
 	padding: 15px 10px;
 	border-radius: 6px;
+	box-shadow: 0 0 400px #990000;
 }
 
 .warning {
@@ -252,6 +253,7 @@ td {
 .dropdown {
 	float: left;
 	overflow: hidden;
+	background-color: #101112;
 }
 
 /* Dropdown button */
