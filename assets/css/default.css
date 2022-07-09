@@ -16,18 +16,62 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA 02110-1301, USA. */
+ 
+:root {
+  --nav-font-size: 1vw;
+  --nav-summary-tittle-size: 1.5vw;
+  --nav-summary-text-size: 1vw;
+  --container-width: 65vw;
+  --nav-width: 40vw;
+  --font-color: #e8e6e3; /*debug var*/
+}
+
+
+@media only screen and (max-width: 1200px) {
+	:root {
+		--nav-font-size: 2vw;
+		--nav-summary-tittle-size: 3vw;
+		--nav-summary-text-size: 2vw;
+		--container-width: 75vw;
+		--nav-width: 50vw;
+		--font-color: #e8e6e3; /*debug var*/
+	}
+}
+
+@media only screen and (max-width: 600px) {
+	:root {
+		--nav-font-size: 3vw;
+		--nav-summary-tittle-size: 4vw;
+		--nav-summary-text-size: 3vw;
+		--container-width: 85vw;
+		--nav-width: 70vw;
+		--font-color: #e8e6e3; /*debug var*/
+	}
+}
+
+ 
 body :not(iframe) {
-    background-color: #101112;
-    border-color: #101112;
-    color: #e8e6e3;
+    border-color: #FFFFFF00;
+    color: var(--font-color);
     font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
 body, footer {
     opacity: 1 !important;
     transition: none !important;
-    background-color: #101112 !important;
+    background-color: #101112;
     border-color: #101112 !important;
+}
+
+summary {
+	font-size: var(--nav-summary-tittle-size);
+}
+
+footer {
+	position: fixed;
+	bottom: 0px;
+	left: 0px;
+	right: 0px;
 }
 
 .title {
@@ -57,6 +101,15 @@ body, footer {
 h1, h2, h3, h4, p {
     font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
     z-index: 1;
+}
+
+.centered-container {
+    background-color: #101112;
+	max-width: var(--container-width);
+	margin: 10vh auto 25vh;
+	padding: 15px 10px;
+	border-radius: 6px;
+	box-shadow: 0 0 400px #990000;
 }
 
 .warning {
@@ -90,20 +143,24 @@ a:hover {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #101112;
-  overflow: hidden;
-  font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+	background-color: #101112;
+	overflow: hidden;
+	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
+	max-width: var(--nav-width);
+	margin: 0 auto;
+	padding: 1px 5px;
+	border-radius: 0px 0px 6px 6px;
+	font-size: var(--nav-font-size);
 }
 
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: left;
-  color: #f2f2f2;
-  background-color: #101112;
-  text-align: center;
-  padding: 14px 16px;
-  text-decoration: none;
-  font-size: 17px;
+	float: left;
+	color: #f2f2f2;
+	background-color: #101112;
+	text-align: center;
+	padding: 14px 16px;
+	text-decoration: none;
 }
 
 /* Change the color of links on hover */
@@ -194,21 +251,22 @@ td {
 
 /* The dropdown container */
 .dropdown {
-  float: left;
-  overflow: hidden;
+	float: left;
+	overflow: hidden;
+	background-color: #101112;
 }
 
 /* Dropdown button */
 .dropdown .dropbtn {
-  overflow: hidden;
-  font-size: 16px;
-  border: none;
-  outline: none;
-  color: white !important;
-  padding: 14px 16px;
-  background-color: inherit;
-  font-family: inherit; /* Important for vertical align on mobile phones */
-  margin: 0; /* Important for vertical align on mobile phones */
+	overflow: hidden;
+	font-size: var(--nav-font-size);
+	border: none;
+	outline: none;
+	color: white !important;
+	padding: 14px 16px;
+	background-color: inherit;
+	font-family: inherit; /* Important for vertical align on mobile phones */
+	margin: 0; /* Important for vertical align on mobile phones */
 }
 
 /* Add a red background color to navbar links on hover */
