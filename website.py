@@ -151,6 +151,7 @@ def go_path_redirector_backup():
 def favicon():
     return static_dir("images/favicon.png")
 
+
 @APP.route("/wiki")
 def wiki_homepage(show=None):
     """This is be the wiki homepage and search
@@ -164,7 +165,7 @@ def wiki_homepage(show=None):
 <h4>Written { written } by { author }</h4>
 <p>{ synopsis }</p>
 </br>"""
-    tags_template = '<input type="checkbox" name="%s" value="1">'
+    tags_template = '<input type="checkbox" name="%s" value="1"> %s'
     if show is None:
         posts = wiki.list_posts()[:10]
     else:
@@ -185,19 +186,52 @@ def wiki_homepage(show=None):
         else:
             new = new.replace("{ author }", ", ".join(post["AUTHOR"]))
         posts_parse_in.append(new)
+
+    # generate tags search GUI
     tags_parse_in = []
     for each in tags:
-        tags_parse_in.append(tags_template % (each))
-    tags_parse_in = "\n</br>\n".join(tags_parse_in)
+        tags_parse_in.append(tags_template % (each, each))
+
+    # make each element
+    count = 0
+    row_width = 5
+    tags_gui = []
+    add = []
+    for each in tags_parse_in:
+        entry = f" <td> { each } </td> "
+        if count < row_width:
+           add.append(entry)
+           count += 1
+        else:
+            tags_gui.append(add)
+            add = []
+            add.append(entry)
+            count = 1
+    if add != []:
+        tags_gui.append(add)
+
+    # combine elements into rows
+    newline = "\n" # it is entirely ridiculous that I have to do this due to a SyntaxError
+    for each in enumerate(tags_gui):
+        tags_gui[each[0]] = f"<tr>{ newline.join(each[1]) }</tr>"
+
+    # combine rows into table
+    tags_gui = f"""<table>{ newline.join(tags_gui) }</table>"""
+
+    # parse post previews into page
     if len(posts_parse_in) > 0:
         posts_parse_in = "\n</br>\n".join(posts_parse_in)
         page = flask.render_template("wiki-home.html")
         page = page.replace("{ content }", posts_parse_in)
     else:
         page = flask.render_template("wiki-home-none.html")
-    page = page.replace("{ tags }", tags_parse_in)
+
+    # parse tag info into page
+    page = page.replace("{ tags }", tags_gui)
     page = page.replace("{ tags_list }",
                         f"""<input type="hidden" id="tags_list" name="tags_list" value="{ ",".join(tags) }">""")
+
+    # send the page to the user
     return page
 
 

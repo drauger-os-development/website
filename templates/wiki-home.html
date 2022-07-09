@@ -24,9 +24,14 @@
         <h2>
             Filter by Tag
         </h2>
-            { tags_list }
+        <!-- This is for use by another function, so it knows what tags are available without having to read anything from disk -->
+        { tags_list }
         <div class="control">
-                { tags }
+            { tags }
+        </div>
+        </br>
+        <div class="control">
+            <button class="button is-block is-info is-large is-fullwidth" name="wiki_search">Search Wiki</button>
         </div>
     </form>
     </br>
