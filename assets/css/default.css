@@ -153,6 +153,20 @@ a:hover {
 	font-size: var(--nav-font-size);
 }
 
+summary {
+	padding: 2px 8px;
+	border-radius: 6px;
+	background-color: #333333;
+}
+
+summary:hover{
+	background-color: #555555;
+}
+
+details[open] summary{
+	background-color: #555555;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
 	float: left;
@@ -218,6 +232,12 @@ a:hover {
 .image-menu a:hover {
   background-color: #dddddd;
   color: black;
+}
+
+@media only screen and (max-width: 1200px) {
+	.image-menu {
+		display: grid;
+	}
 }
 
 .bg

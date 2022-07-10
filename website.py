@@ -113,6 +113,9 @@ def error_404(e):
 def error_403(e):
     return forbidden()
 
+@APP.errorhandler(418)
+def error_418(e):
+    return i_am_a_teapot()
 
 @APP.errorhandler(500)
 def error_500(e):
@@ -128,6 +131,9 @@ def page_not_found():
 def forbidden():
     return flask.render_template('403.html'), 403
 
+@APP.route("/418")
+def i_am_a_teapot():
+    return flask.render_template('418.html'), 418
 
 @APP.route("/500")
 def internal_error():
