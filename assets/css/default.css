@@ -783,3 +783,19 @@ select,
 textarea {
     margin: 0;
 }
+
+.input {
+    margin: 0;
+    color: var(--font-color);
+    background-color: #151515;
+    border: 1px solid var(--font-color) !important;
+    border-radius: 5px;
+}
+
+.wide {
+    width: 45em;
+}
+
+.button:hover {
+    background-color: #505050;
+}
