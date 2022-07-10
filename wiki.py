@@ -184,7 +184,7 @@ def get_all_tags():
         tags = tags + each
     del posts
     tags = common.unique(tags)
-    return tags
+    return sorted(tags, key = lambda s: s.casefold())
 
 
 def search_freetext(text, posts):
