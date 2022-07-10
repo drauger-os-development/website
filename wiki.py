@@ -22,10 +22,10 @@
 #
 #
 """Wiki markdown parser and interpolater"""
-import markdown
-import os
-from flask import render_template
 import time
+import os
+import markdown
+from flask import render_template
 import common
 
 
@@ -82,7 +82,8 @@ def get_post_metadata(title):
             # limit synopsis length to 140 characters
             metadata[data[0].upper()] = data[1][:common.settings["synopsis-length"]]
     keys = ["SYNOPSIS" , "TAGS", "AUTHOR", "WRITTEN"]
-    metadata["WRITTEN"] = time.strftime(common.settings["time-format-displayed"], metadata["WRITTEN"])
+    metadata["WRITTEN"] = time.strftime(common.settings["time-format-displayed"],
+                                        metadata["WRITTEN"])
     if not all(item in metadata.keys() for item in keys):
         raise TypeError(f"Not all fields of { keys } in { path }")
     return metadata

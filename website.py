@@ -23,8 +23,6 @@
 #
 """Drauger OS website"""
 import flask
-import os
-import json
 import wiki
 
 APP = flask.Flask(__name__)
@@ -96,47 +94,55 @@ def thank_you_old():
 
 @APP.route("/assets/<path:path>")
 def static_dir(path):
+    """Handle asset requests"""
     if ".." in path:
         return flask.redirect(flask.url_for("forbidden"))
-    try:
-        return flask.send_from_directory("assets", path)
-    except:
-        return flask.redirect(flask.url_for("page_not_found"))
+    return flask.send_from_directory("assets", path)
 
 
 @APP.errorhandler(404)
 def error_404(e):
+    """Catch Error 404"""
     return page_not_found()
 
 
 @APP.errorhandler(403)
 def error_403(e):
+    """Catch Error 403"""
     return forbidden()
+
 
 @APP.errorhandler(418)
 def error_418(e):
+    """Catch Error 418 (Should never happen)"""
     return i_am_a_teapot()
+
 
 @APP.errorhandler(500)
 def error_500(e):
+    """Catch Error 500"""
     return internal_error()
 
 
 @APP.route("/404")
 def page_not_found():
+    """Error 404 Page"""
     return flask.render_template('404.html'), 404
 
 
 @APP.route("/403")
 def forbidden():
+    """Error 403 Page"""
     return flask.render_template('403.html'), 403
 
 @APP.route("/418")
 def i_am_a_teapot():
+    """Error 418 Easter Egg Page"""
     return flask.render_template('418.html'), 418
 
 @APP.route("/500")
 def internal_error():
+    """Error 500 Page"""
     return flask.render_template('500.html'), 500
 
 
@@ -155,6 +161,7 @@ def go_path_redirector_backup():
 
 @APP.route("/favicon.ico")
 def favicon():
+    """Provide Favicon"""
     return static_dir("images/favicon.png")
 
 
@@ -206,14 +213,14 @@ def wiki_homepage(show=None):
     for each in tags_parse_in:
         entry = f" <td> { each } </td> "
         if count < row_width:
-           add.append(entry)
-           count += 1
+            add.append(entry)
+            count += 1
         else:
             tags_gui.append(add)
             add = []
             add.append(entry)
             count = 1
-    if add != []:
+    if add:
         tags_gui.append(add)
 
     # combine elements into rows
@@ -263,6 +270,7 @@ def wiki_search():
 
 @APP.route("/wiki/<title>")
 def wiki_post(title):
+    """Provide rendered wiki posts"""
     try:
         return wiki.get_post(title)
     except FileNotFoundError:
