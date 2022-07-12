@@ -248,10 +248,21 @@ def wiki_homepage(show=None):
     return page
 
 
+def get_tag_method(form):
+    """Get tag search method"""
+    if form.get("state-g") == "true":
+        return True
+    elif form.get("state-g") == "false":
+        return False
+    return None
+
+
 @APP.route("/wiki/search", methods=["POST"])
 def wiki_search():
     """Search the wiki"""
     tags_list = flask.request.form.get("tags_list").split(",")
+    tag_search_method = get_tag_method(flask.request.form)
+    print(tag_search_method)
     if tags_list is not None:
         tags = {}
         for each in tags_list:
@@ -260,7 +271,8 @@ def wiki_search():
             if not tags[tags_list[each]]:
                 del tags_list[each]
         del tags
-        output = list(wiki.search_tags(tags_list).keys())
+        output = list(wiki.search_tags(tags_list,
+                                       method=tag_search_method).keys())
     else:
         output = wiki.list_posts()
     search_text = flask.request.form.get("free_text").split(" ")

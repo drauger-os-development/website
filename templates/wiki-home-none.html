@@ -19,7 +19,7 @@
             Search
         </h2>
         <div class="control">
-            <input class="input is-large" type="text" id="free_text" name="free_text" placeholder="Free Text Search">
+            <input class="input is-large wide" type="text" id="free_text" name="free_text" placeholder="Free Text Search">
         </div>
         <h2>
             Filter by Tag
@@ -27,6 +27,29 @@
             { tags_list }
         <div class="control">
                 { tags }
+        </div>
+        </br>
+        <div>
+            <h3>
+                Tag Search Method
+            </h3>
+            <div class="switch-toggle switch-3 switch-candy" id="method-toggle">
+                <input id="gluten-free-on" name="state-g" value="true" type="radio" checked="" />
+                <label for="on" onclick="">All</label>
+
+                <input id="gluten-free-na" name="state-g" value="none" type="radio" checked="checked" />
+                <label for="na" onclick="">At Least One</label>
+
+                <input id="gluten-free-off" name="state-g" value="false" type="radio"/>
+                <label for="off" onclick="">None</label>
+
+                <a></a>
+            </div>
+            </br>
+        </div>
+        </br>
+        <div class="control">
+            <button class="input button is-block is-info is-large is-fullwidth" name="wiki_search">Search Wiki</button>
         </div>
     </form>
     </br>
