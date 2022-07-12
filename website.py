@@ -178,7 +178,7 @@ def wiki_homepage(show=None):
 <h4>Written { written } by { author }</h4>
 <p>{ synopsis }</p>
 </br>"""
-    tags_template = '<input type="checkbox" name="%s" value="1"> %s'
+    tags_template = '<input type="checkbox" style="font-size: var(--nav-summary-tittle-size);margin: 8px 0px" name="%s" value="1"> %s'
     if show is None:
         posts = wiki.list_posts()[:10]
     else:
@@ -207,7 +207,7 @@ def wiki_homepage(show=None):
 
     # make each element
     count = 0
-    row_width = 5
+    row_width = 2
     tags_gui = []
     add = []
     for each in tags_parse_in:

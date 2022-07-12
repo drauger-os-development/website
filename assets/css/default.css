@@ -27,6 +27,10 @@
 }
 
 
+input[type=checkbox] {
+	transform: scale(1.2);
+}
+
 @media only screen and (max-width: 1200px) {
 	:root {
 		--nav-font-size: 2vw;
@@ -35,6 +39,10 @@
 		--container-width: 75vw;
 		--nav-width: 50vw;
 		--font-color: #e8e6e3; /*debug var*/
+	}
+	input[type=checkbox] {
+		transform: scale(1.5);
+		font-size: 3vw;
 	}
 }
 
@@ -46,6 +54,9 @@
 		--container-width: 85vw;
 		--nav-width: 70vw;
 		--font-color: #e8e6e3; /*debug var*/
+	}
+	input[type=checkbox] {
+		transform: scale(1.7);
 	}
 }
 
