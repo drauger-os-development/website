@@ -4,7 +4,7 @@
 
 Problem: After using Rufus to install DraugerOS onto a bootable usb, DraugerOS is unable to boot to the live environment
 
-Solution: Ensure Rufus is operating in DD mode
+Solution: Ensure Rufus is operating in "dd" mode
 
 # Nvidia Video driver issues
 
@@ -31,4 +31,16 @@ Here is the command to do everyting needed in one line
 
 ```bash
 echo -e "blacklist nouveau\noptions nouveau modeset=0" | sudo tee /etc/modprobe.d/blacklist-nvidia-nouveau.conf
+```
+
+# Steam fails to launch
+
+Problem: Upon trying to launch Steam, you received the error
+```text
+Fatal error: Failed to load steamui.so
+```
+
+Solution: Try running the following command
+```bash
+sudo apt install --reinstall libva-x11-2:i386
 ```
