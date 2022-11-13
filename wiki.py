@@ -29,6 +29,11 @@ from flask import render_template
 import common
 
 
+def render_content(content: str):
+    """Render content as a markdown-formatted string into HTML"""
+    return markdown.markdown(content)
+
+
 def list_posts():
     """List all available posts"""
     posts = os.listdir("post-meta/wiki")
@@ -156,8 +161,24 @@ def get_raw_post(title):
 def get_isolated_post(title):
     """Get a post, outside of it's web page wrapper"""
     data = get_raw_post(title)
-    data["content"] = markdown.markdown(data["content"])
+    data["content"] = render_content(data["content"])
     return data
+
+
+def render_post(content):
+    """Insert HTML content into a standard webpage"""
+    content = content.split("\n")
+    content[1] = "\n".join(content[1:])
+    content = content[:2]
+    content[0] = content[0][4:-5]
+    post = render_template("wiki-post.html")
+    post = post.split("{ title }")
+    post.insert(1, content[0])
+    post = "\n".join(post)
+    post = post.split("{ content }")
+    post.insert(1, content[1])
+    content = "\n".join(post)
+    return content
 
 
 def get_post(title):
@@ -166,18 +187,8 @@ def get_post(title):
     This includes time formatting, and any sort of further parsing.
     """
     data = get_isolated_post(title)
-    data["content"] = data["content"].split("\n")
-    data["content"][1] = "\n".join(data["content"][1:])
-    data["content"] = data["content"][:2]
-    data["content"][0] = data["content"][0][4:-5]
-    post = render_template("wiki-post.html")
-    post = post.split("{ title }")
-    post.insert(1, data["content"][0])
-    post = "\n".join(post)
-    post = post.split("{ content }")
-    post.insert(1, data["content"][1])
-    data["content"] = "\n".join(post)
-    return data["content"]
+    data = render_post(data["content"])
+    return data
 
 
 def get_all_tags():
