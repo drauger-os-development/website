@@ -57,7 +57,6 @@ def list_posts():
     return output
 
 
-
 def get_post_metadata(title):
     """Get a post's metadata"""
     path = f"post-meta/wiki/{title}"
