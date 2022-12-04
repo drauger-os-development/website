@@ -23,7 +23,9 @@
 #
 """Drauger OS website"""
 import flask
+import urllib3
 import wiki
+import sys
 
 APP = flask.Flask(__name__)
 
@@ -55,6 +57,8 @@ def convert_to_html_list(obj):
 
 
 @APP.route("/contact")
+@APP.route("/contact_us")
+@APP.route("/contact-us")
 def contact():
     """Cause I'm a nerd on multiple levels"""
     return flask.render_template("contact.html")
@@ -289,5 +293,33 @@ def wiki_post(title):
         return page_not_found()
 
 
+@APP.route("/privacy")
+def privacy():
+    """Provide the user with our privacy policy"""
+    http = urllib3.PoolManager()
+    # download markdown-formatted Privacy Policy from our GitHub
+    data = http.request("GET",
+                        "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Privacy%20Policy.md").data
+    data = data.decode()
+    data = wiki.render_post(data)
+    return data
+
+
+@APP.route("/tos")
+def tos():
+    """Provide the user with our Terms of Service"""
+    http = urllib3.PoolManager()
+    # download markdown-formatted Terms of Service from our GitHub
+    data = http.request("GET",
+                        "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Terms%20of%20Service.md").data
+    data = data.decode()
+    data = wiki.render_post(data)
+    return data
+
+
 if __name__ == "__main__":
-    APP.run(host="0.0.0.0", debug=False)
+    if ("--debug" in sys.argv) or ("-debug" in sys.argv) or ("-d" in sys.argv):
+        mode=True
+    else:
+        mode=False
+    APP.run(host="0.0.0.0", debug=mode)
