@@ -294,6 +294,9 @@ def wiki_post(title):
 
 
 @APP.route("/privacy")
+@APP.route("/privacy-policy")
+@APP.route("/privacy_policy")
+@APP.route("/privacy policy")
 def privacy():
     """Provide the user with our privacy policy"""
     http = urllib3.PoolManager()
@@ -312,6 +315,19 @@ def tos():
     # download markdown-formatted Terms of Service from our GitHub
     data = http.request("GET",
                         "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Terms%20of%20Service.md").data
+    data = data.decode()
+    data = wiki.render_post(data)
+    return data
+
+@APP.route("/community-guidelines")
+@APP.route("/community_guidelines")
+@APP.route("/community guidelines")
+def guidelines():
+    """Provide the user with our Terms of Service"""
+    http = urllib3.PoolManager()
+    # download markdown-formatted Terms of Service from our GitHub
+    data = http.request("GET",
+                        "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Community%20Guidelines.md").data
     data = data.decode()
     data = wiki.render_post(data)
     return data
