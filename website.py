@@ -27,6 +27,7 @@ import urllib3
 import wiki
 import sys
 
+
 APP = flask.Flask(__name__)
 
 
@@ -139,10 +140,12 @@ def forbidden():
     """Error 403 Page"""
     return flask.render_template('403.html'), 403
 
+
 @APP.route("/418")
 def i_am_a_teapot():
     """Error 418 Easter Egg Page"""
     return flask.render_template('418.html'), 418
+
 
 @APP.route("/500")
 def internal_error():
@@ -319,6 +322,7 @@ def tos():
     data = wiki.render_post(data)
     return data
 
+
 @APP.route("/community-guidelines")
 @APP.route("/community_guidelines")
 @APP.route("/community guidelines")
@@ -331,6 +335,12 @@ def guidelines():
     data = data.decode()
     data = wiki.render_post(data)
     return data
+
+
+@APP.route("/up")
+def check_up():
+    """Respond for whether website is up so response can be more easily checked programmatically"""
+    return {"up": True}
 
 
 if __name__ == "__main__":
