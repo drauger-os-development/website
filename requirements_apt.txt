@@ -1,5 +1,4 @@
 python3-flask
-python3-pip
 python3-markdown
 nginx-full
 uwsgi
