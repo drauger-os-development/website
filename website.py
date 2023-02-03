@@ -173,7 +173,7 @@ def favicon():
 
 
 @APP.route("/robots.txt")
-def favicon():
+def robot_txt():
     """Provide robots.txt"""
     return static_dir("etc/robots.txt")
 
