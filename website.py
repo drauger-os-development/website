@@ -172,6 +172,12 @@ def favicon():
     return static_dir("images/favicon.png")
 
 
+@APP.route("/robots.txt")
+def robot_txt():
+    """Provide robots.txt"""
+    return static_dir("etc/robots.txt")
+
+
 @APP.route("/wiki")
 def wiki_homepage(show=None):
     """This is be the wiki homepage and search
