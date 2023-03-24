@@ -20,35 +20,36 @@
 Depending on which Nvidia card you have, follow the instructions in A, B or C.
 </br></br>
 A) _If you have a 900 series card or newer_, run the following command:
-</br>
+</br></br>
 ```
 sudo apt install nvidia-driver-latest
 ```
 ***
 </br></br>
 B) _If your card is older than the 900 series_, check [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) to see which driver corresponds to your graphics card.  If it is the latest Nvidia driver (530 at the time of writing), run the following command
-</br>
+</br></br>
 ```
 sudo apt install nvidia-driver-latest
 ```
 </br></br>
 Note: You can see what the latest Nvidia drivers packages are available in apt using the following command and looking for the highest numbered driver release
-</br>
+</br></br>
 ```
 apt search nvidia-driver
 ```
 </br></br>
 C) _if you card is older than the 900 series and the driver listed on [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) is older than the latest driver_, do the following:
-</br>
+</br></br>
 Install, through apt, the package that corresponds to your driver.  If the latest available driver is 470, run
-</br>
+</br></br>
 ```
 sudo apt install nvidia-driver-470
 ```
-</br>
-You can use the apt search command example in section B to see which Nvidia driver packages are available. </br>
+</br></br>
+You can use the apt search command example in section B to see which Nvidia driver packages are available.
+</br></br>
 Next, install the disable-nouveau package
-</br>
+</br></br>
 ```
 sudo apt install disable-nouveau
 ```
