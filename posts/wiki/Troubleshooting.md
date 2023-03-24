@@ -37,7 +37,7 @@ Note: You can see what the latest Nvidia drivers packages are available in apt u
 ```
 apt search nvidia-driver
 ```
-</br></br>
+</br></br></br>
 C) _if you card is older than the 900 series and the driver listed on [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) is older than the latest driver_, do the following:
 </br></br>
 Install, through apt, the package that corresponds to your driver.  If the latest available driver is 470, run
