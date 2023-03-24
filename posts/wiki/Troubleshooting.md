@@ -41,7 +41,11 @@ C) _if you card is older than the 900 series and the driver listed on [Nvidia's 
 ```bash
 sudo apt install nvidia-driver-470
 ```
-You can use the apt search command example in section B to see which Nvidia driver packages are available
+You can use the apt search command example in section B to see which Nvidia driver packages are available. </br>
+Next, install the disable-nouveau package
+```bash
+sudo apt install disable-nouveau
+```
 ***
 Lastly, whether you followed the instructions in A, B or C, reboot your computer.
 
