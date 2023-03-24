@@ -1,7 +1,7 @@
 # Troubleshooting
 
 ## USB drive will not boot Drauger OS live environment
-**Problem**: After using Rufus to install Drauge rOS onto a bootable usb, Drauger OS is unable to boot to the live environment
+**Problem**: After using Rufus to install Drauger OS onto a bootable usb, Drauger OS is unable to boot to the live environment
 </br></br>
 
 **Solution**: Ensure Rufus is operating in "dd" mode
