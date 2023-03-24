@@ -18,15 +18,14 @@
 </br></br>
 
 Depending on which Nvidia card you have, follow the instructions in A, B or C.
-
-***
-
+</br></br>
 A) _If you have a 900 series card or newer_, run the following command:
-```bash
+</br>
+<tt>
 sudo apt install nvidia-driver-latest
-```
+</tt>
 ***
-
+</br></br>
 B) _If your card is older than the 900 series_, check [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) to see which driver corresponds to your graphics card.  If it is the latest Nvidia driver (525 at the time of writing), run the following command
 ```bash
 sudo apt install nvidia-driver-latest
