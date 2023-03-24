@@ -101,7 +101,8 @@ sudo apt install --reinstall libva-x11-2:i386
 </br></br>
 
 **Solution**: Run the following command
-```bash
+</br></br>
+```
 sudo flatpak repair
 ```
 </br></br></br>
