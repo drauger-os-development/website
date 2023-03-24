@@ -53,7 +53,7 @@ Next, install the disable-nouveau package
 ```
 sudo apt install disable-nouveau
 ```
-</br></br>
+</br></br></br>
 Lastly, whether you followed the instructions in A, B or C, reboot your computer.
 
 </br></br></br>
