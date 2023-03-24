@@ -12,15 +12,14 @@ Software written for Drauger OS may be under any license. However, if you want y
 Under no circumstances should code for Drauger OS be written in Java. Javascript should also be avoided wherever possible, with the sole exception being the website. Both of these languages have a reputation for being slow, and indeed there are better options available.
 </br>
 Otherwise, developers are more than welcome to write their code in another language which supports Linux. However, we suggest the following, in no particular order:
- - Python 3.x
 </br>
- - Rust
-</br>
- - C
-</br>
- - C++
-</br>
- - UNIX Shell / BASH
+<ul>
+    <li>Python 3.x</li>
+    <li>Rust</li>
+    <li>C</li>
+    <li>C++</li>
+    <li>UNIX Shell / BASH</li>
+</ul>
 </br></br>
 ### In-house code
 </br>
