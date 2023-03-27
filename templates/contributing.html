@@ -13,10 +13,121 @@
 </br>
 </br>
 <div class="box">
-  <h2>
+    <center>
+        <h2>
+            What to contribute to Drauger OS? Fantastic! These are some of the best ways to do that.
+        </h2>
+    </center>
+    </br>
+    <h3>
+        Code or Documentation
+    </h3>
+    </br>
+    We always need help writing code for various projects! If you want to help write code, we strongly recommend experience with Python, HTML, and/or CSS.
 
-  </h2>
-  </br>
+    You can find all of our projects <a href="https://github.com/drauger-os-development">on our GitHub.</a>
+    </br>
+    </br>
+    These are some of our most heavily worked on projects:
+    <center>
+        <table>
+            <tr class="tr-hidden"><td class="td-hidden"><a href="https://github.com/drauger-os-development/system-installer">Our OS Installation Utility</a></td></tr>
+            <tr class="tr-hidden"><td class="td-hidden"><a href="https://github.com/drauger-os-development/website">Our website</a></tr></td>
+            <tr class="tr-hidden"><td class="td-hidden"><a href="https://github.com/drauger-os-development/systemd-boot-manager">Our Boot Loader Manager</a></tr></td>
+        </table>
+    </center>
+    </br></br>
+    Also, all of this code needs documentation. So, if you are familiar with technical writing, we would love to have your help!
+    </br></br></br>
+    <h3>
+        Artwork
+    </h3>
+    </br>
+    Have a knack for creativity? Got skills in digital artwork or graphic design? Fear not! We have a place for you too!
+    </br></br>
+    We always appreciate new wallpapers, especially when we are working on new versions of Drauger OS. If you want to create one or more wallpapers for Drauger OS, check out <a href="https://github.com/drauger-os-development/artwork">Our artwork repository</a> for details on how to contribute it!
+    </br></br></br>
+    <h3>
+        Monetary Donations
+    </h3>
+    </br>
+    It's okay if you don't have the time or skills to contribute code, documentation, or artwork. You can <i>still</i> contribute to Drauger OS by donating! All proceeds go towards server upkeep, domain registration, hardware upgrades for servers, and on some occasions, internet and power bills to keep the lights on and servers fed! No staff is employed by Drauger OS, so all donations go towards keeping the project online. If you feel compelled to do so, you can donate online, <a href="https://liberapay.com/Drauger_OS_Development/donate">on our Liberapay.</a>
+    </br>
+    </br>
+    </br>
+    <h3>
+        Beta Testing
+    </h3>
+    </br>
+    We don't normally suggest this route as it could potentially nuke your Drauger OS install and there is a risk of data loss. However, you can also contribute by beta-testing software. There are 2 ways to do this:
+    </br></br>
+    <h4>
+        Install a beta version of the OS
+    </h4>
+    </br>
+    Doing this, you can help us prepare Drauger OS for the next release. Simply install the OS, tell us if you notice any issues, and run it for a few days to ensure it's stable and that there aren't any more bugs the need to be fixed.
+    </br>
+    </br>
+    <h4>
+        Enabling the <tt>dev</tt> repos
+    </h4>
+    </br>
+    By enabling the dev repos, you can get updates for things much faster, at the risk of breaking your system.
+    To enable the dev repos, simply run this command in a command line:
+    </br>
+    </br>
+    <tt>
+        sudo apt edit-sources
+    </tt>
+    </br>
+    </br>
+    Scroll to the bottom of the file, until you see this:
+    </br>
+    </br>
+    <pre>
+        ## Extra Repos added for Drauger OS
+        deb https://apt.draugeros.org strigoi main
+        ## Development Repos for Drauger OS
+        ## ONLY ENABLE IF YOU ARE WILLING TO DEAL WITH BUGS
+        # deb https://apt.draugeros.org strigoi-dev main
+
+        deb https://apt.draugeros.org strigoi-graphics main
+        # deb https://apt.draugeros.org strigoi-graphics-dev main
+    </pre>
+    </br>
+    Remove the hash tag (#) from the front of these two lines:
+    </br>
+    </br>
+    <pre>
+        # deb https://apt.draugeros.org strigoi-dev main
+        # deb https://apt.draugeros.org strigoi-graphics-dev main
+    </pre>
+    </br>
+    So the file should look like this:
+    </br>
+    </br>
+    <pre>
+        ## Extra Repos added for Drauger OS
+        deb https://apt.draugeros.org strigoi main
+        ## Development Repos for Drauger OS
+        ## ONLY ENABLE IF YOU ARE WILLING TO DEAL WITH BUGS
+        deb https://apt.draugeros.org strigoi-dev main
+
+        deb https://apt.draugeros.org strigoi-graphics main
+        deb https://apt.draugeros.org strigoi-graphics-dev main
+    </pre>
+    </br>
+    Afterwards, simply save the file and exit. Finally run these commands:
+    </br>
+    </br>
+    <pre>
+        sudo apt update
+        sudo apt upgrade
+    </pre>
+    </br>
+    Congratulations! You've enabled and updated from the dev repos! You're a beta tester now! Simply let us know if anything goes wrong so we know if we need to fix something in a release.
+    </br>
+    </br>
 </div>
 
 {% endblock %}
