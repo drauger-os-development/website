@@ -1,10 +1,10 @@
 # Writing Posts for this Wiki
 <center>
-## So you want to contribute to the Drauger OS Wiki. But you have no idea where to start.
+## So you want to contribute to the Drauger OS Wiki but have no idea where to start.
 ## You've come to the right place!
 </center>
 </br>
-Contributing to the Drauger OS Wiki is designed to be as simple and easy as possible. All you need is knowledge of [Markdown](https://www.markdownguide.org/). And even then, online tools exist ([like this one](https://markdown-editor.github.io/)) that you can write your post in, then copy-paste the resulting text into a plain text file.
+Contributing to the Drauger OS Wiki is designed to be as simple and easy as possible. All you need is knowledge of [Markdown](https://www.markdownguide.org/). That being said, online tools exist ([like this one](https://markdown-editor.github.io/)) that you can write your post in, then copy-paste the resulting text into a plain text file.
 </br></br>
 Of course, you still need to follow a few simple guidelines:
 </br></br></br>
@@ -76,21 +76,19 @@ Every metadata file **MUST** have the following fields:
  - WRITTEN
 
 </br></br>
-All fields take 1 and only 1 line. The values for each tag are separated by a colon (:) and a single space.
+All fields are 1 line. The values for each tag are separated by a colon (:) and a single space.
 </br></br></br>
 ##### SYNOPSIS
-Your synopsis should be a short (140 character max) description of what your post is about. Longer synopses tend to do better with SEO. So if that is important to you, keep it in mind.
+Your synopsis should be a short (140 character max) description of what your post is about. Longer synopses tend to do better with Search Engine Optimization (SEO). So if that is important to you, keep it in mind.
 </br></br></br>
 ##### TAGS
-This should be a comma-delimited list of tags that apply to your post. This list is case insensitive. More tags help users find your post easier. There is no limit to the number of tags you may have.
+This should be a comma-delimited (separated) list of tags that apply to your post. This list is case insensitive. More tags help users find your post easier. There is no limit to the number of tags you may have.
 </br></br></br>
 ##### AUTHOR
-Put your name, or the author's name, in this field. If multiple people wrote this post, they should be in a comma-delimited list.
+Put your name, or the author's name, in this field. If multiple people wrote this post, it should be a comma-delimited (separated) list.
 </br></br></br>
 ##### WRITTEN
-When you wrote your post. If it took you several days to write it, then opt for the day you finished it. The date format you must use is actually very specific:
-</br></br>
-> YYYY - MM - DD
+When you wrote your post. If it took you several days to write it, then opt for the day you finished it. The required date format is YYYY - MM - DD.
 </br></br>
 That is, the full 4 digit year, the 2 digit month, and the 2 digit day.
 </br></br></br>
@@ -101,7 +99,7 @@ These fields are not necessary, but can provide more context to users.
 This field works exactly like the AUTHOR field. However, it denotes who edited the post.
 </br></br></br>
 #### Comments
-Comments take up an entire line, with the first character on the line being a hashtag (#).
+Comments start with a hashtag (#) and take up the entire line.
 </br></br>
 For example:
 </br></br>
