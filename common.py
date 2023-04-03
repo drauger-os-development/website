@@ -3,7 +3,7 @@
 #
 #  common.py
 #
-#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2023 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -28,6 +28,8 @@ import json
 with open("settings.json", "r") as file:
     settings = json.load(file)
 
+
+seo_keywords = ["drauger os", "gaming", "linux", "linux gaming"]
 
 def contents_in_array(arr1: (list, tuple), arr2: (list, tuple)):
     """Check if arr2 contains the same contents as arr1"""

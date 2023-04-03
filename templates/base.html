@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <!-- -*- coding: utf-8 -*-
 
- Copyright 2022 Thomas Castleman <contact@draugeros.org>
+ Copyright 2023 Thomas Castleman <contact@draugeros.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -23,13 +23,19 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Drauger OS</title>
+    <title>{{ master_title }}</title>
+    <meta name="description" content="{{ master_desc }}">
+    <meta name="author" content="{{ author }}">
+    <meta name="keywords" content="{{ seo_keywords }}">
+    <meta property="og:image" content="/assets/images/favicon.png">
+    <meta property="og:image:type" content="image/png">
+    <meta property="og:image:width" content="253">
+    <meta property="og:image:height" content="214">
+    <meta property="og:description" content="{{ master_desc }}">
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
-    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css"> -->
 </head>
 
-<!--style='background-image:radial-gradient(75% 75% at 50% 50%, #990000 0%, #151515 76%);background-size: 100vw 100vh;'-->
 <body>
     <section>
         <div class="topnav">
@@ -48,6 +54,7 @@
                 <button class="dropbtn">Contributing</button>
                 <div class="dropdown-content">
                     <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
+                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
                     <a href="{{ url_for('contributors') }}">Contributors</a>
                     <a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a>
                     <a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on Distrowatch</a>
@@ -56,6 +63,7 @@
             <div class="dropdown">
                 <button class="dropbtn">Community</button>
                 <div class="dropdown-content">
+                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
                     <a href="https://t.me/draugeros">Telegram</a>
                     <a href="https://discord.gg/JW8FGrc">Discord</a>
                     <a href="https://www.reddit.com/r/DraugerOS/">Reddit</a>
@@ -78,13 +86,6 @@
     </section>
 </body>
 <footer style="text-align:center;">
-    <!-- <h4>
-        Hosted by:
-        </br>
-        <a class="p-button--positive is-wide" href="https://fosshost.org" target="_blank">
-            <img class="redglow" src="https://raw.githubusercontent.com/fosshostorg/fosshost.org/main/static/img/fosshost-logo.png">
-        </a>
-    </h4> -->
     </br>
     <h4>
         Drauger OS logos, branding, and website content are property of Drauger OS Development and Thomas Castleman.
@@ -94,6 +95,8 @@
         <a href="{{ url_for('privacy') }}" target="_blank">Privacy Policy</a>
         </br>
         <a href="{{ url_for('tos') }}" target="_blank">Terms of Service</a>
+        </br>
+        <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
     </p>
 	</br>
 </footer>

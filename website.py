@@ -26,6 +26,7 @@ import flask
 import urllib3
 import wiki
 import sys
+import common
 
 
 APP = flask.Flask(__name__)
@@ -34,19 +35,28 @@ APP = flask.Flask(__name__)
 @APP.route("/")
 def main():
     """Handle the root directory of the website"""
-    return flask.render_template("index.html")
+    return flask.render_template("index.html", master_title="Drauger OS - Home",
+                                 master_desc="Drauger OS is an open-source desktop Linux gaming OS.",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords))
 
 
 @APP.route("/download")
 def download():
-    """3D printing stuffs"""
-    return flask.render_template("download.html")
+    """Download the ISO"""
+    return flask.render_template("download.html", master_title="Drauger OS - Download",
+                                 master_desc="Download Drauger OS, the open-source desktop Linux gaming OS.",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords + ["download"]))
 
 
 @APP.route("/about")
 def about():
     """Disaplay about us page"""
-    return flask.render_template("about.html")
+    return flask.render_template("about.html", master_title="Drauger OS - About",
+                                 master_desc="All about Drauger OS, the open-source desktop Linux gaming OS.",
+                                 author="Thomas Castleman",
+                                 seo_keywords=", ".join(common.seo_keywords + ["about"]))
 
 
 def convert_to_html_list(obj):
@@ -61,40 +71,58 @@ def convert_to_html_list(obj):
 @APP.route("/contact_us")
 @APP.route("/contact-us")
 def contact():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("contact.html")
+    """Contact page"""
+    return flask.render_template("contact.html", master_title="Drauger OS - Contact Us",
+                                 master_desc="Contact the Drauger OS Team",
+                                 author="Thomas Castleman",
+                                 seo_keywords=", ".join(common.seo_keywords + ["contact us", "contact"]))
 
 
 @APP.route("/thank_you")
 def thank_you():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("thank_you.html")
+    """Thank the users for downloading the OS"""
+    return flask.render_template("thank_you.html", master_title="Drauger OS - Thank You",
+                                 master_desc="Thank you for downloading Drauger OS!",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords + ["download"]))
 
 
 @APP.route("/system_requirements")
 @APP.route("/sys_reqs")
 def sys_reqs():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("sys_reqs.html")
+    """System Requirements"""
+    return flask.render_template("sys_reqs.html", master_title="Drauger OS - System Requirements",
+                                 master_desc="System Requirements for Drauger OS",
+                                 author="Thomas Castleman",
+                                 seo_keywords=", ".join(common.seo_keywords + ["system requirements", "sys reqs", "requirements", "hardware requirements"]))
 
 
 @APP.route("/contribute")
 @APP.route("/contributing")
 def contributing():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("contributing.html")
+    """How to Contribute"""
+    return flask.render_template("contributing.html", master_title="Drauger OS - Contributing",
+                                 master_desc="How to contribute to Drauger OS",
+                                 author="Thomas Castleman",
+                                 seo_keywords=", ".join(common.seo_keywords + ["contributing"]))
 
 
 @APP.route("/contributors")
 def contributors():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("contributors.html")
+    """Honor our contributors"""
+    return flask.render_template("contributors.html", master_title="Drauger OS - Contributors",
+                                 master_desc="Contributors to Drauger OS",
+                                 author="Thomas Castleman",
+                                 seo_keywords=", ".join(common.seo_keywords))
 
 
 @APP.route("/thank_you_old")
 def thank_you_old():
-    """Cause I'm a nerd on multiple levels"""
-    return flask.render_template("thank_you_old.html")
+    """Thank users for downloading the OS, even if it is an old version"""
+    return flask.render_template("thank_you_old.html", master_title="Drauger OS - Thank You",
+                                 master_desc="Thank you for Downloading Drauger OS",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords + ["download"]))
 
 
 @APP.route("/assets/<path:path>")
@@ -132,25 +160,37 @@ def error_500(e):
 @APP.route("/404")
 def page_not_found():
     """Error 404 Page"""
-    return flask.render_template('404.html'), 404
+    return flask.render_template('404.html', master_title="Drauger OS - 404",
+                                 master_desc="Error 404",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords)), 404
 
 
 @APP.route("/403")
 def forbidden():
     """Error 403 Page"""
-    return flask.render_template('403.html'), 403
+    return flask.render_template('403.html', master_title="Drauger OS - 403",
+                                 master_desc="Error 403",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords)), 403
 
 
 @APP.route("/418")
 def i_am_a_teapot():
     """Error 418 Easter Egg Page"""
-    return flask.render_template('418.html'), 418
+    return flask.render_template('418.html', master_title="Drauger OS - 418",
+                                 master_desc="Error 418",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords)), 418
 
 
 @APP.route("/500")
 def internal_error():
     """Error 500 Page"""
-    return flask.render_template('500.html'), 500
+    return flask.render_template('500.html', master_title="Drauger OS - 500",
+                                 master_desc="Error 500",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords)), 500
 
 
 @APP.route("/go/<path:path>")
@@ -247,7 +287,10 @@ def wiki_homepage(show=None):
     # parse post previews into page
     if len(posts_parse_in) > 0:
         posts_parse_in = "\n</br>\n".join(posts_parse_in)
-        page = flask.render_template("wiki-home.html")
+        page = flask.render_template("wiki-home.html", master_title="Drauger OS Wiki - Home",
+                                 master_desc="The Drauger OS Wiki is here to help you fix issues with your Drauger OS installation, or help you contribute to the community!",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords + ["wiki", "help", "support", "issues", "issue"]))
         page = page.replace("{ content }", posts_parse_in)
     else:
         page = flask.render_template("wiki-home-none.html")
@@ -313,7 +356,10 @@ def privacy():
     data = http.request("GET",
                         "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Privacy%20Policy.md").data
     data = data.decode()
-    data = wiki.render_post(data)
+    data = wiki.render_post(data, desc="The Drauger OS Privacy Policy",
+                            tags=["privacy", "privacy policy",
+                                  "personal data"],
+                            author="Drauger OS Core Contributor Team")
     return data
 
 
@@ -325,7 +371,10 @@ def tos():
     data = http.request("GET",
                         "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Terms%20of%20Service.md").data
     data = data.decode()
-    data = wiki.render_post(data)
+    data = wiki.render_post(data, desc="The Drauger OS Terms of Service",
+                            tags=["tos", "terms of service",
+                                  "service"],
+                            author="Drauger OS Core Contributor Team")
     return data
 
 
@@ -339,7 +388,10 @@ def guidelines():
     data = http.request("GET",
                         "https://raw.githubusercontent.com/drauger-os-development/Policies-and-Operations-Manual/master/Community%20Guidelines.md").data
     data = data.decode()
-    data = wiki.render_post(data)
+    data = wiki.render_post(data, desc="The Drauger OS Community Guidelines",
+                            tags=["community", "guidelines",
+                                  "community guidelines", "ethics policy"],
+                            author="Drauger OS Core Contributor Team")
     return data
 
 
