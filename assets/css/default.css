@@ -1,6 +1,6 @@
 /* -*- coding: utf-8 -*-
 
- Copyright 2022 Thomas Castleman <contact@draugeros.org>
+ Copyright 2023 Thomas Castleman <contact@draugeros.org>
 
  This program is free software; you can redistribute it and/or modify
  it under the terms of the GNU General Public License as published by
@@ -272,14 +272,31 @@ table{
 
 .tr {
     border: 1px solid #ffffff !important;
+    width: 100%;
+    padding: 14px 16px;
 }
 
 .th {
     border: 1px solid #ffffff !important;
+    padding: 14px 16px;
 }
 
 .td {
     border: 1px solid #ffffff !important;
+    padding: 14px 16px;
+}
+
+.tr-hidden {
+    width: 100%;
+    padding: 14px 16px;
+}
+
+.th-hidden {
+    padding: 14px 16px;
+}
+
+.td-hidden{
+    padding: 14px 16px;
 }
 
 
