@@ -3,7 +3,7 @@
 #
 #  website.py
 #
-#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2023 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -120,7 +120,16 @@ def contributors():
 def thank_you_old():
     """Thank users for downloading the OS, even if it is an old version"""
     return flask.render_template("thank_you_old.html", master_title="Drauger OS - Thank You",
-                                 master_desc="Thank you for Downloading Drauger OS",
+                                 master_desc="Thank you for Downloading Drauger OS - OLD VERSION",
+                                 author="",
+                                 seo_keywords=", ".join(common.seo_keywords + ["download"]))
+
+
+@APP.route("/thank_you_beta")
+def thank_you_beta():
+    """Thank users for downloading the OS, beta version"""
+    return flask.render_template("thank_you_beta.html", master_title="Drauger OS - Thank You",
+                                 master_desc="Thank you for Downloading Drauger OS - BETA VERSION",
                                  author="",
                                  seo_keywords=", ".join(common.seo_keywords + ["download"]))
 
