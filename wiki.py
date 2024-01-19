@@ -3,7 +3,7 @@
 #
 #  wiki.py
 #
-#  Copyright 2022 Thomas Castleman <contact@draugeros.org>
+#  Copyright 2023 Thomas Castleman <contact@draugeros.org>
 #
 #  This program is free software; you can redistribute it and/or modify
 #  it under the terms of the GNU General Public License as published by
@@ -164,13 +164,20 @@ def get_isolated_post(title):
     return data
 
 
-def render_post(content):
+def render_post(content, desc=None, tags=[], author=""):
     """Insert HTML content into a standard webpage"""
     content = content.split("\n")
     content[1] = "\n".join(content[1:])
     content = content[:2]
     content[0] = content[0][2:]
-    post = render_template("wiki-post.html")
+    if desc is None:
+        show_desc = ""
+    else:
+        show_desc = desc
+    post = render_template("wiki-post.html", master_title=f"Drauger OS Wiki - { content[0] }",
+                                 master_desc=show_desc,
+                                 author=", ".join(author),
+                                 seo_keywords=", ".join(common.seo_keywords + tags))
     post = post.split("{ title }")
     post.insert(1, content[0])
     post = "\n".join(post)
@@ -186,7 +193,9 @@ def get_post(title):
     This includes time formatting, and any sort of further parsing.
     """
     data = get_isolated_post(title)
-    data = render_post(data["content"])
+    metadata = get_post_metadata(title)
+    data = render_post(data["content"], desc=metadata["SYNOPSIS"],
+                       tags=metadata["TAGS"], author=metadata["AUTHOR"])
     return data
 
 
