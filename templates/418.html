@@ -1,25 +1,10 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        Server code 418
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box" style="text-align:center;">
-  <h1 class="subtitle">
-	Hello User
-	<br><br>
-	I am a <b>teapot.</b>
-  </h1>
-  </br>
+<div class="contentContainer">
+  <div class="error418Title">Error 418: Teapot</div>
+  <div class="error418img"><a href="https://youtu.be/B6en-O5yF0o"><img src="../assets/images/teapot.webp" alt="An image of a Tea Pot"></a></div>
+  <!-- This is not necessary, but a link to the original image and it's author: https://pixabay.com/illustrations/tea-time-tea-teapot-art-vintage-8100595/ -->
+  <div class="error418Message">I am a Teapot.</div>
 </div>
-
 {% endblock %}

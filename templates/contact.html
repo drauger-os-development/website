@@ -1,56 +1,38 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        Contact Us
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-    <h2>
-    There are a number of ways in which to contact us. Below are listed the best ways to do that, organized by purpose of the contact, from the most quick to the least quick response times. At the bottom we also have links to our social media.
-    </h2>
-    </br>
-    </br>
-    <h2>
-        Support
-  </h2>
-  <p>
-    <a href="https://t.me/draugeros" target="_blank">Telegram Group</a>
-    </br>
-    <a href="https://discord.gg/JW8FGrc" target="_blank">Discord Support/Development Server</a>
-    </br>
-    <a href="https://twitter.com/DraugerOS" target="_blank">Twitter</a>
-    </br>
-    <a href="https://reddit.com/r/DraugerOS" target="_blank">Reddit</a>
-  </p>
-  </br>
-  </br>
-  <h2>
-      Contributing/Development
-  </h2>
-  <p>
-    <a href="https://t.me/draugeros" target="_blank">Telegram Group</a>
-    </br>
-    <a href="https://discord.gg/JW8FGrc" target="_blank">Discord Support/Development Server</a>
-  </p>
-  </br>
-  </br>
-  <h2>
-      Social Media
-  </h2>
-  <p>
-      <a href="https://twitter.com/DraugerOS" target="_blank">Twitter</a>
-      </br>
-      <a href="https://reddit.com/r/DraugerOS" target="_blank">Reddit</a>
-      </br>
-      <a rel="me" href="https://fosstodon.org/@DraugerOS" target="_blank">Mastodon</a>
+<div class="contentContainer">
+    <div class="ContactPageTitle">Contact Us</div>
+    <div class="description">There are a number of ways to contact us.
+        <br>Listed below are the best ways, organized from Fastest to Slowest response time.</div>
+    <div class="Support">
+        <div class="SubTitle">Support</div>
+        <div class="options">
+            <ul>
+                <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram Group</a></li>
+                <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord Server</a></li>
+                <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;X&nbsp;(Formerly Twitter)</a></li>
+                <li><a href="https://reddit.com/r/DraugerOS"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            </ul>
+        </div>
+        <div class="SubTitle">Contributing and Development</div>
+        <div class="options">
+            <ul>
+                <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram Group</a></li>
+                <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord Development Server</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="contactSocials">
+        <div class="description">Not Interested in Development and just want to hang out with us?</div>
+        <div class="SubTitle">Social Media</div>
+        <div class="options">
+            <ul>
+                <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;X&nbsp;(Formerly Twitter)</a></li>
+                <li><a href="https://reddit.com/r/DraugerOS"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+                <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram Group</a></li>
+            </ul>
+        </div>
+    </div>
 </div>
-
 {% endblock %}
