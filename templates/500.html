@@ -1,24 +1,9 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        500 Internal Server Error
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-  <h2 class="subtitle">
-    We've experienced an internal server error and cannot complete your request.
-  </h2>
-  <button id="contributor_joke" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1';" style="width:100%;height:5vh;background-color:#151414;margin: 10px 0px 0px 0px;"></button>
-  </br>
+<div class="contentContainer">
+  <div class="error500Title">Error 500: Internal Server Error</div>
+  <div class="error500img"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"></a><img src="../assets/images/" alt=""></div>
+  <div class="error500Message">We've experienced an internal server error and cannot complete your request.</div>
 </div>
-
 {% endblock %}

@@ -16,7 +16,10 @@
  along with this program; if not, write to the Free Software
  Foundation, Inc., 51 Franklin Street, Fifth Floor, Boston,
  MA 02110-1301, USA. */
-
+* {
+    margin: 0;
+    padding: 0;
+}
 :root {
   --nav-font-size: 1vw;
   --nav-summary-tittle-size: 1.5vw;
@@ -67,41 +70,34 @@ body :not(iframe) {
     font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
 }
 
-body, footer {
+body {
     opacity: 1 !important;
     transition: none !important;
     background-color: #101112;
     border-color: #101112 !important;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
 }
 
 summary {
 	font-size: var(--nav-summary-tittle-size);
 }
-
-footer {
-	bottom: 0px;
-	left: 0px;
-	right: 0px;
-	padding: 0px 3px;
+.footer {
+    text-align: center;
+    opacity: 1 !important;
+    background: rgb(59, 59, 59);
+    filter: drop-shadow(0 0 0.25em white); 
+    bottom: 0;
+    padding: 1em 0;
+    margin-top: auto;
 }
-
 .title {
     color:#FFFFFF;
     font-size:2rem;
     font-weight:600;
     line-height:1.125;
 }
-
-.page-title {
-    z-index: 1;
-    color:#FFFFFF;
-    font-size:2rem;
-    font-weight:600;
-    line-height:1.125;
-    position: relative;
-    background-color: rgba(0, 0, 0, 0);
-}
-
 .subtitle {
     color:#FFFFFF;
     font-size:1.25rem;
@@ -115,55 +111,279 @@ h1, h2, h3, h4, p {
 }
 
 .centered-container {
+    z-index: 100;
     background-color: #101112;
-	max-width: var(--container-width);
-	margin: 10vh auto 25vh;
-	padding: 15px 10px;
-	border-radius: 6px;
+    width: 90%; /* - Sets the width to 90% the screen width - */
+    margin: 0 5%; /* - Keeps it Centered - */
 	box-shadow: 0 0 400px #990000;
+    border-radius: 10px;
 }
 
 .warning {
-    color: #FF3939;
+    color: rgb(209, 108, 128);
+    filter: drop-shadow(0 0 0.25em rgb(190, 121, 133));
+    font-size: 1.25rem;
+    width: 70%;
+    margin-left: 15%;
+    margin-bottom: 1em;
 }
-
+.warning span {
+    color: white;
+    filter: drop-shadow(0 0 0);
+}
+.warning-message {
+    color: rgb(194, 62, 88);
+    position: relative;
+    width: 75%;
+    margin-left: 12.5%;
+}
+.warning-message i {
+    color: orange;
+    opacity: 0.5;
+    position: absolute;
+    transform: translate(-12px, -12px);
+}
+.warning-message:hover i {
+    opacity: 1;
+}
+.explanation {
+    margin: 1em 0;
+}
 .bolded {
     color: inherit;
     font-weight: bolder;
 }
-
 .column {
      width:400px;
      float:left
 }
-
-/* unvisited link */
+/* Links [I liked this, it's smart] */
 a:link {
     color: white;
 }
-
-/* visited link */
 a:visited {
     color: grey;
 }
-
-/* mouse over link */
 a:hover {
     color: #FF3939;
 }
-
-/* Add a black background color to the top navigation */
-.topnav {
-	background-color: #101112;
-	overflow: hidden;
-	font-family: Open Sans, Ubuntu, Helvetica, Arial, sans-serif;
-	max-width: var(--nav-width);
-	margin: 0 auto;
-	padding: 1px 5px;
-	border-radius: 0px 0px 6px 6px;
-	font-size: var(--nav-font-size);
+/* End Links*/
+/* Desktop Top Nav */
+#topnav {
+    z-index: 9999;
+    display: block;
+    text-align: center;
+    background-color: #101112;
+    filter: drop-shadow(0 0 0.25em crimson);
+    position: sticky;
+    top: 0;
+}
+#topnav ul {
+    list-style: none;
+    font-size: 0;
+}
+#topnav ul li {
+    font-size: 1rem;
+    display: inline-flex;
+}
+#topnav ul li a {
+    font-weight: bold;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+}
+#topnav ul li a:hover {
+    background-color: red;
+}
+#topnav ul li button {
+    font-weight: bold;
+    padding: 1em;
+    font-size: 1rem;
+    background: none;
+    border: none;
+    color: white;
+}
+#topnav ul li button:hover {
+    background-color: red;
+    cursor: pointer;
+}
+.nav-dropshadow {
+    background-color: red ;
+    width: 100%;
+    height: 4px;
+}
+#desktopAbout,
+#desktopContributing,
+#desktopCommunity {
+    position: absolute;
+    z-index: 2000;
+    width: 100%;
+    top: -50em;
+    text-align: center;
+    transition: 0.35s;
+}
+#desktopAbout ul, 
+#desktopContributing ul,
+#desktopCommunity ul {
+    list-style: none;
+    /* display: none; */
+}
+#desktopAbout ul li,
+#desktopContributing ul li,
+#desktopCommunity ul li {
+    display: inline-flex;
+    width: 100%;
+    background-color: #101112;
+}
+#desktopAbout ul li a,
+#desktopContributing ul li a,
+#desktopCommunity ul li a {
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    padding: 1em;
+    border-top: 1px solid red;
+    border-bottom: 1px solid red;
+}
+#desktopAbout ul li a:hover,
+#desktopContributing ul li a:hover,
+#desktopCommunity ul li a:hover {
+    background-color: crimson;
+}
+/* End Desktop Top Nav */
+/* Start Mobile Nav */
+#mobile-nav {
+    z-index: 1000;
+    display: none;
+    width: 100%;
+    position: sticky;
+    top: 0;
+    background-color: #101112;
+    filter: drop-shadow(0 0 0.25em gray);
+}
+#mobile-nav button {
+    border: none;
+    background: none;
+    font-size: 2rem;
+    color: white;
+    padding-top: 0.5em;
+    padding-bottom: 0.5rem;
+    padding-left: 1rem;
+    transition: 0.35s;
+    float: left;
+}
+#mobile-nav button:hover {
+    color: crimson;
+    cursor: pointer;
+    transition: 0.35s;
+}
+#mobile-nav .siteName {
+    font-family: 'Ubuntu';
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    text-align: center;
+    padding: 0.4em 0;
+    width: 90%;
+}
+#mobileSacrafice {
+    z-index: 900;
+    width: 100%;
+    position: sticky;
+    top: 4.18em;
+}
+#mobile-options {
+    background-color: rgb(65, 62, 62);
+    width: 15em;
+    position: absolute;
+    left: -20em;
+    top: 0;
+    z-index: 9990;
+    transition: 0.35s;
+}
+#mobile-options ul {
+    list-style: none;
+}
+#mobile-options ul li {
+    display: flex;
+}
+#mobile-options ul li a {
+    font-weight: bold;
+    width: 100%;
+    color: white;
+    text-decoration: none;
+    padding: 1.5em;
+    border-bottom: 2px solid red;
+    transition: 0.35s;
+}
+#mobile-options ul li a:hover {
+    background-color: crimson;
+    transition: 0.35s;
 }
 
+#mobileAbout {
+    font-weight: bold;
+    z-index: 800;
+    background-color: rgb(65, 62, 62);
+    position: absolute;
+    left: -20em;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    border-left: 2px solid red;
+    top: 21.05em;
+    transition: 0.35s;
+}
+#mobileContributing {
+    font-weight: bold;
+    z-index: 800;
+    background-color: rgb(65, 62, 62);
+    position: absolute;
+    left: -20em;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    border-left: 2px solid red;
+    top: 25.3em;
+    transition: 0.35s;
+}
+#mobileCommunity {
+    font-weight: bold;
+    z-index: 800;
+    background-color: rgb(65, 62, 62);
+    position: absolute;
+    left: -20em;
+    border-top: 2px solid red;
+    border-right: 2px solid red;
+    border-left: 2px solid red;
+    top: 29.55em;
+    transition: 0.35s;
+}
+#mobileAbout ul,
+#mobileContributing ul,
+#mobileCommunity ul {
+    list-style: none;
+}
+#mobileAbout ul li,
+#mobileContributing ul li,
+#mobileCommunity ul li {
+    display: flex;
+}
+#mobileAbout ul li a,
+#mobileContributing ul li a,
+#mobileCommunity ul li a {
+    color: white;
+    width: 100%;
+    text-align: left;
+    padding: 1.5em 1em;
+    border-bottom: 2px solid red;
+    text-decoration: none;
+}
+#mobileAbout ul li a:hover,
+#mobileContributing ul li a:hover,
+#mobileCommunity ul li a:hover {
+    background-color: crimson;
+}
+
+/* End Mobile Nav */
 summary {
 	padding: 2px 8px;
 	border-radius: 6px;
@@ -176,22 +396,6 @@ summary:hover{
 
 details[open] summary{
 	background-color: #555555;
-}
-
-/* Style the links inside the navigation bar */
-.topnav a {
-	float: left;
-	color: #f2f2f2;
-	background-color: #101112;
-	text-align: center;
-	padding: 14px 16px;
-	text-decoration: none;
-}
-
-/* Change the color of links on hover */
-.topnav a:hover {
-  background-color: #dddddd;
-  color: black;
 }
 
 .image-menu {
@@ -333,7 +537,7 @@ table{
   color: white !important;
   min-width: 160px;
   box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-  z-index: 2;
+  z-index: 200;
 }
 
 /* Links inside the dropdown */
@@ -826,4 +1030,442 @@ textarea {
 
 .button:hover {
     background-color: #505050;
+}
+
+/* Start Index CSS */
+.banner {
+    border-radius: 7.5px 7.5px 0 0;
+    background-image: url("../images/banner.webp");
+    background-position: center;
+    background-size: 100%;
+    text-align: center;
+    color: white;
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 3em 0;
+}
+.desktopPreview {
+    color: white;
+    padding: 1em;
+    text-align: center;
+}
+.desktopPreview p {
+    margin-bottom: 0.5em;
+}
+.desktopPreview img {
+    width: 50em;
+    border: 2px solid crimson;
+    filter: drop-shadow(0 0 0.25em black);
+    margin-bottom: 1em;
+    transition: 0.35s;
+}
+.desktopPreview img:hover {
+    filter: drop-shadow(0 0 0.25em red);
+    cursor: pointer;
+}
+.desktopPreview img:active {
+    width: 80%;
+    transition: 0.35s;
+}
+.desktopPreview button {
+    font-weight: bold;
+    padding: 1em 2em;
+    background-color: rgb(165, 14, 14);
+    color: white;
+    border: 2px solid black;
+    border-radius: 2.5px;
+    filter: drop-shadow(0 0 0.25em black);
+    margin-bottom: 1em;
+    transition: 0.35s;
+}
+.desktopPreview button:hover {
+    color: white;
+    background-color: crimson;
+    cursor: pointer;
+    transition: 0.35s;
+}
+.desktopPreview button:active {
+transform: translateY(0.5em);
+}
+.aboutDraugerOS {
+    color: white;
+    text-align: center;
+    width: 80%;
+    margin-bottom: 2em;
+}
+.aboutDraugerOS h1 {
+    margin-bottom: 0.5em;
+}
+.osName {
+    font-family: 'Ubuntu';
+    color: crimson;
+}
+.rightForYou {
+    color: white;
+    width: 80%;
+    margin: 0 10%;
+    text-align: center;
+}
+.rightForYou h1 {
+    margin-bottom: 0.5em;
+}
+.goals {
+    color: white;
+    text-align: center;
+    margin-top: 1em;
+    width: 80%;
+    padding-bottom: 2em;
+}
+.goals h1 {
+    margin-bottom: 0.5em;
+}
+/* End Index CSS */
+
+@media only screen and (max-width: 750px) {
+    #mobile-nav {
+        display: block;
+}
+    #topnav {
+        display: none;
+    }
+    .desktopPreview img {
+        width: 100%;
+    }
+    .banner .tagline {
+        height: 1em;
+        font-size: 1.5rem;
+    }
+    .contentContainer img {
+        width: 80%;
+        transition: 0.35s;
+    }
+    .contentContainer .downloadImage {
+        width: 300px;
+        transition: 0.35s;
+    }
+    .desktopPreview img:hover {
+        filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
+        cursor: default;
+    }
+    .desktopPreview img:active {
+        width: 100%;
+        transition: 0.35s;
+    }
+}
+@media only screen and (min-width: 752px) {
+    #mobile-nav {
+        display: none;
+    }
+    #mobile-options {
+        display: none;
+    }
+}
+/* New Container to use that matches styles on all pages */
+.contentContainer {
+    text-align: center;
+    width: 90%;
+    margin-left: 5%;
+    /* margin: 1em 0 2em 0; */
+    margin-top: 1em;
+}
+.spacer {
+    width: 100%;
+    height: 1em;
+    background: none;
+    color: none;
+}
+.CTA_Download {
+    font-size: 2rem;
+    font-weight: bold;
+    padding-top: 2rem;
+}
+.choice {
+    padding: 1em;
+}
+.contentContainer img:hover {
+    filter: drop-shadow(0 0 0.25em white);
+}
+.contentContainer img {
+    padding-bottom: 1em;
+    width: 25%;
+    transition: 0.35s;
+}
+.torrent {
+    margin-bottom: 2em;
+}
+.DownloadsMoreInfo {
+    padding-bottom: 1em;
+}
+.check5ums {
+    padding-bottom: 2rem;
+}
+.ContactPageTitle {
+    padding: 1em;
+    font-size: 2rem;
+    color: crimson;
+    font-weight: bold;
+}
+.SubTitle {
+    font-size: 2rem;
+    margin-top: 1em;
+}
+.options {
+    margin: 0.5em;
+    font-size: 1.25rem;
+}
+.options ul {
+    list-style: none;
+}
+.options ul li {
+    display: inline-flex;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    align-content: center;
+}
+.options ul li a {
+    padding: 1em;
+    position: relative;
+    text-decoration: none;
+}
+.options ul li a i {
+    color: rgba(0, 0, 0, 0.25%);
+    position: absolute;
+    top: 0;
+    width: 40%;
+    margin-left: 20%;
+}
+.options ul li a:hover i {
+    color: crimson;
+}
+.contactSocials {
+    padding-bottom: 1em;
+}
+.AboutTitle {
+    font-weight: bold;
+    font-size: 2rem;
+    padding: 1em 0;
+}
+.aboutSubTitle {
+    text-align: left;
+    font-size: 1.5rem;
+    margin: 1em 0 0.25em 0;
+}
+.aboutDescription {
+    text-align: left;
+}
+.aboutAlert {
+    margin-top: 1em;
+    color: gray;
+    position: relative;
+    padding: 0 1em;
+}
+.aboutAlert .osName {
+    color: rgb(202, 84, 84);
+}
+.aboutAlert i {
+    position: absolute;
+    top: -8px;
+    left: 4px;
+    opacity: 0.5;
+    color: orange;
+}
+.aboutAlert:hover i {
+    opacity: 1;
+}
+.tenets {
+    color: rgb(204, 102, 102);
+    margin-left: 1em;
+}
+.aboutRequirements {
+    text-align: left;
+    padding-bottom: 2rem;
+}
+.contrubutingNeeds {
+    margin: 1em 0 0 0;
+}
+.contributing-options {
+    margin: 0.25rem 0; 
+}
+.requirementsSubTitle {
+    font-weight: bold;
+    color: red;
+    font-size: 1.25rem;
+}
+.requirementTables {
+    margin: 1em auto 2em auto;
+    background-color: rgb(121, 64, 64);
+    border: 2px solid white;
+    filter: drop-shadow(0 0 0.25em crimson);
+}
+.BestResultsAlert {
+    color: gray;
+    padding-bottom: 2em;
+}
+.ContributingTitle {
+    font-size: 2rem;
+    margin: 0 0 0.25rem 0;
+    padding-top: 1em;
+}
+.ContributingSubTitle {
+    font-size: 1.25rem;
+}
+.projects {
+    text-align: left;
+}
+.projects ul {
+    margin: 0.5em 0 0.5em 0;
+    list-style: none;
+}
+.projects ul li {
+    margin: 0.35rem 0 0.35rem 0;
+}
+.artwork {
+    margin: 1em 0;
+}
+.betaOptions {
+    color: rgb(207, 121, 121);
+    font-size: 1.2rem;
+}
+.enableDevRepos {
+    margin: 0.25rem 3em 1em 3em;
+    padding-bottom: 2em;
+}
+.codeText {
+    color: gray;
+}
+.enableDevRepos ol li {
+    margin: 0.5em;
+}
+.githubCTA {
+    font-size: 1.25rem;
+    padding: 1rem 0 2rem 0;
+}
+.Error404Title {
+    font-size: 2rem;
+    color: crimson;
+    padding: 1em 0 2em 0;
+}
+.Error404img img {
+    width: 50%;
+    height: auto;
+}
+.Error404SubTitle {
+    font-size: 1.5rem;
+    padding-bottom: 2em;
+}
+.error500Title {
+    font-size: 2rem;
+    color: crimson;
+    padding: 1em 0 2rem 0;
+}
+.error500Message {
+    font-size: 1.25rem;
+    padding-bottom: 2rem;
+}
+.error418Title { 
+    font-size: 2rem;
+    color: crimson;
+    padding: 1em 0 1em 0;
+}
+.error418img img {
+    width: 75%;
+}
+.error418Message {
+    font-size: 1.25rem;
+    padding-bottom: 2em;
+}
+.thankYouTitle {
+    font-size: 2rem;
+    color: crimson;
+    padding: 1em 0 1em 0;
+}
+.thankYouPassword {
+    padding: 0.5em 0 1em 0;
+}
+.ThankYouPassword {
+    color: gray;
+}
+.thankYouMessage .torrent {
+    padding: 1em;
+}
+.JCTitle {
+    font-size: 1.5rem;
+    color: crimson;
+    margin-bottom: 1em;
+}
+.joinContributors {
+    padding-bottom: 2em;
+}
+.JCDescription {
+    padding-bottom: 1em;
+}
+.JCExpectations { 
+    text-align: left;
+    position: relative;
+    padding-bottom: 0.5em;
+}
+.JCExpectations img {
+    width: 12px;
+    height: 12px;
+    position: absolute;
+    top: 2px;
+    left: -16px;
+}
+.searchBoxTitle {
+    font-size: 1.25rem;
+}
+.wikiHomeTitle {
+    font-size: 2rem;
+    font-weight: bold;
+    padding: 1em 0;
+}
+.wikiSearchBar {
+    width: 100%;
+    padding: 0.25rem 0;
+    padding-left: 0.5em;
+    margin-bottom: 1em;
+    font-size: 1.5rem;
+    border-radius: 5px;
+    border: 1px solid white;
+    background: none;
+}
+.wikiPosts {
+    width: 90%;
+    margin: 0 5%;
+}
+.wikiSearchBar::placeholder {
+    font-size: 1.25rem;
+}
+.TSM, .FBT {
+    font-weight: bold;
+    font-size: 1.5rem;
+    margin: 0.5em 0;
+}
+.wikiContent {
+    width: 80%;
+    margin: 2em 10%;
+}
+.tags {
+    border: 1px solid white;
+    padding: 1em;
+    border-radius: 5px;
+}
+.wikiSearchButton {
+    margin-top: 1em;
+    width: 100%;
+}
+.wikiSearchButton button {
+    padding: 1em 2em;
+    border-radius: 5px;
+    background-color: #151515;
+    border: 1px solid white;
+    cursor: pointer;
+}
+.wikiSearchButton button:hover {
+    color: white;
+    background-color: red;
+}
+.wikiSearchButton button:active {
+    transform: translateY(4px);
 }

@@ -1,27 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        System Requirements
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-    <center>
-        <h2>
-            Minimum Hardware Requirements
-        </h2>
-        <h2 class="subtitle">
-            Hardware under these requirements may still run, but the experience will be so poor that we STRONGLY recommend against it, and in some cases, may have placed limiters in our installer in order to prevent installations that will fail based on internal testing.
-        </h2>
-        <table class="table-visible">
+<div class="contentContainer">
+    <div class="AboutTitle">System Requirements</div>
+    <div class="minumum">
+        <div class="requirementsSubTitle">Minimum Hardware Requirements</div>
+        <div class="aboutAlert">Hardware under these requirements may still run, but the experience will be so poor that we STRONGLY recommend against it, and in some cases, may have placed limiters in our installer in order to prevent installations that will fail based on internal testing.</div>
+    </div>
+        <table class="requirementTables">
             <tr class="tr">
                 <th class="th">
                     CPU
@@ -68,18 +54,15 @@
                 </th>
                 <td class="td">
                     1 Display output (HDMI, DisplayPort, USB-C, VGA, DVI, etc.)
-                    </br>
+                    
                     3 USB 2.0 Ports (1x for bootable USB drive, 1x for keyboard, 1x for mouse)
                 </td>
             </tr>
-        </table class="table-visible">
-        </br>
-        </br>
-        </br>
-        <h2>
-            Recommended Hardware Requirements
-        </h2>
-        <table>
+        </table>
+        <div class="recommended">
+            <div class="requirementsSubTitle">Recommended Hardware Requirements</div>
+        </div>
+        <table class="requirementTables">
             <tr class="tr">
                 <th class="th">
                     CPU
@@ -126,25 +109,17 @@
                 </th>
                 <td class="td">
                     1 Display output (HDMI, DisplayPort, USB-C, VGA, DVI, etc.)
-                    </br>
+                    
                     2 USB 2.0 Ports (1x for keyboard, 1x for mouse)
-                    </br>
+                    
                     1 USB 3.0 Port (1x for bootable USB drive)
                 </td>
             </tr>
         </table>
-        </br>
-        </br>
-        </br>
-        <h2>
-            Best Possible Results
-        </h2>
-        </br>
-        <h2 class="subtitle">
-            In our testing, anything past these specs sees diminishing returns with our installer. Performance per game depends on that particular game.
-        </h2>
-        </br>
-        <table class="table-visible">
+        <div class="BestResults">
+            <div class="requirementsSubTitle">Best Possible Results</div>
+        </div>
+        <table class="requirementTables">
             <tr class="tr">
                 <th class="th">
                     CPU
@@ -191,14 +166,15 @@
                 </th>
                 <td class="td">
                     1 Display output (HDMI, DisplayPort, USB-C, VGA, DVI, etc.)
-                    </br>
+                    
                     2 USB 2.0 Ports (1x for keyboard, 1x for mouse)
-                    </br>
+                    
                     1 Thunderbolt 4 Port (1x for bootable USB drive)
                 </td>
             </tr>
         </table>
-    </center>
+        <div class="BestResultsAlert">In our testing, anything past these specs sees diminishing returns with our installer.
+            <br>Performance per game depends on that particular game.</div>
+    </div>
 </div>
-
 {% endblock %}

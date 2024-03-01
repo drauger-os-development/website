@@ -42,70 +42,294 @@
     <meta property="og:description" content="{{ master_desc }}"/>
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Used for Icons -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'> <!-- This links to an externally hosted form of the font that allows the user to see the font regardless of if they have it installed or not-->
 </head>
-
 <body>
-    <section>
-        <div class="topnav">
-            <a href="{{ url_for('main') }}">Home</a>
-            <a href="{{ url_for('download') }}">Download</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-            <a href="{{ url_for('wiki_homepage') }}">Wiki</a>
-            <div class="dropdown">
-                <button class="dropbtn">About</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('about') }}">About Drauger OS</a>
-                    <a href="{{ url_for('sys_reqs') }}">System Requirements</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Contributing</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
-                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-                    <a href="{{ url_for('contributors') }}">Contributors</a>
-                    <a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a>
-                    <a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on Distrowatch</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Community</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-                    <a href="https://t.me/draugeros">Telegram</a>
-                    <a href="https://discord.gg/JW8FGrc">Discord</a>
-                    <a href="https://www.reddit.com/r/DraugerOS/">Reddit</a>
-                    <a href="https://twitter.com/DraugerOS">Twitter</a>
-                    <a rel="me" href="https://fosstodon.org/@DraugerOS">Mastodon</a>
-                </div>
-            </div>
+    <div id="topnav">
+        <ul>
+            <li><a href="{{ url_for('main') }}">Home</a></li>
+            <li><a href="{{ url_for('download') }}">Download</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wiki_homepage') }}">Wiki</a></li>
+            <li><a href="#" class="dropbtn" onclick="AboutSubMenu(); onlyDesktopAbout()">About</a></li>
+            <li><a href="#" class="dropbtn" onclick="ContributingSubMenu(); onlyDesktopContrib()">Contributing</a></li>
+            <li><a href="#" class="dropbtn" onclick="CommunitySubMenu(); onlyDesktopCommunity()">Community</a></li>
+        </ul>
+        <div class="nav-dropshadow"></div>
+    </div>
+    <div id="desktopAbout">
+        <ul>
+            <li><a href="{{ url_for('about') }}">About Drauger OS</a></li>
+            <li><a href="{{ url_for('sys_reqs') }}">System Requirements</a></li>
+        </ul>
+    </div>
+    <div id="desktopContributing">
+        <ul>
+            <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
+            <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
+            <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a></li>
+            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on DistroWatch</a></li>
+        </ul>
+    </div>
+    <div id="desktopCommunity"> 
+        <ul>
+            <li><a href="/community%20guidelines" target="_black">Community Guidelines</a></li>
+            <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+        </ul>
+    </div>
+        <!-- Mobile Navigation Below -->
+    <div id="mobile-nav"> 
+        <div class="mobile-menu"><button onclick="mobileSettings()"><i class="fa-solid fa-bars"></i></button></div>
+        <div class="siteName">drauger os</div>
+        <div class="nav-dropshadow"></div>
+    </div>
+    <div id="mobileSacrafice">
+        <div id="mobile-options">
+            <ul>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('download') }}">Download</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('wiki_homepage') }}">Wiki</a></li>
+                <li><a href="#About" onclick="MobileAboutSubMenu(); onlyAbout()">About</a></li>
+                <li><a href="#Contributing" onclick="MobileContributingSubMenu(); onlyContrib()">Contributing</a></li>
+                <li><a href="#Community" onclick="MobileCommunitySubMenu(); onlyCommunity()">Community</a></li>
+            </ul>
         </div>
-        <div class="centered-container">
-            <div class="container has-text-centered">
-            </br>
-            </br>
-            </br>
-            </br>
-            </br>
-               {% block content %}
-               {% endblock %}
-            </div>
-        </div>
-    </section>
+    </div>
+    <div id="mobileAbout" class="toggle-left-div">
+        <ul>
+            <li><a href="{{ url_for('about') }}">About Drauger OS</a></li>
+            <li><a href="{{ url_for('sys_reqs') }}">System Requirements</a></li>
+        </ul>
+    </div>
+    <div id="mobileContributing" class="toggle-left-div">
+        <ul>
+            <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
+            <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
+            <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a></li>
+            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on DistroWatch</a></li>
+        </ul>
+    </div>
+    <div id="mobileCommunity" class="toggle-left-div"> 
+        <ul>
+            <li><a href="/community%20guidelines">Community Guidelines</a></li>
+            <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+        </ul>
+    </div>
+    <div class="contentContainer"></div>
+    <div class="centered-container">
+           {% block content %}
+           {% endblock %}
+    </div>
+<div class="spacer"></div>
+<div class="footer">
+        <div class="copyright">&copy; Copyright | Drauger OS and Thomas Castleman | All Rights Reserved</div>
+        <p>
+            <a href="{{ url_for('privacy') }}" target="_blank">Privacy Policy</a>
+            <a href="{{ url_for('tos') }}" target="_blank">Terms of Service</a>
+            <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
+        </p>
+</div>
+        <script>
+            function mobileSettings() {
+             var menuBox = document.getElementById('mobile-options');
+             if (menuBox.style.left == "0em") {
+                 menuBox.style.left = "-20em";
+              } else {
+                  menuBox.style.left = "0em";
+              }
+            }
+             function AboutSubMenu() {
+              var menuBox = document.getElementById('desktopAbout');
+              if (menuBox.style.top == "3.5em") {
+                  menuBox.style.top = "-7em";
+               } else {
+                   menuBox.style.top = "3.5em";
+               }
+             }
+             function ContributingSubMenu() {
+                 var menuBox = document.getElementById('desktopContributing');
+                 if (menuBox.style.top == "3.5em") {
+                     menuBox.style.top = "-20em";
+                 } else {
+                     menuBox.style.top = "3.5em";
+                 }
+             }
+             function CommunitySubMenu() {
+                 var menuBox = document.getElementById('desktopCommunity');
+                 if (menuBox.style.top == "3.5em") {
+                     menuBox.style.top = "-20em";
+                 } else {
+                     menuBox.style.top = "3.5em";
+                 }
+             }
+            function MobileAboutSubMenu() {
+                var menuBox = document.getElementById('mobileAbout');
+                if (menuBox.style.left == "15em") {
+                    menuBox.style.left = "-20em";
+                } else {
+                    menuBox.style.left = "15em";
+                }
+            }
+            function MobileContributingSubMenu() {
+                var menuBox = document.getElementById('mobileContributing');
+                if (menuBox.style.left == "15em") {
+                    menuBox.style.left = "-20em";
+                } else {
+                    menuBox.style.left = "15em";
+                }
+            }
+            function MobileCommunitySubMenu() {
+                var menuBox = document.getElementById('mobileCommunity');
+                if (menuBox.style.left == "15em") {
+                    menuBox.style.left = "-20em";
+                } else {
+                    menuBox.style.left = "15em";
+                }
+            }
+    // Below is the script to automatically hide open elements when scrolled away from the top of the screen (Mobile Nav)
+            function changeLeftValue(ids) {
+                ids.forEach(id => {
+                    const element = document.getElementById(id);
+                if (element) {
+                    element.style.left = "-20em";
+                } else {
+                    console.error("Element with ID", id, "not found.");
+                }
+                });
+            }
+             function hideMobileElements() {
+                const elementIDs = ["mobile-options", "mobileAbout","mobileContributing", "mobileCommunity"];
+                changeLeftValue(elementIDs);
+             }
+             window.addEventListener("scroll", hideMobileElements);
+    // Below is the script to automatically hide open elements when scrolled away from the top of the screen (Desktop Nav)
+            function changeTopValue(ids) {
+                ids.forEach(id => {
+                    const element = document.getElementById(id);
+                if (element) {
+                    element.style.top = "-20em";
+                } else {
+                    console.error("Element with ID", id, "not found.");
+                }
+                });
+            }
+             function hideDesktopElements() {
+                const elementIDs = ["desktopAbout", "desktopContributing", "desktopCommunity"];
+                changeTopValue(elementIDs);
+             }
+            window.addEventListener("scroll", hideDesktopElements);
+    // Below is the script to automatically hide open elements when clicked off of (Desktop) 
+            function handleClickOutsideDesktopNav(event) {
+                const navbar = document.getElementById('topnav');
+                if (!navbar.contains(event.target)) {
+                    const elementIDs = ["desktopAbout", "desktopContributing", "desktopCommunity"];
+                    changeTopValue(elementIDs);
+                }
+            }
+            document.addEventListener('click', handleClickOutsideDesktopNav);
+    // Below is the script to automatically hide open elements when clicked off of (Mobile SubMenus)
+            function handleClickOutsideMobileNav(event) {
+                const mobileNav = document.getElementById('mobile-options');
+                if (!mobileNav.contains(event.target)) {
+                    const elementIDs = ["mobileAbout", "mobileContributing", "mobileCommunity"];
+                    changeLeftValue(elementIDs);
+                }
+            }
+            document.addEventListener('click', handleClickOutsideMobileNav);
+    // Below is the script to automatically hide Contrib and Community when About is opened (Mobile)
+            function onlyAbout() {
+                const menuBox = document.getElementById('mobileAbout')
+                const contrib = document.getElementById('mobileContributing')
+                const community = document.getElementById('mobileCommunity');
+                if (menuBox.style.left == '-20em') {
+                    menuBox.style.left = '15em'
+                }
+                if (contrib.style.left == '15em') {
+                    contrib.style.left = '-20em';
+                }
+                if (community.style.left == '15em') {
+                    community.style.left = '-20em';
+                } else {
+                    return
+                }
+            }
+    // Below is the script to automatically hide About and Community when Contrib is opened (Mobile)
+            function onlyContrib() {
+                const contrib = document.getElementById('mobileAbout')
+                const community = document.getElementById('mobileCommunity');
+                if (contrib.style.left == '15em') {
+                    contrib.style.left = '-20em';
+                }
+                if (community.style.left == '15em') {
+                    community.style.left = '-20em';
+                } else {
+                    return
+                }
+            }
+    // Below is the script to automatically hide Contrib and About when Community is opened (Mobile)
+            function onlyCommunity() {
+                const contrib = document.getElementById('mobileAbout')
+                const community = document.getElementById('mobileContributing');
+                if (contrib.style.left == '15em') {
+                    contrib.style.left = '-20em';
+                }
+                if (community.style.left == '15em') {
+                    community.style.left = '-20em';
+                } else {
+                    return
+                }
+            }
+    // Below is the script to automatically hide Contrib and About when About is opened (Desktop)
+            function onlyDesktopAbout() {
+                        const contrib = document.getElementById('desktopContributing')
+                        const community = document.getElementById('desktopCommunity');
+                        if (contrib.style.top == '3.5em') {
+                            contrib.style.top = '-20em';
+                        }
+                        if (community.style.top == '3.5em') {
+                            community.style.top = '-20em';
+                        } else {
+                            return
+                        }
+                    }
+    // Below is the script to automatically hide Contrib and About when Contrib is opened (Desktop)
+    function onlyDesktopContrib() {
+                        const about = document.getElementById('desktopAbout')
+                        const community = document.getElementById('desktopCommunity');
+                        if (about.style.top == '3.5em') {
+                            about.style.top = '-7em';
+                        }
+                        if (community.style.top == '3.5em') {
+                            community.style.top = '-20em';
+                        } else {
+                            return
+                        }
+                    }
+    // Below is the script to automatically hide Contrib and About when Community is opened (Desktop)
+    function onlyDesktopCommunity() {
+                        const about = document.getElementById('desktopAbout')
+                        const contrib = document.getElementById('desktopContributing');
+                        if (about.style.top == '3.5em') {
+                            about.style.top = '-7em';
+                        }
+                        if (contrib.style.top == '3.5em') {
+                            contrib.style.top = '-20em';
+                        } else {
+                            return
+                        }
+                    }
+    </script>
 </body>
-<footer style="text-align:center;">
-    </br>
-    <h4>
-        Drauger OS logos, branding, and website content are property of Drauger OS Development and Thomas Castleman.
-    </h4>
-    </br>
-    <p>
-        <a href="{{ url_for('privacy') }}" target="_blank">Privacy Policy</a>
-        </br>
-        <a href="{{ url_for('tos') }}" target="_blank">Terms of Service</a>
-        </br>
-        <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-    </p>
-	</br>
-</footer>
 </html>

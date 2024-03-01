@@ -1,31 +1,13 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        Our Contributors
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-    <center>
-        <h2>
-            We have a lot of amazing contributors. But the people on this page have gone above
-            </br>
-            and beyond to improve Drauger OS and foster the community around it.
-        </h2>
-        </br>
-        Contributors on this page have met the following requirements:
-        </br>
-        - Been active and maintained a good standing in the community for at least 6 months
-        </br>
-        - Provided at least 10 contributions (pull requests, solving novel/new bugs, monetary donations, documentation)
-        </br></br></br>
+<div class="contentContainer">
+    <div class="ContactPageTitle">Our Contributors</div>
+    <div class="contribDescription">
+        The people on this page have gone Above and Beyond all <a href="#joinContributors">expectations</a> to help improve <span class="osName">Drauger OS</span> and foster the community around it.
+    </div>
+</div>
+            
         <table>
             <!-- Each row of the table should be formatted like below -->
             <tr class="tr-hidden">
@@ -166,7 +148,17 @@
                 </td>
             </tr>
         </table>
-    </center>
+    <div class="contentContainer">
+    <section id="joinContributors">
+    <div class="joinContributors">
+        <div class="JCTitle">Interested in Joining the People on this page?</div>
+        <div class="JCDescription">Everyone on this page has done one of the following:</div>
+        <div class="JCExpectations"><img src="../assets/images/favicon.png" alt="The Drauger OS Favicon/Icon">Be active and maintain a good standing in the community for at least 6 months.</div>
+        <div class="JCExpectations"><img src="../assets/images/favicon.png" alt="The Drauger OS Favicon/Icon">Provided at least 10 contributions (pull requests, bugs fixes, donations, documentation, etc)</div>
+    </div>
+    </div>
+    </section>
+    </div>
 </div>
 
 {% endblock %}
