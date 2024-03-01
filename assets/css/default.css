@@ -1347,7 +1347,8 @@ transform: translateY(0.5em);
     padding: 1em 0 2em 0;
 }
 .Error404img img {
-    width: 80%;
+    width: 50%;
+    height: auto;
 }
 .Error404SubTitle {
     font-size: 1.5rem;
