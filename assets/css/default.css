@@ -139,10 +139,9 @@ h1, h2, h3, h4, p {
 }
 .warning-message i {
     color: orange;
-    top: -10px;
-    left: -4px;
     opacity: 0.5;
     position: absolute;
+    transform: translate(-12px, -12px);
 }
 .warning-message:hover i {
     opacity: 1;
