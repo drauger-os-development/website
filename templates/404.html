@@ -3,8 +3,17 @@
 {% block content %}
 <div class="contentContainer">
   <div class="Error404Title">Error 404: Page Not Found</div>
-  <div class="Error404img"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"><img src="../assets/images/illegal.webp" alt="A Halo Meme" /></a></div>
+  <div class="Error404img"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"><img src="images/spacer.gif" width="305" height="312" id="myPicture" alt="some image"></a></div>
   <div class="Error404SubTitle">Uh oh! That page doesn't exist</div>
 </div>
+<script>
+  window.onload = choosePic;
 
+var myPix = new Array("assets/images/FilthyFrank.png","assets/images/Guess_Ill_Die.png");
+
+function choosePic() {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     document.getElementById("myPicture").src = myPix[randomNum];
+  }
+     </script>
 {% endblock %}
