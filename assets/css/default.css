@@ -1196,6 +1196,9 @@ transform: translateY(0.5em);
 .DownloadsMoreInfo {
     padding-bottom: 1em;
 }
+.check5ums {
+    padding-bottom: 2rem;
+}
 .ContactPageTitle {
     padding: 1em;
     font-size: 2rem;
