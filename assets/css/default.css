@@ -1140,7 +1140,7 @@ transform: translateY(0.5em);
         transition: 0.35s;
     }
     .contentContainer .downloadImage {
-        width: 300px;
+        width: 90%;
         transition: 0.35s;
     }
     .desktopPreview img:hover {
