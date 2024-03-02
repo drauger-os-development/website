@@ -10,7 +10,7 @@
 		<p>Interested in trying out Drauger OS?</p>
 		<div class="downloadButton"><button onclick="window.location.href = 'https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso'" class="download">Download&nbsp;<i class="fa-solid fa-download"></i></button>&nbsp;<button class="torrent" onclick="window.location.href = 'https://draugeros.org/assets/torrents/Drauger_OS-7.6-AMD64.iso.torrent'">Torrent&nbsp;<i class="fa-solid fa-file-arrow-down"></i></button></div>
 		<p>Download Info: 3.8GB | Ver. 7.6</p>
-		<p>For more info <a href="#Download">Click Here</a>.</p>
+		<p>For more info <a href="{{ url_for('download') }}">Click Here</a>.</p>
 	</div>
 	<div class="aboutDraugerOS">
 		<h1>What is <span class="osName">drauger os?</span></h1>
@@ -40,9 +40,9 @@
 			any sufficiantly advanced user can easily use Drauger OS to do
 			anything from streaming, video editing, and audio production
 			to everyday usage. However, you may encounter issues in the process due to the gaming-related optimizations.
-			<br><br>If so, feel free to hop into our <a href="#Discord">Discord Server</a> or <a href="#Telegram">Telegram Group</a> to get assistance. 
+			<br><br>If so, feel free to hop into our <a href="https://discord.gg/JW8FGrc" target="_blank">Discord Server</a> or <a href="https://t.me/draugeros" target="_blank">Telegram Group</a> to get assistance. 
 			<br>More ways to contact us for support can be
-			found on our <a href="#Contact">Contact page</a>.</p>
+			found on our <a href="{{ url_for('contact') }}" target="_blank">Contact page</a>.</p>
 	</div>
 </center>
 {% endblock %}
