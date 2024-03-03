@@ -294,9 +294,9 @@ a:hover {
 }
 #mobile-options {
     background-color: rgb(65, 62, 62);
-    width: 15em;
+    width: 100%;
     position: absolute;
-    left: -20em;
+    left: -30em;
     top: 0;
     z-index: 9990;
     transition: 0.35s;
@@ -326,11 +326,11 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -20em;
+    left: -30em;
+    width: 100%;
     border-top: 2px solid red;
-    border-right: 2px solid red;
-    border-left: 2px solid red;
-    top: 21.05em;
+    border-bottom: 2px solid red;
+    top: 4em;
     transition: 0.35s;
 }
 #mobileContributing {
@@ -338,11 +338,10 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -20em;
+    left: -30em;
+    width: 100%;
     border-top: 2px solid red;
-    border-right: 2px solid red;
-    border-left: 2px solid red;
-    top: 25.3em;
+    border-bottom: 2px solid red;
     transition: 0.35s;
 }
 #mobileCommunity {
@@ -350,11 +349,10 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -20em;
+    left: -30em;
+    width: 100%;
     border-top: 2px solid red;
-    border-right: 2px solid red;
-    border-left: 2px solid red;
-    top: 29.55em;
+    border-bottom: 2px solid red;
     transition: 0.35s;
 }
 #mobileAbout ul,
@@ -1151,12 +1149,30 @@ transform: translateY(0.5em);
         width: 100%;
         transition: 0.35s;
     }
+    #mobileAbout {
+        display: block;
+    }
+    #mobileContributing {
+        display: block;
+    }
+    #mobileCommunity {
+        display: block;
+    }
 }
 @media only screen and (min-width: 752px) {
     #mobile-nav {
         display: none;
     }
     #mobile-options {
+        display: none;
+    }
+    #mobileAbout {
+        display: none;
+    }
+    #mobileContributing {
+        display: none;
+    }
+    #mobileCommunity {
         display: none;
     }
 }
