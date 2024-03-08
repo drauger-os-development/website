@@ -296,7 +296,7 @@ a:hover {
     background-color: rgb(65, 62, 62);
     width: 100%;
     position: absolute;
-    left: -30em;
+    left: -50em;
     top: 0;
     z-index: 9990;
     transition: 0.35s;
@@ -326,7 +326,7 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -30em;
+    left: -50em;
     width: 100%;
     border-top: 2px solid red;
     border-bottom: 2px solid red;
@@ -338,7 +338,7 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -30em;
+    left: -50em;
     width: 100%;
     border-top: 2px solid red;
     border-bottom: 2px solid red;
@@ -349,7 +349,7 @@ a:hover {
     z-index: 800;
     background-color: rgb(65, 62, 62);
     position: absolute;
-    left: -30em;
+    left: -50em;
     width: 100%;
     border-top: 2px solid red;
     border-bottom: 2px solid red;
@@ -1051,7 +1051,7 @@ textarea {
     margin-bottom: 0.5em;
 }
 .desktopPreview img {
-    width: 50em;
+    width: 60%;
     border: 2px solid crimson;
     filter: drop-shadow(0 0 0.25em black);
     margin-bottom: 1em;
@@ -1062,7 +1062,7 @@ textarea {
     cursor: pointer;
 }
 .desktopPreview img:active {
-    width: 80%;
+    width: 95%;
     transition: 0.35s;
 }
 .desktopPreview button {

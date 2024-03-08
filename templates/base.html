@@ -44,6 +44,7 @@
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Used for Icons -->
     <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'> <!-- This links to an externally hosted form of the font that allows the user to see the font regardless of if they have it installed or not-->
+    <script src="../assets/js/default.js"></script>
 </head>
 <body>
     <div id="topnav">
@@ -69,18 +70,18 @@
             <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
             <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
             <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
-            <li><a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">Donate</a></li>
             <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on DistroWatch</a></li>
         </ul>
     </div>
     <div id="desktopCommunity"> 
         <ul>
             <li><a href="/community%20guidelines" target="_black">Community Guidelines</a></li>
-            <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
-            <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
-            <li><a href="https://www.reddit.com/r/DraugerOS/"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
-            <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
-            <li><a href="https://fosstodon.org/@DraugerOS"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+            <li><a href="https://t.me/draugeros" target="_blank"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc" target="_blank"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/" target="_blank"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS" target="_blank"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS" target="_blank"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
         </ul>
     </div>
         <!-- Mobile Navigation Below -->
@@ -113,20 +114,20 @@
         <ul>
             <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
             <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
-            <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
-            <li><a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a></li>
-            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on DistroWatch</a></li>
+            <li><a href="{{ url_for('contributors') }}" target="_blank">Contributors</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">Donate</a></li>
+            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new" target="_blank">Vote for us on DistroWatch</a></li>
             <li><a href="#Back" onclick="backToDefault()"><i class="fa-solid fa-angles-left"></i>&nbsp;Back</a></li>
         </ul>
     </div>
     <div id="mobileCommunity" class="toggle-left-div"> 
         <ul>
-            <li><a href="/community%20guidelines">Community Guidelines</a></li>
-            <li><a href="https://t.me/draugeros"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
-            <li><a href="https://discord.gg/JW8FGrc"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
-            <li><a href="https://www.reddit.com/r/DraugerOS/"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
-            <li><a href="https://twitter.com/DraugerOS"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
-            <li><a href="https://fosstodon.org/@DraugerOS"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+            <li><a href="/community%20guidelines" target="_blank">Community Guidelines</a></li>
+            <li><a href="https://t.me/draugeros" target="_blank"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc" target="_blank"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/" target="_blank"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS" target="_blank"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS" target="_blank"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
             <li><a href="#Back" onclick="backToDefault()"><i class="fa-solid fa-angles-left"></i>&nbsp;Back</a></li>
         </ul>
     </div>
@@ -144,209 +145,6 @@
             <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
         </p>
 </div>
-        <script>
-            function AboutSubMenu() {
-                var menuBox = document.getElementById('desktopAbout');
-                if (menuBox.style.top == "3.5em") {
-                    menuBox.style.top = "-7em";
-                } else {
-                    menuBox.style.top = "3.5em";
-                }
-            }
-            function ContributingSubMenu() {
-                var menuBox = document.getElementById('desktopContributing');
-                if (menuBox.style.top == "3.5em") {
-                    menuBox.style.top = "-20em";
-                } else {
-                    menuBox.style.top = "3.5em";
-                }
-            }
-            function CommunitySubMenu() {
-                var menuBox = document.getElementById('desktopCommunity');
-                if (menuBox.style.top == "3.5em") {
-                    menuBox.style.top = "-20em";
-                } else {
-                    menuBox.style.top = "3.5em";
-                }
-            }
-/* - Mobile Navbar below - */
-            function mobileSettings() {
-             var menuBox = document.getElementById('mobile-options');
-             if (menuBox.style.left == "0em") {
-                 menuBox.style.left = "-30em";
-              } else {
-                  menuBox.style.left = "0em";
-              }
-            }
-            function MobileAboutSubMenu() {
-                var menuBox = document.getElementById('mobileAbout');
-                var mobileOptions = document.getElementById('mobile-options');
-                if (mobileOptions.style.left == '0em') {
-                    mobileOptions.style.left = '-30em';
-                } 
-                if (menuBox.style.left == "0em") {
-                    menuBox.style.left = "-30em";
-                } else {
-                    menuBox.style.left = "0em";
-                }
-            }
-            function MobileContributingSubMenu() {
-                var menuBox = document.getElementById('mobileContributing');
-                var mobileOptions = document.getElementById('mobile-options');
-                if (mobileOptions.style.left == '0em') {
-                    mobileOptions.style.left = '-30em';
-                } 
-                if (menuBox.style.left == "0em") {
-                    menuBox.style.left = "-30em";
-                } else {
-                    menuBox.style.left = "0em";
-                }
-            }
-            function MobileCommunitySubMenu() {
-                var menuBox = document.getElementById('mobileCommunity');
-                var mobileOptions = document.getElementById('mobile-options');
-                if (mobileOptions.style.left == '0em') {
-                    mobileOptions.style.left = '-30em';
-                } 
-
-                if (menuBox.style.left == "0em") {
-                    menuBox.style.left = "-30em";
-                } else {
-                    menuBox.style.left = "0em";
-                }
-            }
-            function backToDefault() {
-                var menuBox = document.getElementById('mobile-options');
-                if (menuBox.style.left == '-30em') {
-                    menuBox.style.left = '0em';
-                } else {
-                    return;
-                }
-            }
-    // Below is the script to automatically hide open elements when scrolled away from the top of the screen (Mobile Nav)
-    function hideDesktopElements() {
-                const elementIDs = ["desktopAbout", "desktopContributing", "desktopCommunity"];
-                changeTopValue(elementIDs);
-             }
-            window.addEventListener("scroll", hideDesktopElements);
-            function handleClickOutsideDesktopNav(event) {
-                const navbar = document.getElementById('topnav');
-                if (!navbar.contains(event.target)) {
-                    const elementIDs = ["desktopAbout", "desktopContributing", "desktopCommunity"];
-                    changeTopValue(elementIDs);
-                }
-            }
-            document.addEventListener('click', handleClickOutsideDesktopNav);
-            function handleClickOutsideMobileNav(event) {
-                const mobileNav = document.getElementById('mobile-options');
-                if (!mobileNav.contains(event.target)) {
-                    const elementIDs = ["mobileAbout", "mobileContributing", "mobileCommunity"];
-                    changeLeftValue(elementIDs);
-                }
-            }
-            function onlyDesktopAbout() {
-                        const contrib = document.getElementById('desktopContributing')
-                        const community = document.getElementById('desktopCommunity');
-                        if (contrib.style.top == '3.5em') {
-                            contrib.style.top = '-20em';
-                        }
-                        if (community.style.top == '3.5em') {
-                            community.style.top = '-20em';
-                        } else {
-                            return
-                        }
-                    }
-    function onlyDesktopContrib() {
-                        const about = document.getElementById('desktopAbout')
-                        const community = document.getElementById('desktopCommunity');
-                        if (about.style.top == '3.5em') {
-                            about.style.top = '-7em';
-                        }
-                        if (community.style.top == '3.5em') {
-                            community.style.top = '-20em';
-                        } else {
-                            return
-                        }
-                    }
-    function onlyDesktopCommunity() {
-                        const about = document.getElementById('desktopAbout')
-                        const contrib = document.getElementById('desktopContributing');
-                        if (about.style.top == '3.5em') {
-                            about.style.top = '-7em';
-                        }
-                        if (contrib.style.top == '3.5em') {
-                            contrib.style.top = '-20em';
-                        } else {
-                            return
-                        }
-                    }
-            function changeLeftValue(ids) {
-                ids.forEach(id => {
-                    const element = document.getElementById(id);
-                if (element) {
-                    element.style.left = "-30em";
-                } else {
-                    console.error("Element with ID", id, "not found.");
-                }
-                });
-            }
-             function hideMobileElements() {
-                const elementIDs = ["mobile-options", "mobileAbout","mobileContributing", "mobileCommunity"];
-                changeLeftValue(elementIDs);
-             }
-             window.addEventListener("scroll", hideMobileElements);
-            function changeTopValue(ids) {
-                ids.forEach(id => {
-                    const element = document.getElementById(id);
-                if (element) {
-                    element.style.top = "-20em";
-                } else {
-                    console.error("Element with ID", id, "not found.");
-                }
-                });
-            }
-            document.addEventListener('click', handleClickOutsideMobileNav);
-            function onlyAbout() {
-                const menuBox = document.getElementById('mobileAbout')
-                const contrib = document.getElementById('mobileContributing')
-                const community = document.getElementById('mobileCommunity');
-                if (menuBox.style.left == '-20em') {
-                    menuBox.style.left = '15em'
-                }
-                if (contrib.style.left == '15em') {
-                    contrib.style.left = '-20em';
-                }
-                if (community.style.left == '15em') {
-                    community.style.left = '-20em';
-                } else {
-                    return
-                }
-            }
-            function onlyContrib() {
-                const contrib = document.getElementById('mobileAbout')
-                const community = document.getElementById('mobileCommunity');
-                if (contrib.style.left == '15em') {
-                    contrib.style.left = '-20em';
-                }
-                if (community.style.left == '15em') {
-                    community.style.left = '-20em';
-                } else {
-                    return
-                }
-            }
-            function onlyCommunity() {
-                const contrib = document.getElementById('mobileAbout')
-                const community = document.getElementById('mobileContributing');
-                if (contrib.style.left == '15em') {
-                    contrib.style.left = '-20em';
-                }
-                if (community.style.left == '15em') {
-                    community.style.left = '-20em';
-                } else {
-                    return
-                }
-            }
-    </script>
 </body>
 </html>
 mobile-options
