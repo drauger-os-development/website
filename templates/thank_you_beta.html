@@ -2,10 +2,10 @@
 
 {% block content %}
 <div class="contentContainer">
-  <div class="thankYouTitle">Thank You!</div> 
+  <div class="thankYouTitle">Thank You!</div>
   <div class="thankYouMessage">
     Thank you for choosing <span class="osName">Drauger OS</span>!
-    <br>If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA1-AMD64.iso">click here</a>.
+    <br>If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA2-AMD64.iso">click here</a>.
     <div class="thankYouPassword">The root password is <span class="ThankYouPassword">toor</span>.</div>
     <div class="supportCTA">In the mean time, please consider <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">donating</a> to support the development of <span class="osName">Drauger OS</span>.</div>
     <div class="check5ums">If you would like to verify the integrity of the ISO, you can use any of these files:
@@ -23,8 +23,8 @@ function sleep(ms) {
 async function init_download()
 {
   link = document.createElement("a"); //create 'a' element
-  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA1-AMD64.iso");
-  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA1-AMD64.iso");
+  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA2-AMD64.iso");
+  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA2-AMD64.iso");
   await sleep(3000);
   link.click();
 }
@@ -32,6 +32,6 @@ async function init_download()
 init_download();
 </script>
 <noscript>
-  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA1-AMD64.iso">
+  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-BETA2-AMD64.iso">
 </noscript>
 {% endblock %}
