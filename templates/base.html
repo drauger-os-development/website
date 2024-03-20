@@ -42,70 +42,109 @@
     <meta property="og:description" content="{{ master_desc }}"/>
     <link rel="stylesheet" href="/assets/css/default.css">
     <link rel="icon" type="image/x-icon" href="../assets/images/favicon.png">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css"> <!-- Used for Icons -->
+    <link href='https://fonts.googleapis.com/css?family=Ubuntu' rel='stylesheet'> <!-- This links to an externally hosted form of the font that allows the user to see the font regardless of if they have it installed or not-->
+    <script src="../assets/js/default.js"></script>
 </head>
-
 <body>
-    <section>
-        <div class="topnav">
-            <a href="{{ url_for('main') }}">Home</a>
-            <a href="{{ url_for('download') }}">Download</a>
-            <a href="{{ url_for('contact') }}">Contact</a>
-            <a href="{{ url_for('wiki_homepage') }}">Wiki</a>
-            <div class="dropdown">
-                <button class="dropbtn">About</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('about') }}">About Drauger OS</a>
-                    <a href="{{ url_for('sys_reqs') }}">System Requirements</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Contributing</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a>
-                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-                    <a href="{{ url_for('contributors') }}">Contributors</a>
-                    <a href="https://liberapay.com/Drauger_OS_Development/donate">Donate</a>
-                    <a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on Distrowatch</a>
-                </div>
-            </div>
-            <div class="dropdown">
-                <button class="dropbtn">Community</button>
-                <div class="dropdown-content">
-                    <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-                    <a href="https://t.me/draugeros">Telegram</a>
-                    <a href="https://discord.gg/JW8FGrc">Discord</a>
-                    <a href="https://www.reddit.com/r/DraugerOS/">Reddit</a>
-                    <a href="https://twitter.com/DraugerOS">Twitter</a>
-                    <a rel="me" href="https://fosstodon.org/@DraugerOS">Mastodon</a>
-                </div>
-            </div>
+    <div id="topnav">
+        <ul>
+            <li><a href="{{ url_for('main') }}">Home</a></li>
+            <li><a href="{{ url_for('download') }}">Download</a></li>
+            <li><a href="{{ url_for('contact') }}">Contact</a></li>
+            <li><a href="{{ url_for('wiki_homepage') }}">Wiki</a></li>
+            <li><a href="#" class="dropbtn" onclick="AboutSubMenu(); onlyDesktopAbout()">About</a></li>
+            <li><a href="#" class="dropbtn" onclick="ContributingSubMenu(); onlyDesktopContrib()">Contributing</a></li>
+            <li><a href="#" class="dropbtn" onclick="CommunitySubMenu(); onlyDesktopCommunity()">Community</a></li>
+        </ul>
+        <div class="nav-dropshadow"></div>
+    </div>
+    <div id="desktopAbout">
+        <ul>
+            <li><a href="{{ url_for('about') }}">About Drauger OS</a></li>
+            <li><a href="{{ url_for('sys_reqs') }}">System Requirements</a></li>
+        </ul>
+    </div>
+    <div id="desktopContributing">
+        <ul>
+            <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
+            <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
+            <li><a href="{{ url_for('contributors') }}">Contributors</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">Donate</a></li>
+            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new">Vote for us on DistroWatch</a></li>
+        </ul>
+    </div>
+    <div id="desktopCommunity"> 
+        <ul>
+            <li><a href="/community%20guidelines" target="_black">Community Guidelines</a></li>
+            <li><a href="https://t.me/draugeros" target="_blank"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc" target="_blank"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/" target="_blank"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS" target="_blank"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS" target="_blank"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+        </ul>
+    </div>
+        <!-- Mobile Navigation Below -->
+    <div id="mobile-nav"> 
+        <div class="mobile-menu"><button onclick="mobileSettings()"><i class="fa-solid fa-bars"></i></button></div>
+        <div class="siteName">drauger os</div>
+        <div class="nav-dropshadow"></div>
+    </div>
+    <div id="mobileSacrafice">
+        <div id="mobile-options">
+            <ul>
+                <li><a href="{{ url_for('main') }}">Home</a></li>
+                <li><a href="{{ url_for('download') }}">Download</a></li>
+                <li><a href="{{ url_for('contact') }}">Contact</a></li>
+                <li><a href="{{ url_for('wiki_homepage') }}">Wiki</a></li>
+                <li><a href="#About" onclick="MobileAboutSubMenu(); onlyAbout()">About</a></li>
+                <li><a href="#Contributing" onclick="MobileContributingSubMenu(); onlyContrib()">Contributing</a></li>
+                <li><a href="#Community" onclick="MobileCommunitySubMenu(); onlyCommunity()">Community</a></li>
+            </ul>
         </div>
-        <div class="centered-container">
-            <div class="container has-text-centered">
-            </br>
-            </br>
-            </br>
-            </br>
-            </br>
-               {% block content %}
-               {% endblock %}
-            </div>
-        </div>
-    </section>
+    </div>
+    <div id="mobileAbout" class="toggle-left-div">
+        <ul>
+            <li><a href="{{ url_for('about') }}">About Drauger OS</a></li>
+            <li><a href="{{ url_for('sys_reqs') }}">System Requirements</a></li>
+            <li><a href="#Back" onclick="backToDefault()"><i class="fa-solid fa-angles-left"></i>&nbsp;Back</a></li>
+        </ul>
+    </div>
+    <div id="mobileContributing" class="toggle-left-div">
+        <ul>
+            <li><a href="{{ url_for('contributing') }}">Contributing to Drauger OS</a></li>
+            <li><a href="/community%20guidelines" target="_blank">Contribuiting Guidelines</a></li>
+            <li><a href="{{ url_for('contributors') }}" target="_blank">Contributors</a></li>
+            <li><a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">Donate</a></li>
+            <li><a href="https://distrowatch.com/dwres.php?waitingdistro=488&resource=links#new" target="_blank">Vote for us on DistroWatch</a></li>
+            <li><a href="#Back" onclick="backToDefault()"><i class="fa-solid fa-angles-left"></i>&nbsp;Back</a></li>
+        </ul>
+    </div>
+    <div id="mobileCommunity" class="toggle-left-div"> 
+        <ul>
+            <li><a href="/community%20guidelines" target="_blank">Community Guidelines</a></li>
+            <li><a href="https://t.me/draugeros" target="_blank"><i class="fa-brands fa-telegram"></i>&nbsp;Telegram</a></li>
+            <li><a href="https://discord.gg/JW8FGrc" target="_blank"><i class="fa-brands fa-discord"></i>&nbsp;Discord</a></li>
+            <li><a href="https://www.reddit.com/r/DraugerOS/" target="_blank"><i class="fa-brands fa-reddit-alien"></i>&nbsp;Reddit</a></li>
+            <li><a href="https://twitter.com/DraugerOS" target="_blank"><i class="fa-brands fa-x-twitter"></i>&nbsp;(formerly Twitter)</a></li>
+            <li><a href="https://fosstodon.org/@DraugerOS" target="_blank"><i class="fa-brands fa-mastodon"></i>&nbsp;Mastadon</a></li>
+            <li><a href="#Back" onclick="backToDefault()"><i class="fa-solid fa-angles-left"></i>&nbsp;Back</a></li>
+        </ul>
+    </div>
+    <div class="contentContainer"></div>
+    <div class="centered-container">
+           {% block content %}
+           {% endblock %}
+    </div>
+<div class="spacer"></div>
+<div class="footer">
+        <div class="copyright">&copy; Copyright | Drauger OS and Thomas Castleman | All Rights Reserved</div>
+        <p>
+            <a href="{{ url_for('privacy') }}" target="_blank">Privacy Policy</a>
+            <a href="{{ url_for('tos') }}" target="_blank">Terms of Service</a>
+            <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
+        </p>
+</div>
 </body>
-<footer style="text-align:center;">
-    </br>
-    <h4>
-        Drauger OS logos, branding, and website content are property of Drauger OS Development and Thomas Castleman.
-    </h4>
-    </br>
-    <p>
-        <a href="{{ url_for('privacy') }}" target="_blank">Privacy Policy</a>
-        </br>
-        <a href="{{ url_for('tos') }}" target="_blank">Terms of Service</a>
-        </br>
-        <a href="{{ url_for('guidelines') }}" target="_blank">Community Guidelines</a>
-    </p>
-	</br>
-</footer>
 </html>
+mobile-options

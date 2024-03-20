@@ -1,99 +1,50 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        About Drauger OS
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-  <h2>
-    What is Drauger OS?
-  </h2>
-  <h2 class="subtitle">
-      Drauger OS is a Linux desktop gaming operating system. It aims to provide a platform for gamers to use where they can get great performance without sacrificing their security. Furthermore, it aims to make it easy for anyone to game, whether they use a keyboard and mouse, or some sort of controller.
-      </br>
-      </br>
-      Since Drauger OS is based on Ubuntu LTS releases, it is stable, secure, and receives updates from the Ubuntu repositories for 5 years (even if a given Drauger OS release is not supported the full 5 years by Drauger OS Development.)
-  </h2>
-  </br>
-  </br>
-  </br>
-  <h2>
-    What is Drauger OS NOT?
-  </h2>
-  <h2 class="subtitle">
-      Drauger OS is NOT for everyday use. For this reason, it does not come with some otherwise common non-gaming applications, such as audio and video editing software (i.e. Audacity and Kdenlive) or an Office Suite (i.e. LibreOffice).
-      </br>
-      </br>
-Furthermore, Drauger OS is NOT based on <a href="https://www.archlinux.org/" target="_blank">Arch</a>, <a href="https://getfedora.org/" target="_blank">Fedora</a>, or <a href="https://getsol.us/home/" target="_blank">Solus</a>. There are not any plans to rebase Drauger OS to another distro. For various reasons, most other distributions would not fit the desired outcome for Drauger OS and would require copious amounts of work to get to the point we are at now. This is not to say they are not good distributions, but rather they do not fit our vision of where to take Drauger OS and do not fit our development process.
-  </h2>
-  </br>
-  </br>
-  </br>
-  <h2>
-      What is the vision for Drauger OS’s future?
-  </h2>
-  <h2 class="subtitle">
-      Drauger OS was created for several reasons. The primary of which is that other gaming distributions were either abandoned, difficult to use, or did not have a strong community supporting them.
-      </br>
-To avoid the issues listed above, we observe the following tenets when developing Drauger OS:
-
-    <ul style="margin: 0px 10px 0px 30px;">
-    <li>Continuity: We have structured Drauger OS Development around a team concept and distributed leadership.  That way, the project won't stop if a key member discontinues work.</li>
-    </br>
-    <li>Easy to Use: We aim to make Drauger OS user-friendly.  Specifically, we try to make tasks intuitive while also ensuring that software and hardware "just works".</li>
-    </br>
-    <li>Grow the Community: We always welcome community engagement! The more we hear what people want, the better we can do. If you want to voice your opinion, check out our Telegram Group, Discord channel or subreddit!</li>
-    </br>
-    <li>Make it Easy to Contact Support / Development: We work hard to make sure there are a number of ways anyone can contact the Drauger OS Devs. The easiest ways are through the same methods listed in "Grow the Community" above.</li>
-    </ul>
-  </h2>
-  </br>
-  </br>
-  </br>
-  <h2>
-      Development & Media
-  </h2>
-  <h2 class="subtitle">
-      Drauger OS is a free, open-source, community driven project. If you wish to participate in development, contribute code, update documentation, help users, or provide feedback, feel free to <a href="{{ url_for('contact') }}">contact us in any of the listed ways</a>, and check out our <a href="{{ url_for('contributing') }}">“Contributing”</a> page for info on how to give back. If you wish to learn more about Drauger OS, or contact the people behind it, feel free to <a href="{{ url_for('contact') }}">contact us</a>.
-  </h2>
-  </br>
-  </br>
-  </br>
-  <h2>
-      Contributing
-  </h2>
-  <h2 class="subtitle">
-      We accept contributions of all sorts: <a href="https://github.com/drauger-os-development" target="_blank">code, documentation,</a> <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">money</a>, <a href="http://a.co/2M9SNAq" target="_blank">goods</a>, etc. If you wish to contribute to Drauger OS, please reach out to us. If you meet certain milestones, you may be listed on our <a href="{{ url_for('contributing') }}" target="_blank">contributors page.</a>
-
-Right now, we especially need help with:
-
-    <ul style="margin: 0px 10px 0px 30px;">
-        <li>Code (mostly Python and BASH, growing amounts of C++, some CSS)</li>
-        <li>Documentation (man pages, README files, Change Logs, you name it)</li>
-    </ul>
-
-
-If you want to contribute and have no programming experience, please consider handling documentation or language translations. All that is required is basic English literacy (and in the case of translations, literacy in another language). If you are still unsure, consider <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">donating</a> or sending us testing equipment off our <a href="http://a.co/2M9SNAq">Amazon Wishlist</a>
-  </h2>
-</br>
-</br>
-</br>
-  <h2>
-      System Requirements
-  </h2>
-  <h2 class="subtitle">
-To view our System Requirements, please view our <a href="{{ url_for('sys_reqs') }}" target="_blank">System Requirements page.</a>
-  </h2>
-  </br>
-  </br>
+<div class="contentContainer">
+  <div class="AboutTitle">About <span class="osName">Drauger OS</span></div>  
+  <div class="aboutSubTitle">What is <span class="osName">Drauger OS</span>?</div>
+  <div class="aboutDescription"><span class="osName">Drauger OS</span> is a Desktop Linux Gaming Operating System.
+    <br>Our aim is to provide a platform for gamers to get great performance without sacrificing security. From Keyboard and Mouse to a Full Flight Simulator, our goal is to make it easy for anyone to start playing their favorite games quickly. 
+    <div class="aboutAlert">Since <span class="osName">Drauger OS</span> is based on <a href="https://ubuntu.com/desktop">Ubuntu LTS</a>, it's secure, stable and will continue to recieves regular updates even if your version of Drauger OS isn't currently supported by our Developers.</div>
+  </div>
+  <div class="aboutSubTitle">What <span class="osName">Drauger OS</span> is <u>NOT</u></div>
+  <div class="aboutDescription"><span class="osName">Drauger OS</span> is NOT for everyday use.
+    <br>For this reason, it does not come with some apps that you may find "common". Although they will still function, <span class="osName">Drauger OS</span> does not come with audio or video editing software (i.e. Audacity and Kdenlive) nor an Office Suite (i.e. LibreOffice).
+    <br>
+    <br>Furthermore, <span class="osName">Drauger OS</span> is NOT based on: <a href="https://www.archlinux.org/" target="_blank">Arch</a>, <a href="https://getfedora.org/" target="_blank">Fedora</a>, or <a href="https://getsol.us/home/" target="_blank">Solus</a>.
+    <br>There are no plans to rebase <span class="osName">Drauger OS</span> to another distro for various reasons. Most impotantly, the majority of other distributions would require copious amounts of work to get to the point we are at now.
+    <br>This is not to say they are not good distributions, but rather they do not fit our vision of where to take <span class="osName">Drauger OS</span> and do not fit our development process.</div>
+  <div class="aboutSubTitle">The <span class="osName">Drauger OS</span> vision of the Future</div>
+  <div class="aboutDescription"></div>
+  <div class="aboutDescription"> <span class="osName">Drauger OS</span> was created for several reasons.
+    <br>The primary of which is that other gaming distributions were either abandoned, difficult to use, or did not have a strong community supporting them. To avoid the issues listed above, we observe the following tenets when developing <span class="osName">Drauger OS</span>:
+    <br><!-- I hate using br's especially for spacing, but for right here it makes sense and works  -->
+    <br><span class="tenets">Continuity</span>: We have structured <span class="osName">Drauger OS</span> Development around a team concept and distributed leadership.  That way, the project won't stop if a key member discontinues work.
+    <br>
+    <br><span class="tenets">Ease of Use</span>: We aim to make <span class="osName">Drauger OS</span> user-friendly.  Specifically, we try to make tasks intuitive while also ensuring that software and hardware "just works".
+    <br>
+    <br><span class="tenets">Community Growth</span>: We always welcome community engagement! The more we hear what people want, the better we can do. If you want to voice your opinion, check out our <a href="">Telegram Group</a>, <a href="">Discord Server</a> or <a href="">subreddit</a>!
+    <br>
+    <br><span class="tenets">Make Support Easy</span>: We work hard to make sure there are a number of ways anyone can contact the <span class="osName">Drauger OS</span> Devs. The easiest ways are through the same methods listed in "Grow the Community" above.
+  </div>
+<div class="aboutSubTitle">Development & media</div>
+  <div class="aboutDescription"><span class="osName">Drauger OS</span> is a free and open-source, community driven project. If you wish to participate in development, contribute code, update documentation, help users, or provide feedback, feel free to <a href="{{ url_for('contact') }}">contact us in any of the listed ways</a>, and check out our <a href="{{ url_for('contributing') }}">“Contributing”</a> page for info on how to give back. If you wish to learn more about <span class="osName">Drauger OS</span>, or contact the people behind it, feel free to <a href="{{ url_for('contact') }}">contact us</a>.</div>
+  <div class="aboutSubTitle">Contributing</div>
+  <div class="aboutDescription">With <span class="osName">Drauger OS</span> being free and Open-Source, we accept contributions of all sorts: From <a href="https://github.com/drauger-os-development" target="_blank">code</a> and <a href="https://draugeros.org/wiki" target="_blank">documentation</a>, to <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">donations</a> and <a href="http://a.co/2M9SNAq" target="_blank">goods</a>, if it will aid in development it's welcome. 
+    <br>
+    <br>If you wish to contribute to <span class="osName">Drauger OS</span>, please reach out to us. If you meet certain milestones, you may be listed on our <a href="{{ url_for('contributing') }}" target="_blank">contributors page.</a>
+    <br>
+    <div class="contrubutingNeeds"> Right now, we especially need help with:</div>
+    <div class="contributing-options"><span class="tenets">Code</span>: Mostly Python and BASH, but also growing amounts of C++ and CSS.
+    <br><span class="tenets">Documentation</span>: Man pages, README files, Change Logs, you name it.
+    </div>
+    <br>If you want to contribute and have no programming experience, please consider handling documentation or language translations. All that is required is basic English literacy (and in the case of translations, literacy in another language).
+    <br>
+    <div class="donation-CTA">If you are still unsure, consider <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">donating</a> or sending us testing equipment off our <a href="http://a.co/2M9SNAq">Amazon Wishlist</a></div>
+  </div>
+  <div class="aboutSubTitle">System Requirements</div>
+  <div class="aboutRequirements">To view System Requirements for <span class="osName">Drauger OS</span>, please view our <a href="{{ url_for('sys_reqs') }}" target="_blank">System Requirements page.</a></div>
 </div>
 
 {% endblock %}

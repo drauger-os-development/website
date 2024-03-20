@@ -1,44 +1,28 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        Download Drauger OS
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-    <center>
-        <h2>
-            Please choose the version of Drauger OS you would like to download.
-        </h2>
-    </center>
-    </br>
-<!-- Download buttons for the ISOs -->
-    <center>
+<div class="contentContainer">
+    <div class="CTA_Download">Download <span class="osName">Drauger OS</span></div>
+            <div class="choice">Please choose the version of Drauger OS you would like to download.</div>
         <a class="p-button--positive is-wide" href="{{ url_for('thank_you') }}">
-            <img class="redglow" src="{{ url_for('static_dir', path='images/76download.png') }}">
+            <img class="downloadImage" src="{{ url_for('static_dir', path='images/76download.png') }}">
         </a>
-        </br>
-        </br>
-        <center>
-            <h3 class="warning">
-                Currently, Drauger OS 7.7 is in early beta, and many changes are expected. Expect instability, and extremely frequent updates.
-                </br>
-                It is recommended that users download Drauger OS 7.6 instead unless necessary.
-            </h4>
-        </center>
-        </br>
-        <a class="p-button--positive is-wide" href="{{ url_for('thank_you_beta') }}">
-            <img class="redglow" src="{{ url_for('static_dir', path='images/77download.png') }}">
-        </a>
-    </center>
-    </br>
-</div>
+		<p>Download Info: 3.8GB | Ver. 7.6</p>
+        <div class="torrent">Need a torrent? <a href="https://draugeros.org/assets/torrents/Drauger_OS-7.6-AMD64.iso.torrent">Click here</a>.</div>
+        <div class="betaDownload">
+            <div class="warning">
+                <div class="warning-message"><i class="fa-solid fa-triangle-exclamation"></i>DraugerOS 7,7 NZAMBI is currently in beta.</div>
+            </div>
+            <div class="explanation">Expect Instability and frequent updates.
+                <br>We recommend you use 7.6 STRIGOI unless you're aware of these potential issues.</div>
+            <a class="p-button--positive is-wide" href="{{ url_for('thank_you_beta') }}">
+                <img class="downloadImage" src="{{ url_for('static_dir', path='images/77download.png') }}">
+            </a>
+        </div>
+        <div class="DownloadsMoreInfo">
+            <div class="aboutDrauger">For more information about the development and inner workings of <span class="osName">DraugerOS</span><a href="{{ url_for('about') }}" target="_blank">&nbsp;Click Here.</a></div>
+            <div class="systemRequirements">For information about current System Requirements of <span class="osName">Drauger OS</span><a href="{{ url_for('sys_reqs') }}" target="_blank">&nbsp;Click Here.</a></div>
+        </div>
+    </div>
 
 {% endblock %}

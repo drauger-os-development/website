@@ -1,24 +1,19 @@
 {% extends "base.html" %}
 
 {% block content %}
-<center>
-    <h1 class="page-title">
-        404 Not Found
-    </h1>
-</center>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-</br>
-<div class="box">
-  <h2 class="subtitle">
-    Uh oh! That page doesn't exist!
-  </h2>
-  <button id="contributor_joke" onclick="location.href='https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1';" style="width:100%;height:5vh;background-color:#151414;margin: 10px 0px 0px 0px;"></button>
-  </br>
+<div class="contentContainer">
+  <div class="Error404Title">Error 404: Page Not Found</div>
+  <div class="Error404img"><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ?autoplay=1"><img src="images/spacer.gif" width="305" height="312" id="myPicture" alt="some image"></a></div>
+  <div class="Error404SubTitle">Uh oh! That page doesn't exist</div>
 </div>
+<script>
+  window.onload = choosePic;
 
+var myPix = new Array("assets/images/FilthyFrank.png","assets/images/Guess_Ill_Die.png");
+
+function choosePic() {
+     var randomNum = Math.floor(Math.random() * myPix.length);
+     document.getElementById("myPicture").src = myPix[randomNum];
+  }
+     </script>
 {% endblock %}
