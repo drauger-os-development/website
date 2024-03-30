@@ -19,14 +19,14 @@
 
 Depending on which Nvidia card you have, follow the instructions in A, B or C.
 </br></br>
-A) _If you have a 900 series card or newer_, run the following command:
+A) _If you have a 10 series card or newer_, run the following command:
 </br></br>
 ```
 sudo apt install nvidia-driver-latest
 ```
 ***
 </br></br>
-B) _If your card is older than the 900 series_, check [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) to see which driver corresponds to your graphics card.  If it is the latest Nvidia driver (530 at the time of writing), run the following command
+B) _If your card is older than the 10 series_, check [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) to see which driver corresponds to your graphics card.  If it is the latest Nvidia driver (545 at the time of writing), run the following command
 </br></br>
 ```
 sudo apt install nvidia-driver-latest
@@ -38,7 +38,7 @@ Note: You can see what the latest Nvidia drivers packages are available in apt u
 apt search nvidia-driver
 ```
 </br></br></br>
-C) _if you card is older than the 900 series and the driver listed on [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) is older than the latest driver_, do the following:
+C) _if you card is older than the 10 series and the driver listed on [Nvidia's Website](https://www.nvidia.com/Download/index.aspx?lang=en-us) is older than the latest driver_, do the following:
 </br></br>
 Install, through apt, the package that corresponds to your driver.  If the latest available driver is 470, run
 </br></br>
@@ -70,6 +70,15 @@ Lastly, whether you followed the instructions in A, B or C, reboot your computer
 sudo apt install disable-nouveau
 ```
 </br></br></br>
+
+
+
+## No graphical output after Nvidia driver install
+**Problem**: After installing the Nvidia driver, there is still no graphical output.
+
+**Solution**: If this is a fresh Drauger OS install, reinstall the OS. Then, make sure your system is up-to-date before installing the Nvidia drivers.
+
+Otherwise, [contact support](https://draugeros.org/contact-us) so we can walk you through more complex recovery procedures.
 
 
 
