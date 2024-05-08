@@ -116,7 +116,7 @@ sudo flatpak repair
 ```
 </br></br></br>
 
-## `sudo apt upgrade` returns `The following upgrades have been deferred due to phasing`
+## "`sudo apt upgrade`" returns "`The following upgrades have been deferred due to phasing`"
 **Problem**: When attempting to run an upgrade, not all updates where applied and `apt` said some packages upgrades have been deferred due to phasing.
 </br></br>
 
