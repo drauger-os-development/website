@@ -115,3 +115,15 @@ sudo apt install --reinstall libva-x11-2:i386
 sudo flatpak repair
 ```
 </br></br></br>
+
+## `sudo apt upgrade` returns `The following upgrades have been deferred due to phasing`
+**Problem**: When attempting to run an upgrade, not all updates where applied and `apt` said some packages upgrades have been deferred due to phasing.
+</br></br>
+
+**Solution**: This is not a problem. When `apt` chooses to defer some update(s), it is doing so because a change in one or more packages may adversely affect some users. To test this, the developers of the package have opted to roll the upgrade out in stages. This message simply states you will get the update at a later stage. While it is not advised, you can bypass this with the following command:
+</br></br>
+```
+sudo apt install <deferred_packages>
+```
+</br></br>
+where `<deferred_packages>` is the list of packages the upgrade has been defered on.
