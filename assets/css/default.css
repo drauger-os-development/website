@@ -1288,6 +1288,22 @@ textarea {
     #mobileCommunity {
         display: block;
     }
+    .contributors_list {
+        margin-left: -1em;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    .contributors_list tr {
+        display: flex;
+    }
+    .contributors_list tr td img{
+        align-items: start;
+        width: 50px;
+        height: 50px;
+    }
+    .JCExpectations {
+        margin-left: 0.5em;
+    }
 }
 @media only screen and (min-width: 752px) {
     #mobile-nav {
@@ -1582,6 +1598,10 @@ textarea {
 }
 .JCDescription {
     padding-bottom: 1em;
+}
+.contributors_list img{
+    width: 195px;
+    height: 200px;
 }
 .JCExpectations { 
     text-align: left;
