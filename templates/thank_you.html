@@ -2,17 +2,17 @@
 
 {% block content %}
 <div class="contentContainer">
-  <div class="thankYouTitle">Thank You!</div> 
+  <div class="thankYouTitle">Thank You!</div>
   <div class="thankYouMessage">
     Thank you for choosing <span class="osName">Drauger OS</span>!
-    <br>If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso">click here</a>.
+    <br>If your download does not start within a few seconds, <a href="https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-AMD64.iso">click here</a>.
     <div class="thankYouPassword">The root password is <span class="ThankYouPassword">toor</span>.</div>
     <div class="supportCTA">In the mean time, please consider <a href="https://liberapay.com/Drauger_OS_Development/donate" target="_blank">donating</a> to support the development of <span class="osName">Drauger OS</span>.</div>
     <div class="check5ums">If you would like to verify the integrity of the ISO, you can use any of these files:
-    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.6/MD5.txt" target="_blank">MD5</a>
-    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.6/SHA1.txt" target="_blank">SHA1</a>
-    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.6/SHA256.txt" target="_blank">SHA256</a></div>
-    <div class="torrent">If the download is too slow for your liking, you can also try <a href="assets/torrents/Drauger_OS-7.6-AMD64.iso.torrent">this torrent</a>.</div>
+    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.7/MD5.txt" target="_blank">MD5</a>
+    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.7/SHA1.txt" target="_blank">SHA1</a>
+    <a href="https://download.draugeros.org/hash_files/Drauger_OS-7.7/SHA256.txt" target="_blank">SHA256</a></div>
+    <!-- <div class="torrent">If the download is too slow for your liking, you can also try <a href="assets/torrents/Drauger_OS-7.6-AMD64.iso.torrent">this torrent</a>.</div> -->
   </div>
 </div>
 <script>
@@ -23,8 +23,8 @@ function sleep(ms) {
 async function init_download()
 {
   link = document.createElement("a"); //create 'a' element
-  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso");
-  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso");
+  link.setAttribute("href", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-AMD64.iso");
+  link.setAttribute("download", "https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-AMD64.iso");
   await sleep(3000);
   link.click();
 }
@@ -32,6 +32,6 @@ async function init_download()
 init_download();
 </script>
 <noscript>
-  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso">
+  <meta http-equiv="refresh" content="3;url=https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-AMD64.iso">
 </noscript>
 {% endblock %}
