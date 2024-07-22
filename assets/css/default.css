@@ -1042,6 +1042,26 @@ textarea {
     font-size: 2rem;
     padding: 3em 0;
 }
+.downloadButton {
+    font-weight: bold;
+    padding: 1em 2em;
+    background-color: rgb(165, 14, 14);
+    color: white;
+    border: 2px solid black;
+    border-radius: 2.5px;
+    filter: drop-shadow(0 0 0.25em black);
+    margin-bottom: 1em;
+    transition: 0.35s;
+}
+.downloadButton:hover {
+    color: white;
+    background-color: crimson;
+    cursor: pointer;
+    transition: 0.35s;
+}
+.downloadButton:active {
+transform: translateY(0.5em);
+}
 .aboutDraugerOS {
     color: white;
     text-align: center;

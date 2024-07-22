@@ -3,19 +3,19 @@
 {% block content %}
 <center>
 	<div class="banner">
-		<div class="tagline">DraugerOS v 7.7 is OUT NOW!</div>
+		<div class="tagline">DraugerOS v7.7 is OUT NOW!</div>
 	</div>
 	<div class="desktopPreview">
 		<div class="previewImage fade">
-		  <img src="../assets/images/Desktop-Preview.webp">
+		  <img src="../assets/images/Desktop-Preview.png">
 		  <div class="captions unselectable">Drauger OS Desktop</div>
 		</div>
-		
+
 		<div class="previewImage fade">
 		  <img src="../assets/images/desktop_preview2.webp">
 		  <div class="captions unselectable">Game Launchers</div>
 		</div>
-		
+
 		<div class="previewImage fade">
 		  <img src="../assets/images/desktop_preview3.webp">
 		  <div class="captions unselectable">Kate Text Editor</div>
@@ -29,27 +29,34 @@
 
 		  <i class="fa-solid fa-arrow-left prev" onclick="plusSlides(-1)"></i>
 		  <i class="fa-solid fa-arrow-right next" onclick="plusSlides(1)"></i>
-		</div>
-	<div class="centered">
+    </div>
+	<div class="centered" style="opacity: 0%; height: 1em">
 		<div class="dono_section">
-		  <div class="dono_span"><span>Pay What You Can:</span></div>
+		  <!-- <div class="dono_span"><span>Pay What You Can:</span></div> -->
 		  <div class="dono_1">
-		  <button id="dono_1" name="dono_button" onclick="donoActive(1)" value='5'>$5</button>
+		  <!-- <button id="dono_1" name="dono_button" onclick="donoActive(1)" value='5'>$5</button>
 		  <button id="dono_2" name="dono_button" onclick="donoActive(2)" value='15'>$15</button>
-		  <button id="dono_3" name="dono_button" onclick="donoActive(3)" value='25'>$25</button>
+		  <button id="dono_3" name="dono_button" onclick="donoActive(3)" value='25'>$25</button> -->
 		  </div>
 		  <div class="dono_2">
-			<p class="dono_currency_icon unselectable">$</p>
+			<!-- <p class="dono_currency_icon unselectable">$</p> -->
 			<input id="dono_custom" placeholder="custom" type="number" step="0.01" maxlength="10" value="" min="0" onFocus="donoActive(4)">
-			<p id="custom_dono_message">Please Enter any Dollar Amount</p>
+			<!--<p id="custom_dono_message">Please Enter any Dollar Amount</p> -->
 		  </div>
 		  <div class="dono_3">
-			<button id="purchase_button">Purchase DraugerOS</button>
+			<!-- <button id="purchase_button">Purchase DraugerOS</button>
 			<p class="download_descriptor">Drauger OS 7.7 Nzambi (3.8 GB)</p>
-			<p class="download_descriptor">For more info <a href="#moreinfo">Click Here</a>.</p>
+			<p class="download_descriptor">For more info <a href="#moreinfo">Click Here</a>.</p>-->
 		  </div>
 		</div>
-		</div>
+    </div>
+    <div class="centered">
+        <p>Interested in trying out Drauger OS?</p>
+		<div><button class="downloadButton" onclick="window.location.href = 'https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.7-AMD64.iso'" class="download">Download&nbsp;<i class="fa-solid fa-download"></i></button>&nbsp;<button class="downloadButton" onclick="window.location.href = 'https://draugeros.org/assets/torrents/Drauger_OS-7.7-AMD64.iso.torrent'">Torrent&nbsp;<i class="fa-solid fa-file-arrow-down"></i></button></div>
+		<p>Download Info: 3.7GB | Ver. 7.7</p>
+		<p>For more info <a href="/download">Click Here</a>.</p>
+    </div>
+    <div class="centered" style="opacity: 0%; height: 1em"></div>
 	<div class="aboutDraugerOS">
 		<h1>What is <span class="osName">drauger os?</span></h1>
 		<p>
@@ -77,7 +84,7 @@
 			any sufficiantly advanced user can easily use Drauger OS to do
 			anything from streaming, video editing, and audio production
 			to everyday usage. However, you may encounter issues in the process due to the gaming-related optimizations.
-			<br><br>If so, feel free to hop into our <a href="https://discord.gg/JW8FGrc" target="_blank">Discord Server</a> or <a href="https://t.me/draugeros" target="_blank">Telegram Group</a> to get assistance. 
+			<br><br>If so, feel free to hop into our <a href="https://discord.gg/JW8FGrc" target="_blank">Discord Server</a> or <a href="https://t.me/draugeros" target="_blank">Telegram Group</a> to get assistance.
 			<br>More ways to contact us for support can be
 			found on our <a href="{{ url_for('contact') }}" target="_blank">Contact page</a>.</p>
 	</div>
@@ -87,7 +94,7 @@ window.addEventListener("load", (event) => {
     donoActive(0)
     updateButtonStyles;
 });
-  
+
 document.getElementById('dono_custom').addEventListener('input', function() {
 var donationAmount = document.getElementById('dono_custom').value;
 var confirmButton = document.getElementById('purchase_button');
@@ -99,14 +106,14 @@ var confirmButton = document.getElementById('purchase_button');
         confirmButton.textContent = 'Download DraugerOS';
     }
 });
-  
+
   let selectedButton = 0;
-  
+
   function donoActive(buttonNumber) {
     selectedButton = buttonNumber;
     updateButtonStyles();
   }
-  
+
   function updateButtonStyles() {
     let dono1 = document.getElementById('dono_1');
     let dono2 = document.getElementById('dono_2');
@@ -150,7 +157,7 @@ var confirmButton = document.getElementById('purchase_button');
       dono4.className = 'not_selected';
       dono4.value = "" ;
       document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
-      break;    
+      break;
     default:
       dono1.className = 'not_selected';
       dono2.className = 'not_selected';
@@ -174,12 +181,12 @@ function currentSlide(n) {
 function showSlides(n) {
   let i;
   let slides = document.getElementsByClassName("previewImage");
-  if (n > slides.length) {slideIndex = 1}    
+  if (n > slides.length) {slideIndex = 1}
   if (n < 1) {slideIndex = slides.length}
   for (i = 0; i < slides.length; i++) {
-    slides[i].style.display = "none";  
+    slides[i].style.display = "none";
   }
-  slides[slideIndex-1].style.display = "block";  
+  slides[slideIndex-1].style.display = "block";
 }
 	</script>
 </center>
