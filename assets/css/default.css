@@ -1042,49 +1042,6 @@ textarea {
     font-size: 2rem;
     padding: 3em 0;
 }
-.desktopPreview {
-    color: white;
-    padding: 1em;
-    text-align: center;
-}
-.desktopPreview p {
-    margin-bottom: 0.5em;
-}
-.desktopPreview img {
-    width: 60%;
-    border: 2px solid crimson;
-    filter: drop-shadow(0 0 0.25em black);
-    margin-bottom: 1em;
-    transition: 0.35s;
-}
-.desktopPreview img:hover {
-    filter: drop-shadow(0 0 0.25em red);
-    cursor: pointer;
-}
-.desktopPreview img:active {
-    width: 95%;
-    transition: 0.35s;
-}
-.desktopPreview button {
-    font-weight: bold;
-    padding: 1em 2em;
-    background-color: rgb(165, 14, 14);
-    color: white;
-    border: 2px solid black;
-    border-radius: 2.5px;
-    filter: drop-shadow(0 0 0.25em black);
-    margin-bottom: 1em;
-    transition: 0.35s;
-}
-.desktopPreview button:hover {
-    color: white;
-    background-color: crimson;
-    cursor: pointer;
-    transition: 0.35s;
-}
-.desktopPreview button:active {
-transform: translateY(0.5em);
-}
 .aboutDraugerOS {
     color: white;
     text-align: center;
@@ -1117,6 +1074,180 @@ transform: translateY(0.5em);
 .goals h1 {
     margin-bottom: 0.5em;
 }
+.dono_section {
+    display: inline-flex;
+    width: 100%;
+    height: 10em;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1em;
+    /* border: 1px solid red; */
+    transform: translateY(-3em);
+  }
+  .dono_span{
+    height: 1em;
+    margin: auto 0.5em auto auto;
+  }
+  .dono_span span{
+    font-size: 1rem;
+  }
+  .dono_1{
+    /* margin: auto -1.5em auto 0; */
+    margin: auto -1.25em auto 0;
+  }
+  .dono_1 button{
+    border: 2px solid black;
+    /* background-color: #990000; */
+    padding: 0.75em;
+    color: white;
+    cursor: pointer;
+  }
+  .dono_1 button:hover{
+    background-color: red;
+  }
+  .dono_2{
+    transform: translateY(0.4em);
+    margin: auto 0 auto 0;
+  }
+  .dono_2 #dono_custom{
+    /* background-color: #990000; */
+    width: 8rem;
+    height: 2rem;
+    font-size: 1rem;
+    text-align: center;
+    color: white;
+    cursor: pointer;
+  }
+  #dono_custom:hover{
+    background-color: red;
+  }
+  #dono_custom::placeholder{
+    color: white;
+  }
+  .dono_2 .dono_currency_icon{
+    display: inline-block;
+    position: relative;
+    left: 1.25em;
+    color: white;
+    font-weight: bold;
+  }
+  .dono_2 input::-webkit-outer-spin-button,
+  .dono_2 input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+    margin: 0;
+  }
+  .dono_2 #custom_dono_message{
+    font-size: 0.75rem;
+    font-weight: bold;
+    position: relative;
+    left: -1em;
+    top: 0.5em;
+    color: gray;
+    opacity: 0;
+    transition: 0.3s;
+  }
+  #dono_custom:focus + #custom_dono_message{
+    opacity: 100;
+    transition: 0.3s;
+  }
+  .dono_3{
+    margin: auto auto auto 0;
+    height: 3em;
+  /*   border: 1px solid red; */
+    text-align: center;
+    }
+  #purchase_button {
+    border: 1px solid black;
+    background-color: #990000;
+    font-weight: bold;
+    font-size: 1.25rem;
+    height: 3rem;
+    width: 14rem;
+    color: white;
+    transition: 0.3s;
+  }
+  #purchase_button:hover {
+    background-color: red;
+    cursor: pointer;
+  }
+  #purchase_button:active{
+    transition: 0.3s;
+    transform: translateY(4px);
+  }
+  .download_descriptor{
+    position: relative;
+    top: 0.75em;
+  }
+  .unselectable{
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+  }
+  .not_selected{
+    background-color: #990000;;
+  }
+  .dono_selected{
+    background-color: crimson;
+  }
+  .desktopPreview {
+    max-width: 1000px;
+    position: relative;
+    border: 2px solid crimson;
+    margin: 2em auto auto auto;
+  }
+  .previewImage {
+    width: 100%;
+    height: 100%;
+  }
+  .previewImage img {
+    width: 100%;
+  }
+  .prev, .next {
+    cursor: pointer;
+    position: absolute;
+    top: 50%;
+    width: auto;
+    padding: 16px;
+    margin-top: -22px;
+    color: white;
+    font-weight: bold;
+    font-size: 18px;
+    transition: 0.6s ease;
+    border-radius: 50%;
+    user-select: none;
+    filter: drop-shadow(0 0 0.75rem crimson);
+  }
+  .next {
+    right: 0;
+  }
+  .prev {
+    left: 0.25em;
+  }
+  .prev:hover, .next:hover {
+    background-color: rgba(153, 0, 0, 0.5);
+  }
+  .captions {
+    color: white;
+    background-color: rgba(0, 0, 0, 0.5);
+    font-family: sans-serif;
+    font-size: 15px;
+    padding: 1em 0;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    /* transform: translateX(2px); */
+    text-align: center;
+  }
+  .fade {
+    animation-name: fade;
+    animation-duration: 1.5s;
+  }
+  @keyframes fade {
+    from {opacity: .4} 
+    to {opacity: 1}
+  }
 /* End Index CSS */
 
 @media only screen and (max-width: 750px) {
@@ -1127,7 +1258,10 @@ transform: translateY(0.5em);
         display: none;
     }
     .desktopPreview img {
-        width: 100%;
+        width: 98%;
+    }
+    .desktopPreview img:active {
+        width: 98%
     }
     .banner .tagline {
         height: 1em;
@@ -1145,10 +1279,6 @@ transform: translateY(0.5em);
         filter: drop-shadow(0 0 0 rgba(0, 0, 0, 0));
         cursor: default;
     }
-    .desktopPreview img:active {
-        width: 100%;
-        transition: 0.35s;
-    }
     #mobileAbout {
         display: block;
     }
@@ -1157,6 +1287,22 @@ transform: translateY(0.5em);
     }
     #mobileCommunity {
         display: block;
+    }
+    .contributors_list {
+        margin-left: -1em;
+        margin-top: 0.5em;
+        width: 100%;
+    }
+    .contributors_list tr {
+        display: flex;
+    }
+    .contributors_list tr td img{
+        align-items: start;
+        width: 50px;
+        height: 50px;
+    }
+    .JCExpectations {
+        margin-left: 0.5em;
     }
 }
 @media only screen and (min-width: 752px) {
@@ -1176,6 +1322,43 @@ transform: translateY(0.5em);
         display: none;
     }
 }
+/* Donation Mobile changes */
+@media only screen and (max-width: 769px) {
+    .dono_section {
+      display: block;
+      height: 16em;
+      /* border: 1px solid red; */
+      transform: translateY(0em);
+    }
+    .dono_span {
+      width: 100%;
+      margin: 0.5em auto;
+    }
+    .dono_1{
+      margin: auto;
+    }
+    .dono_1 button{
+      width: 5em;
+    }
+    .dono_2{
+    margin: 0.5em auto 1em auto;
+  /*   border: 1px solid green; */
+    }
+    .dono_2 #dono_custom{
+  /*     width: 10rem; */
+      width: 12.8rem;
+      margin: 0 auto;
+      transform: translateX(-6px);
+    }
+    .dono_2 #custom_dono_message{
+      position: static;
+      padding-top: 0.25em;
+    }
+    #purchase_button {
+      width: 14em;
+      height: 3em;
+    }
+  }
 /* New Container to use that matches styles on all pages */
 .contentContainer {
     text-align: center;
@@ -1415,6 +1598,10 @@ transform: translateY(0.5em);
 }
 .JCDescription {
     padding-bottom: 1em;
+}
+.contributors_list img{
+    width: 195px;
+    height: 200px;
 }
 .JCExpectations { 
     text-align: left;

@@ -3,19 +3,57 @@
 {% block content %}
 <center>
 	<div class="banner">
-		<div class="tagline">Gaming, the Way it should be.</div>
+		<div class="tagline">DraugerOS v 7.7 is OUT NOW!</div>
 	</div>
 	<div class="desktopPreview">
-		<img src="../assets/images/Desktop-Preview.jpg" alt="A Preview of the DraugerOS Desktop.">
-		<p>Interested in trying out Drauger OS?</p>
-		<div class="downloadButton"><button onclick="window.location.href = 'https://download-optimizer.draugeros.org/ISOs/Drauger_OS-7.6-AMD64.iso'" class="download">Download&nbsp;<i class="fa-solid fa-download"></i></button>&nbsp;<button class="torrent" onclick="window.location.href = 'https://draugeros.org/assets/torrents/Drauger_OS-7.6-AMD64.iso.torrent'">Torrent&nbsp;<i class="fa-solid fa-file-arrow-down"></i></button></div>
-		<p>Download Info: 3.8GB | Ver. 7.6</p>
-		<p>For more info <a href="{{ url_for('download') }}">Click Here</a>.</p>
-	</div>
+		<div class="previewImage fade">
+		  <img src="../assets/images/Desktop-Preview.webp">
+		  <div class="captions unselectable">Drauger OS Desktop</div>
+		</div>
+		
+		<div class="previewImage fade">
+		  <img src="../assets/images/desktop_preview2.webp">
+		  <div class="captions unselectable">Game Launchers</div>
+		</div>
+		
+		<div class="previewImage fade">
+		  <img src="../assets/images/desktop_preview3.webp">
+		  <div class="captions unselectable">Kate Text Editor</div>
+		</div>
+
+		<div class="previewImage fade">
+		  <img src="../assets/images/desktop_preview4.webp">
+		  <div class="captions unselectable">Konsole - Terminal Emulator</div>
+		</div>
+		<!-- Copy/paste to add more, these are completely re-useable to just add on to the carousel -->
+
+		  <i class="fa-solid fa-arrow-left prev" onclick="plusSlides(-1)"></i>
+		  <i class="fa-solid fa-arrow-right next" onclick="plusSlides(1)"></i>
+		</div>
+	<div class="centered">
+		<div class="dono_section">
+		  <div class="dono_span"><span>Pay What You Can:</span></div>
+		  <div class="dono_1">
+		  <button id="dono_1" name="dono_button" onclick="donoActive(1)" value='5'>$5</button>
+		  <button id="dono_2" name="dono_button" onclick="donoActive(2)" value='15'>$15</button>
+		  <button id="dono_3" name="dono_button" onclick="donoActive(3)" value='25'>$25</button>
+		  </div>
+		  <div class="dono_2">
+			<p class="dono_currency_icon unselectable">$</p>
+			<input id="dono_custom" placeholder="custom" type="number" step="0.01" maxlength="10" value="" min="0" onFocus="donoActive(4)">
+			<p id="custom_dono_message">Please Enter any Dollar Amount</p>
+		  </div>
+		  <div class="dono_3">
+			<button id="purchase_button">Purchase DraugerOS</button>
+			<p class="download_descriptor">Drauger OS 7.7 Nzambi (3.8 GB)</p>
+			<p class="download_descriptor">For more info <a href="#moreinfo">Click Here</a>.</p>
+		  </div>
+		</div>
+		</div>
 	<div class="aboutDraugerOS">
 		<h1>What is <span class="osName">drauger os?</span></h1>
 		<p>
-			Drauger OS is an <a href="https://ubuntu.com" target="_blank">Ubuntu-based</a> Linux desktop gaming distribution that ships with many modifications and optimizations over stock Ubuntu that are intended to improve gaming performance and the gaming experience. From simple changes such as swapping <a href="https://gnome.org" target="_blank">Gnome</a> out for the light-weight <a href="https://xfce.org" target="_blank">Xfce Desktop Environment</a> and using a dark GTK theme by default, to more complex changes such as using a kernel compiled in-house and replacing <a href="https://en.wikipedia.org/wiki/PulseAudio" target="_blank">PulseAudio</a> with <a href="https://pipewire.org" target="_blank">Pipewire</a>. Drauger OS is built from the ground up with our primary focus on performance.
+			Drauger OS is an <a href="https://ubuntu.com" target="_blank">Ubuntu-based</a> Linux desktop gaming distribution that ships with many modifications and optimizations over stock Ubuntu that are intended to improve gaming performance and the gaming experience. From simple changes such as swapping <a href="https://gnome.org" target="_blank">Gnome</a> out for <a href="https://xfce.org" target="_blank">KDE Plasma</a> and using a dark QT theme by default, to more complex changes such as using a kernel compiled in-house and replacing <a href="https://en.wikipedia.org/wiki/PulseAudio" target="_blank">PulseAudio</a> with <a href="https://pipewire.org" target="_blank">Pipewire</a>. Drauger OS is built from the ground up with our primary focus on performance.
 		</p>
 	</div>
 	<div class="rightForYou">
@@ -28,10 +66,9 @@
 			into old computers. However, again like it's namesake, it
 			requires maintainance from time to time, and issues cropping up
 			are not uncommon. Drauger OS is developed by a small, passionate
-			team who don't get paid anything for their work. As such, bugs
-			may sometimes be common. Therefore, users who are new to Linux
-			may want to look elsewhere to gain experience before taking the
-			plunge with Drauger OS.</p>
+			team who don't get paid anything for their work. Therefore, users
+			who are new to Linux may want to look elsewhere to gain experience
+			before taking the plunge with Drauger OS.</p>
 	</div>
 	<div class="goals">
 		<h1>Goals of <span class="osName">drauger os</span></h1>
@@ -44,5 +81,106 @@
 			<br>More ways to contact us for support can be
 			found on our <a href="{{ url_for('contact') }}" target="_blank">Contact page</a>.</p>
 	</div>
+	<script>
+		// Custom Styling Transitions for purchase/download buttons
+window.addEventListener("load", (event) => {
+    donoActive(0)
+    updateButtonStyles;
+});
+  
+document.getElementById('dono_custom').addEventListener('input', function() {
+var donationAmount = document.getElementById('dono_custom').value;
+var confirmButton = document.getElementById('purchase_button');
+    if (donationAmount != 0) {
+        confirmButton.textContent = 'Purchase DraugerOS';
+    } else if (donationAmount == "") {
+        confirmButton.textContent = 'Purchase DraugerOS';
+    }else {
+        confirmButton.textContent = 'Download DraugerOS';
+    }
+});
+  
+  let selectedButton = 0;
+  
+  function donoActive(buttonNumber) {
+    selectedButton = buttonNumber;
+    updateButtonStyles();
+  }
+  
+  function updateButtonStyles() {
+    let dono1 = document.getElementById('dono_1');
+    let dono2 = document.getElementById('dono_2');
+    let dono3 = document.getElementById('dono_3');
+    let dono4 = document.getElementById('dono_custom');
+  switch(selectedButton) {
+    case 1:
+      dono1.className = 'dono_selected';
+      dono2.className = 'not_selected';
+      dono3.className = 'not_selected';
+      dono4.className = 'not_selected';
+      dono4.value = "" ;
+      document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
+      break;
+    case 2:
+      dono1.className = 'not_selected';
+      dono2.className = 'dono_selected';
+      dono3.className = 'not_selected';
+      dono4.className = 'not_selected';
+      dono4.value = "" ;
+      document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
+      break;
+    case 3:
+      dono1.className = 'not_selected';
+      dono2.className = 'not_selected';
+      dono3.className = 'dono_selected';
+      dono4.className = 'not_selected';
+      dono4.value = "" ;
+      document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
+      break;
+    case 4:
+      dono1.className = 'not_selected';
+      dono2.className = 'not_selected';
+      dono3.className = 'not_selected';
+      dono4.className = 'dono_selected';
+      break;
+    case 0:
+      dono1.className = 'not_selected';
+      dono2.className = 'not_selected';
+      dono3.className = 'not_selected';
+      dono4.className = 'not_selected';
+      dono4.value = "" ;
+      document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
+      break;    
+    default:
+      dono1.className = 'not_selected';
+      dono2.className = 'not_selected';
+      dono3.className = 'not_selected';
+      dono4.className = 'not_selected';
+      dono4.value = "" ;
+      document.getElementById('purchase_button').textContent = 'Purchase DraugerOS';
+    }
+  }
+let slideIndex = 1;
+  showSlides(slideIndex);
+
+function plusSlides(n) {
+  showSlides(slideIndex += n);
+}
+
+function currentSlide(n) {
+  showSlides(slideIndex = n);
+}
+
+function showSlides(n) {
+  let i;
+  let slides = document.getElementsByClassName("previewImage");
+  if (n > slides.length) {slideIndex = 1}    
+  if (n < 1) {slideIndex = slides.length}
+  for (i = 0; i < slides.length; i++) {
+    slides[i].style.display = "none";  
+  }
+  slides[slideIndex-1].style.display = "block";  
+}
+	</script>
 </center>
 {% endblock %}
