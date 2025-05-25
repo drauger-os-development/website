@@ -26,9 +26,10 @@ import flask
 import urllib3
 import wiki
 import sys
+import time
 import common
 
-
+START_TIME = time.time()
 APP = flask.Flask(__name__)
 
 
@@ -396,9 +397,12 @@ def guidelines():
 
 
 @APP.route("/up")
+@APP.route("/status")
 def check_up():
     """Respond for whether website is up so response can be more easily checked programmatically"""
-    return {"up": True}
+    global START_TIME
+    return {"status": True,
+            "START_TIME": START_TIME}
 
 
 if __name__ == "__main__":
