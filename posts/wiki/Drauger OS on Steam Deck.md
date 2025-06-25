@@ -5,7 +5,7 @@ Drauger OS isn't designed for hand-held PCs, but that doesn't mean it won't work
 </br></br>
 
 ### What's working
-</br></br>
+</br>
 
 #### Display Output
 When using Wayland, Drauger OS automatically recognizes it is on a Steam Deck (and, presumably, other hand-held PCs. This is untested.) and rotates the screen to the correct orientation. Resolution scaling may be a bit wonky, but display output on both the internal display and external displays works perfectly out of the box!
@@ -38,14 +38,17 @@ As the built-in GPU on the Steam Deck is RDNA-based, it works out of the box wit
 </br></br>
 
 ### What's NOT Working
-</br></br>
+</br>
+
 #### Audio Output
 Audio output, to the built-in speakers or headphone jack, is not working.
 </br></br>
 If you wish to have audio output on Drauger OS on Steam Deck, you still have a few options available to you. Audio output DOES work in the following scenarios:
 </br>
- - USB Audio
- - Bluetooth Audio
- - Audio output through HDMI or DisplayPort
+<ul>
+ <li>USB Audio</li>
+ <li>Bluetooth Audio</li>
+ <li>Audio output through HDMI or DisplayPort</li>
+</ul>
 </br>
-The exact reason for audio output failing on the built-in speakers or headphone jack is currently unknown. However, we theorize that the problem has something to do with the internal DAC (digital-to-analog converter.)
+The exact reason for audio output failing on the built-in speakers or headphone jack is currently unknown. However, we theorize that the problem has something to do with the internal DAC (digital-to-analog converter.) We are confident this issue can be fixed without using the same kernel as Steam OS, as other distros have reported working audio on the Steam Deck.
